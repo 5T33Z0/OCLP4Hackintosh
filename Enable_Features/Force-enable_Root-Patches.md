@@ -32,7 +32,7 @@ In some cases, GPUs and Wi-Fi cards might not be detected by OpenCore Legacy Pat
 
 > [!CAUTION]
 > 
-> If your system does not have any of the GPUs supported by OCLP installed on your system but you apply any of the GPU patches in this section anyways, *you will brick your macOS installation* and have to [revert root patches](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/Guides/Reverting_Root_Patches.md) in order to recover macOS!
+> If your system does not have any of the GPUs supported by OCLP installed on your system but you apply any of the GPU patches in this section anyways, *you will brick your macOS installation* and have to [revert root patches](/Guides/Reverting_Root_Patches.md) in order to recover macOS!
 
 ### NVIDIA Kepler Patching
 

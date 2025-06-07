@@ -31,7 +31,7 @@ If you create a macOS USB installer with OpenCore Legacy Patcher, `AutoPkg-Asset
 ### When using the macOS Installer app
 If you use OCLP to download the macOS Installer app to install a newer version of macOS on a separate APFS volume or upgrade your existing install, you need to add `AutoPkg-Assets.pkg` to the app manually after the download and assembly of the macOS installer is completed:
 
-1. [**Prepare**](https://github.com/5T33Z0/OC-Little-Translated/tree/main/14_OCLP_Wintel#configuration-guides) your OpenCore `config.plist` and `EFI` folder for installing macOS 13 and newer based on the configuration guide for your CPU family.
+1. [**Prepare**](https://github.com/5T33Z0/OCLP4Hackintosh/tree/main?tab=readme-ov-file#configuration-guides) your OpenCore `config.plist` and `EFI` folder for installing macOS 13 and newer based on the configuration guide for your CPU family.
 2. Add [**`AutoPkgInstaller.kext`**](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) to your EFI folder and `config.plist` if it is not present already.
 3. Download the latest [**AutoPkg-Assets.pkg**](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) file from the OCLP repo.
 4. Download the macOS Installer with OCLP:

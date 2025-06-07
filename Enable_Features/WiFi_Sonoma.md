@@ -52,7 +52,7 @@ Since Apple never used Intel Wi-Fi/BT cards in their Macs, there are no root pat
 ## Instructions (Broadcom and Atheros)
 
 ### Config and EFI adjustments
-Apply the following changes to your config (or copy them over from the plist examples (&rarr; [Legacy WiFi](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/plist/Sonoma_WIFI_Legacy.plist) &rarr; [Modern WiFi](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/plist/Sonoma_WIFI_Modern.plist)) and add the listed kexts to `EFI/OC/Kexts` folder:
+Apply the following changes to your config (or copy them over from the plist examples (&rarr; [Legacy WiFi](/plist/Sonoma_WIFI_Legacy.plist) &rarr; [Modern WiFi](/plist/Sonoma_WIFI_Modern.plist)) and add the listed kexts to `EFI/OC/Kexts` folder:
 
 Config Section | Action
 :-------------:|-------
@@ -140,7 +140,7 @@ Listed below are instruction of how to cobinate itlwm and AirportIlmw kexts. In 
 
 ### Bluetooth
 
-If your Intel Wi-FI/BT card is [supported](https://openintelwireless.github.io/itlwm/Compat.html) by the OpenIntelWireless project, the following kexts are required for enabling Bluetooth in macOS 14+ (&rarr; [plist](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/plist/Sonoma_WIFI_Intel.plist)):
+If your Intel Wi-FI/BT card is [supported](https://openintelwireless.github.io/itlwm/Compat.html) by the OpenIntelWireless project, the following kexts are required for enabling Bluetooth in macOS 14+ (&rarr; [plist](/plist/Sonoma_WIFI_Intel.plist)):
 
 Kext | Comment | `MinKernel` | `MaxKernel`
 -----|---------|:-----------:|:-----------:
