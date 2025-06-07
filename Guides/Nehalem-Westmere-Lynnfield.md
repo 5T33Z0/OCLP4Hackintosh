@@ -51,7 +51,7 @@ In order to check if your system is potentially capable of installing and runnin
 2. CPU must support **SSE4.2** in order to boot macOS 10.14 Mojave and newer
 
 ### Potential Candidates
-1st Gen Intel Core CPUs. Check [this list](https://github.com/5T33Z0/OC-Little-Translated/blob/main/14_OCLP_Wintel/CPU_to_SMBIOS.md) to find out if your CPU is supported and which SMBOS is suitable.
+1st Gen Intel Core CPUs. Check [this list](/Guides/CPU_to_SMBIOS.md) to find out if your CPU is supported and which SMBOS is suitable.
 
 ### Patching Principle
 In macOS Ventura and newer, support for CPU families prior to Kaby Lake was dropped. For Sandy Bridge and older this mainly affects:
