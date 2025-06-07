@@ -81,4 +81,4 @@ For more options, check the [**Utilities**](https://github.com/5T33Z0/OC-Little-
 - **MetallibSupportPkg**: https://github.com/dortania/MetallibSupportPkg/releases
 
 ## Contribute
-Although I've created these guides with a lot of attention to detail, there's always room for improvement. As far as verifying the guides are concerned, I only have an iMac11,3 (Lynnfield), an iMac12,2 (Sandy Bridge), and and Ivy Bridge notebook for testing. So if you have any suggestions or updated instructions to improve the guides or workflows, feel free to create an issue and let me know!
+Although I've created these guides with a lot of attention to detail, there's always room for improvement. As far as verifying the guides are concerned, I only have the following systems for testing: an iMac11,3 (Lynnfield), an iMac12,2 (Sandy Bridge), Some notebooks (Ivy Bridge, Skylake, Whiskey Lake) and some Small Form Factor machines (Kaby Lake and Coffee Lake). So if you have any suggestions or updated instructions to improve the guides or workflows, feel free to create an issue and let me know!
