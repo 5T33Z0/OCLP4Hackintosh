@@ -1,7 +1,7 @@
-# Installing newer versions of macOS on legacy Wintel systems
+# OCLP4Hackintosh – Installing newer versions of macOS on legacy Wintel systems
 
 ## About
-**OCLP4Hackintosh**: A concise guide for using OpenCore Legacy Patcher (OCLP) to apply macOS patches on Intel-based Hackintosh systems, enabling modern macOS support with OpenCore.
+**OCLP4Hackintosh** is a concise guide for using OpenCore Legacy Patcher (OCLP) to apply macOS patches on Intel-based Hackintosh systems, enabling modern macOS support with OpenCore.
 
 As you may know, Dortania developed the [**OpenCore Legacy Patcher**](https://github.com/dortania/OpenCore-Legacy-Patcher) (OCLP) to install and run macOS 12 and newer on end-of-life Macs with Intel Core CPUs from the 1st to 6th generation (Kaby Lake to Comet Lake CPUs are still supported by macOS 15). It achieves this by installing the OpenCore boot loader on the target system to inject settings and [additional kexts](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts) required for:
 
