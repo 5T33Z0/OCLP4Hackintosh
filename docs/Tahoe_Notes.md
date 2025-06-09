@@ -4,7 +4,7 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple dec
 
 ## (Officially) Supported Mac Models
 
-![alt text](macOS_talahon.png)
+![macOS_talahon](https://github.com/user-attachments/assets/2e3c53c7-4b33-4968-8505-e15247619004)
 
 **Source**: https://www.apple.com/os/macos/
 
