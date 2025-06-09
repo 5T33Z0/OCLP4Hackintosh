@@ -1,4 +1,4 @@
-# OCLP4Hackintosh – Installing newer versions of macOS on legacy Wintel systems
+# OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
 
 ## About
 **OCLP4Hackintosh** is a concise guide for using OpenCore Legacy Patcher (OCLP) to apply macOS patches on Intel-based Hackintosh systems, enabling modern macOS support with OpenCore. Originally, the content in this repo was a chapter in my [OC-Little Translated](https://github.com/5T33Z0/OC-Little-Translated) repo but I decided to outsource it to a dedicated repo to better maintain it. 
