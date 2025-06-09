@@ -1,6 +1,6 @@
 # macOS Tahoe Notes
 
-On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan.
+On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
 
 ## (Officially) Supported Mac Models
 
