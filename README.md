@@ -36,7 +36,7 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 
 > [!IMPORTANT]
 >
-> Updating from from macOS 14.3.x to 14.4.x and newer might crash the installer early. This is related to `SecureBootModel`, so it should be set to `Disabled` during installation (&rarr; see [**Workarounds**](/W_Workarounds/macOS14.4.md) section for details).
+> Updating from from macOS 14.3.x to 14.4.x and newer might crash the installer early. This is related to `SecureBootModel`, so it should be set to `Disabled` during installation (&rarr; see [**Workarounds**](https://github.com/5T33Z0/OC-Little-Translated/blob/main/W_Workarounds/macOS14.4.md) section for details).
 
 ## (Re-)Enabling Features
 - [**Fixing WiFi and Bluetooth in macOS Sonoma+**](/Enable_Features/WiFi_Sonoma.md)
