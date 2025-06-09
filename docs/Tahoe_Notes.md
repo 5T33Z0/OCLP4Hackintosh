@@ -20,3 +20,7 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple dec
 ## OpenCore Patcher Support
 
 - Unknown yet. Waiting for official statements by Dortania et. al.
+
+## Status
+
+- Don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
