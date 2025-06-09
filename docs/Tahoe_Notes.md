@@ -10,7 +10,8 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple dec
 
 ## Intel CPU requirements:
 
--  Coffee Lake or newer
+- Coffee Lake or newer
+- It looks like Ice Lake is not supported since the 2020 Intel macBook Air is not mentioned – only the Apple silicon model
 
 ## New features
 
