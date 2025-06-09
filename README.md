@@ -21,6 +21,7 @@ What you may not know is: some of the settings, kexts and root-patches can  be u
  
 ## Latest updates
 - [**OCLP update status**](/docs/OCLP_status.md)
+- [**macOS Tahoe OCLP Notes**](/docs/Tahoe_Notes.md)
 - [**macOS Sequoia OCLP Notes**](/docs/Sequoia_Notes.md)
 - [**macOS Sonoma OCLP Notes**](/docs/Sonoma_Notes.md)
 
