@@ -2,7 +2,7 @@
 
 | ⚠️ Important updates |
 |:----------------------------|
-| Nothing to report currently.
+| Don't install macOS Tahoe beta yet!
 
 ## Release History
 
