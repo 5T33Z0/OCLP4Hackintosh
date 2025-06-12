@@ -10,9 +10,9 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple dec
 
 ## Supported Intel Mac Models
 
-- **Noetbooks**: Coffee Lake or newer (except MacBooAir, which has been dropped although it has a 10th Gen Intel Core Ice Lake CPU)
-- **Desktops**: Coment Lake only (iMac20,1/iMac20,2)
-- The rest (MacPro, iMacPro, Mac mini, MacBookAir): dropped
+- **Noetbooks**: MacBookPro16,1 and MacBookPro16,4
+- **Desktops**: iMac20,1 and iMac20,2
+- The rest: dropped
 
 It looks like Dortania has a lot of work to do to include all of these newly dropped Intel Macs into OCLP…
 
