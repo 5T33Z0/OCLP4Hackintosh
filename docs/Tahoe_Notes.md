@@ -10,8 +10,8 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple dec
 
 ## Usable SMBIOSes
 
-- **Noetbooks**: MacBookPro16,1 and MacBookPro16,4 (aka the 16" models)
-- **Desktops**: iMac20,1 and iMac20,2
+- **Noetbooks**: `MacBookPro16,1` and `MacBookPro16,4`
+- **Desktops**: `iMac20,1` and `iMac20,2`
 - The rest: dropped
 
 It looks like Dortania has a lot of work to do to include all of these newly dropped Intel Macs into OCLP…
