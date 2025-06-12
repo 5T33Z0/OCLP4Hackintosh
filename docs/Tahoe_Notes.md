@@ -2,15 +2,15 @@
 
 On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
 
-## (Officially) Supported Mac Models
+## (Officially) Supported Mac Models 
 
 ![macOS_talahon](https://github.com/user-attachments/assets/2e3c53c7-4b33-4968-8505-e15247619004)
 
 **Source**: https://www.apple.com/os/macos/
 
-## Supported Intel Mac Models
+## Usable SMBIOSes
 
-- **Noetbooks**: MacBookPro16,1 and MacBookPro16,4
+- **Noetbooks**: MacBookPro16,1 and MacBookPro16,4 (aka the 16" models)
 - **Desktops**: iMac20,1 and iMac20,2
 - The rest: dropped
 
