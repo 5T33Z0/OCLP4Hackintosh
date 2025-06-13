@@ -32,7 +32,7 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 
 - Metal 4 support
 - LAN – all my systems with an I219 NIC stopped working under macOS Tahoe
-- USB – might be a user-based issue (USBMap.kext with incorrect/outdated `model` information). **Workaround**: use `XhciPortlimit` Quirk as temporary fix
+- [USB](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/USB_Tahoe.md) 
 
 ## Observations
 
