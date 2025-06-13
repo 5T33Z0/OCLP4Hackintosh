@@ -32,7 +32,7 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 
 - Metal 4 support
 - LAN – all my systems with an I219 NIC stopped working under macOS Tahoe
-- [USB](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/USB_Tahoe.md) 
+- [USB](/Enable_Features/USB_Tahoe.md) 
 
 ## Observations
 
