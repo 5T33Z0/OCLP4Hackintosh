@@ -31,8 +31,7 @@ Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left
 
 Previous macOS | macOS Tahoe
 ---------------|--------------
-![alt text](old.png) | ![alt text](new.png)
+![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![new](https://github.com/user-attachments/assets/d89219c1-2ed5-4989-b211-ed173b1b12ca)
 
 ## Credits
-
 **JustFun** from [Hackintosh-Forum.de](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
