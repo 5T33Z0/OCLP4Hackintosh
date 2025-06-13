@@ -27,7 +27,7 @@ This ensures the appropriate kext loads based on the used macOS version.
 
 ## Screenshots
 
-Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left is the original file and on the right the modified plist with the changes required for macOS Tahoe:
+Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left is the original file and on the right the modified plist with the changes required for macOS Tahoe for direct comparison:
 
 Previous macOS | macOS Tahoe
 ---------------|--------------
