@@ -1,6 +1,6 @@
 # macOS Tahoe Notes
 
-On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe. Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
+On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe (Kernel version 25.0). Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
 
 ## (Officially) Supported Mac Models 
 
@@ -32,7 +32,7 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 
 - Metal 4 support
 - LAN – all my systems with an I219 NIC stopped working under macOS Tahoe
-- USB – might be a user-based issue (USBMap.kext with incorrect/outdated `model` informatio). **Workaround**: use `XhciPortlimit` Quirk as temporary fix
+- USB – might be a user-based issue (USBMap.kext with incorrect/outdated `model` information). **Workaround**: use `XhciPortlimit` Quirk as temporary fix
 
 ## Observations
 
