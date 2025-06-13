@@ -30,10 +30,9 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 
 ## Technical challenges
 
-- SMBIOSes for Macs with a T2 chip only (Board-ID skip still works, so not a big issue)
 - Metal 4 support
-- LAN – all my systems with an I219 NIC stopped working 
-- USB – might be a user error only (USBMap.kext with incorrect/outdated `model` informatio)
+- LAN – all my systems with an I219 NIC stopped working under macOS Tahoe
+- USB – might be a user-based issue (USBMap.kext with incorrect/outdated `model` informatio). **Workaround**: use `XhciPortlimit` Quirk as temporary fix
 
 ## Observations
 
