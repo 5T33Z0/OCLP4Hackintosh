@@ -27,3 +27,14 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 ## Status
 
 - Don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
+
+
+## Observations
+
+- Board-ID Skip and RestrictEvents still seem to work
+- On my Ivy Bridge Notebook installation works without effor. But the system crashes after completing the first stage of the install assistant before attempting to create the user account.
+- Couldn't get it to work on my Z490 system with a Comet Lake CPU and a Polaris GPU. I've read that disabling it and using the iGPU works
+
+## Further Resources
+
+- [macOS Tahoe 26 on Unsupported Macs](https://forums.macrumors.com/threads/macos-tahoe-26-on-unsupported-macs-discussion.2458481/) – Thread on macrumors.com. A good source for current developments regarding OCLP
