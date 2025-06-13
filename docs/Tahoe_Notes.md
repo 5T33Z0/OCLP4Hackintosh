@@ -28,6 +28,12 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 
 - Don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
 
+## Technical challenges
+
+- SMBIOSes for Macs with a T2 chip only (Board-ID skip still works, so not a big issue)
+- Metal 4 support
+- LAN – all my systems with an I219 NIC stopped working 
+- USB – might be a user error only (USBMap.kext with incorrect/outdated `model` informatio)
 
 ## Observations
 
