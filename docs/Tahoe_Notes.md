@@ -46,3 +46,4 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Further Resources
 
 - [macOS Tahoe 26 on Unsupported Macs](https://forums.macrumors.com/threads/macos-tahoe-26-on-unsupported-macs-discussion.2458481/) – Thread on macrumors.com. A good source for current developments regarding OCLP
+- [Supported/unsupported GPUs](https://osxlatitude.com/forums/topic/8238-supportedunsupported-gpus-graphics-cards/) - Thread on osxlatitude
