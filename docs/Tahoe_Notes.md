@@ -8,13 +8,15 @@ On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe (Kernel version 25.0)
 
 **Source**: https://www.apple.com/os/macos/
 
+It looks like Dortania has a lot of work to do to support all of these newly dropped Intel Macs via OCLP…
+
 ## Usable SMBIOSes
 
 - **Noetbooks**: `MacBookPro16,1` and `MacBookPro16,4`
 - **Desktops**: `iMac20,1` and `iMac20,2`
 - The rest: dropped
 
-It looks like Dortania has a lot of work to do to include all of these newly dropped Intel Macs into OCLP…
+Since the board-id check skip still works, macOS Tahoe can be installed with a native SMBIOS for the used CPU family.
 
 ## New features
 
@@ -31,8 +33,9 @@ It looks like Dortania has a lot of work to do to include all of these newly dro
 ## Technical challenges
 
 - Metal 4 support
-- LAN – all my systems with an I219 NIC stopped working under macOS Tahoe
+- Ethernet: LAN Controllers requiring IntelMausiEthernet (and derivates of it) won't work due to incomplete AppleVTD support.
 - [USB](/Enable_Features/USB_Tahoe.md) 
+- AMD Polaris GPUs: I couldn't get my Radeon RX580 to work in macOS Tahoe although the required kext is still present:<br>![alt text](Polaris.png)
 
 ## Observations
 

@@ -2,7 +2,7 @@
 
 Apple introduced significant changes to the USB stack in macOS 26 “Tahoe”, causing the standard `USBMap.kext` to stop functioning as expected. This guide explains how to adapt an existing `USBMap.kext` to work reliably under macOS Tahoe without needing to map ports via an SSDT.
 
-## Steps to Adapt USBMap.kext for macOS 26
+## Manual edits to fix `USBMap.kext` for macOS 26
 
 ### 1. Duplicate the Kext
 - Create a copy of your existing `USBMap.kext`.
@@ -25,7 +25,7 @@ Include both kexts in your OpenCore `config.plist` with version-specific kernel 
 
 This ensures the appropriate kext loads based on the used macOS version.
 
-## Screenshots
+### Screenshots
 
 Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left is the original file and on the right the modified plist with the changes required for macOS Tahoe for direct comparison:
 
@@ -33,5 +33,18 @@ Previous macOS | macOS Tahoe
 ---------------|--------------
 ![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![new](https://github.com/user-attachments/assets/d89219c1-2ed5-4989-b211-ed173b1b12ca)
 
+## Semi-automated fix
+
+CorpNewt recently updated his [USBMap](https://github.com/corpnewt/USBMap) Python script. You can use it to fix an *existing* `USBMap.kext` so it will work in macOS Tahoe as well. Here's a run-down:
+- Boot macOS Sequoia or older with your existing `USBMap.kext`
+- Download and unzip the USBMap script
+- Run `USBMap.command`
+- Press "P"
+- Prass "A"
+- Press "K" to build USBMap.kext for macOS Catalina and newer
+- The fixed kext will be located in the "Results" folder
+- Add it to your `EFI/OC/Kexts` folder, replacing the existing one
+
 ## Credits
-**JustFun** from [Hackintosh-Forum.de](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
+- **JustFun** from [Hackintosh-Forum.de](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582) for the manual fix
+- **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
