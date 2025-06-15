@@ -9,7 +9,7 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 - Run `USBMapInjectorEdit` script (.command in macOS or .bat in Windows)
 - Drag the USBMap.kext into the Terminal window and press Enter 
 - In the Main windwow you now have the following options: <br>![Update_keys](https://github.com/user-attachments/assets/ab0a2a8c-7149-4c44-a379-93fcc67c55e5)
-- You only have to press "U" and the relevant keys will be changed. That's it.
+- You only have to press <kbd>u</kbd> and press <kbd>Enter</kbd> – That's it.
 - In the `config.plist`, change the `MinKernel` setting for your USBMap.kext to `19.0.0`
 - Save your config, boot into macOS Tahoe and test it.
 
