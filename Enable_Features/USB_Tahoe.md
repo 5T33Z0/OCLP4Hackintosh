@@ -1,29 +1,33 @@
 # Fixing `USBMap.Kext` for use with macOS 26 "Tahoe"
 
-Apple introduced significant changes to the USB stack in macOS 26 “Tahoe”, causing the standard `USBMap.kext` to stop functioning as expected. This guide explains how to adapt an existing `USBMap.kext` to work reliably under macOS Tahoe without needing to map ports via an SSDT.
+Apple introduced some changes to the USB stack in macOS 26 “Tahoe”, causing the standard `USBMap.kext` to stop functioning as expected. This guide explains how to adapt an existing `USBMap.kext` to work reliably under macOS Tahoe without needing to map ports via an SSDT.
 
-## Manual edits to fix `USBMap.kext` for macOS 26
+## Option 1: Automated fix using USBMap Script
 
-### 1. Duplicate the Kext
-- Create a copy of your existing `USBMap.kext`.
-- Rename it to, e.g., `USBMap_Tahoe.kext`.
+CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) port mapping Python script. It also contains a script called `USBMapInjectorEdit`. It can now update the info.plist of the kext for macOS 26 compatibility automatically:
 
-### 2. Modify the Info.plist in `USBMap_Tahoe.kext`
-Update the following entries in the `Info.plist` file of `USBMap_Tahoe.kext`:
-- `CFBundleIdentifier`: Set to `com.apple.driver.AppleUSBHostMergeProperties`
-- Under `IOKitPersonalities/XHC/`: `IOClass`: Set to `AppleUSBHostMergeProperties` (if it isn't already)
-- `IOProviderClass`: Set to `AppleUSBXHCIPCI`
-- Under `IOKitPersonalities/XHC/IOProviderMergeProperties/ports`:
-  - Change every instance of `port` to `usb-port-number`. This is critical due to Apple's updated USB architecture in macOS 26.
+- Run `USBMapInjectorEdit` script (.command in macOS or .bat in Windows)
+- Drag the USBMap.kext into the Terminal window and press Enter 
+- In the Main windwow you now have the following options: <br>![](/Users/5t33z0/Desktop/Update_keys.png)
+- You only have to press "U" and the relevant keys will be changed.
+- In the `config.plist`, change the `MinKernel` setting for your USBMap.kext to `19.0.0`
+- Save your config, boot into macOS Tahoe and test it.
 
-### 3. Update `config.plist`
-Include both kexts in your OpenCore `config.plist` with version-specific kernel settings:
-- For `USBMap.kext`:
-  - Set `MaxKernel` to `24.9.9` (for macOS 15 Sequoia and earlier).
-- For `USBMap_Tahoe.kext`:
-  - Set `MinKernel` to `25.0.0` (for macOS 26 Tahoe and later).
+## Option 2: Editing the `info.plist` of the `USBMap.kext` manually
 
-This ensures the appropriate kext loads based on the used macOS version.
+- Mount your EFI folder
+- Open Finder
+- Press Shift+G
+- Enter 
+	```text
+	/Volumes/EFI/EFI/oc/Kexts/USBMap.kext/Contents/Info.plist
+	```
+- Open it with ProperTree or the plist Editor of your choice
+- In the plist, navigate to: `IOKitPersonalities` &rarr; XHC/EHC/etc. (Name depends on type of controller) &rarr; `IOProviderMergeProperties` &rarr; `ports` 
+- There you will find the entries for all the ports you mapped (`HS` and `SS`)
+- Open each one of them and every instance of `port` to `usb-port-number`. This is critical due to Apple's updated USB architecture in macOS 26.
+- In the config, change `MinKernel` to `19.0.0`
+- Save changes.
 
 ### Screenshots
 
@@ -33,18 +37,6 @@ Previous macOS | macOS Tahoe
 ---------------|--------------
 ![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![new](https://github.com/user-attachments/assets/d89219c1-2ed5-4989-b211-ed173b1b12ca)
 
-## Semi-automated fix
-
-CorpNewt recently updated his [USBMap](https://github.com/corpnewt/USBMap) Python script. You can use it to fix an *existing* `USBMap.kext` so it will work in macOS Tahoe as well. Here's a run-down:
-- Boot macOS Sequoia or older with your existing `USBMap.kext`
-- Download and unzip the USBMap script
-- Run `USBMap.command`
-- Press "P"
-- Prass "A"
-- Press "K" to build USBMap.kext for macOS Catalina and newer
-- The fixed kext will be located in the "Results" folder
-- Add it to your `EFI/OC/Kexts` folder, replacing the existing one
-
 ## Credits
-- **JustFun** from [Hackintosh-Forum.de](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582) for the manual fix
+- **JustFun** from for his original instructions [fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
 - **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
