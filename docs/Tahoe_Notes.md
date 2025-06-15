@@ -33,9 +33,9 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges
 
 - [ ] Metal 4 support
-- [ ] Ethernet: LAN Controllers requiring IntelMausiEthernet (and derivates of it) won't work due to incomplete AppleVTD support.
-- [x] [USB](/Enable_Features/USB_Tahoe.md) 
-- [ ] AMD Polaris GPUs: I couldn't get my Radeon RX580 to work in macOS Tahoe although the required kext is still present:<br>![alt text](Polaris.png)
+- [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
+- [x] USB issues due to changed parameters ([**Fix available**](/Enable_Features/USB_Tahoe.md))
+- [ ] AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
 
 ## Observations
 
