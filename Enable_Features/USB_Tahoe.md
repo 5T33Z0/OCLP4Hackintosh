@@ -22,12 +22,16 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 	```text
 	/Volumes/EFI/EFI/oc/Kexts/USBMap.kext/Contents/Info.plist
 	```
-- Open it with ProperTree or the plist Editor of your choice
+- Open the plist with ProperTree or the plist editor of your choice
 - In the plist, navigate to: `IOKitPersonalities` &rarr; XHC/EHC/etc. (Name depends on type of controller) &rarr; `IOProviderMergeProperties` &rarr; `ports` 
 - There you will find the entries for all the ports you mapped (`HS` and `SS`)
-- Open each one of them and every instance of `port` to `usb-port-number`. This is critical due to Apple's updated USB architecture in macOS 26.
-- In the config, change `MinKernel` to `19.0.0`
-- Save changes.
+- Open each one of them and look for the entry `port`
+- Copy and paste the line and rename it to `usb-port-number` so that it works in macOS 26. (see "Screenshots" for details)
+- Repeat this procedure for the rest of the ports
+- Once you are done with editing, save the file
+- Next, open your config.plist and change `MinKernel` to `19.0.0` for `USBMap.kext`
+- Save the config
+- Boot into macoOS Test and it
 
 ### Screenshots
 
