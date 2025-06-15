@@ -8,8 +8,8 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 
 - Run `USBMapInjectorEdit` script (.command in macOS or .bat in Windows)
 - Drag the USBMap.kext into the Terminal window and press Enter 
-- In the Main windwow you now have the following options: <br>![](/Users/5t33z0/Desktop/Update_keys.png)
-- You only have to press "U" and the relevant keys will be changed.
+- In the Main windwow you now have the following options: <br>![Update_keys](https://github.com/user-attachments/assets/ab0a2a8c-7149-4c44-a379-93fcc67c55e5)
+- You only have to press "U" and the relevant keys will be changed. That's it.
 - In the `config.plist`, change the `MinKernel` setting for your USBMap.kext to `19.0.0`
 - Save your config, boot into macOS Tahoe and test it.
 
@@ -35,7 +35,7 @@ Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left
 
 Previous macOS | macOS Tahoe
 ---------------|--------------
-![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![new](https://github.com/user-attachments/assets/d89219c1-2ed5-4989-b211-ed173b1b12ca)
+![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![ports_new](https://github.com/user-attachments/assets/5cfd37e3-5e7c-40a9-ae21-7fd0796f7881)
 
 ## Credits
 - **JustFun** from for his original instructions [fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
