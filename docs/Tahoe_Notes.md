@@ -33,6 +33,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges
 
 - [ ] Metal 4 support
+- [x] DRM issues. ITunes not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7`
 - [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
 
   A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
