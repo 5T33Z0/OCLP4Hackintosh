@@ -33,7 +33,22 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges
 
 - [ ] Metal 4 support
-- [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
+- [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk! Currently, the following Ethernet drivers support **AppleVTD** in the current version (provided the motherboard cooperates), but can also operate without it:
+
+  - LucyRTL8125Ethernet
+  - RealtekRTL8111
+  - AtherosE2200Ethernet
+  - IntelLucy
+  - [IntelMausiEthernet](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802680#post802680) (v2.5.5d0)
+
+The following drivers currently do _not_ work with **AppleVTD** because** approximately 10 lines of code are missing**. I am currently trying to resolve this issue but am facing significant challenges compiling a functional kext with the latest Xcode after about 4 years without updates:
+
+  - IntelMausi
+
+In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
+
+**Source**: [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet
+
 - [x] USB issues due to changed parameters ([**Fix available**](/Enable_Features/USB_Tahoe.md))
 - [ ] GPUs: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
 - [ ] Bluetooth: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
