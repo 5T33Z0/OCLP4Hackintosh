@@ -41,7 +41,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
   - IntelLucy
   - [IntelMausiEthernet](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802680#post802680) (v2.5.5d0)
 
-The following drivers currently do _not_ work with **AppleVTD** because** approximately 10 lines of code are missing**. I am currently trying to resolve this issue but am facing significant challenges compiling a functional kext with the latest Xcode after about 4 years without updates:
+  The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing. I am currently trying to resolve this issue but am facing significant challenges compiling a functional kext with the latest Xcode after about 4 years without updates:
 
   - IntelMausi
 
