@@ -51,8 +51,6 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
   > 
   > In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
   
-  **Source**: [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet
-
 - [x] USB issues due to changed parameters ([**Fix available**](/Enable_Features/USB_Tahoe.md))
 - [ ] GPUs: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
 - [ ] Bluetooth: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
