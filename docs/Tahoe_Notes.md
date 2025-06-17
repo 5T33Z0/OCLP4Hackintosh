@@ -33,7 +33,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges
 
 - [ ] Metal 4 support
-- [x] DRM issues. ITunes not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
+- [x] DRM issues. Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
 - [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
 
   A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
@@ -49,7 +49,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
   
   > The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing: 
   >
-  > - IntelMausi
+  > - IntelMausi4
   
   > In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
   
@@ -60,7 +60,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Observations
 
 - Board-ID Skip and RestrictEvents still seem to work
-- On my Ivy Bridge Notebook installation works without effor. But the system crashes after completing the first stage of the install assistant before attempting to create the user account.
+- On my Ivy Bridge Notebook installation worked without effort. But the system crashes after completing the first stage of the install assistant.
 - Couldn't get it to work on my Z490 system with a Comet Lake CPU and a Polaris GPU. I've read that disabling it and using the iGPU works
 
 ## Further Resources
