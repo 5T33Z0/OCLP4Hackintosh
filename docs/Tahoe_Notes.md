@@ -49,7 +49,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
   
   > The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing: 
   >
-  > - IntelMausi4
+  > - IntelMausi
   
   > In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
   
