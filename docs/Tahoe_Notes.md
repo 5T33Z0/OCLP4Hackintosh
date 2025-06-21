@@ -22,13 +22,9 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 
 - Nothing really noteable besided an overhaul of Spotlight
 
-## OpenCore Patcher Support
+## Current OCLP Status
 
-- Unknown yet. Waiting for official statements by Dortania et. al.
-
-## Status
-
-- Don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
+- Unknown yet. Waiting for official statements by Dortania et. al. So don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
 - khronokernel, one of the cornerstone developers of OpenCore and OCLP stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP. My guess is that this will slow down future OCLP development signficantly.
 
 ## Technical challenges
