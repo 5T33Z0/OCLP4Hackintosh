@@ -65,7 +65,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 
 ## Outlook
 
-- khronokernel, one of the cornerstone developers of OpenCore stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP.
+- khronokernel, one of the cornerstone developers of OpenCore and OCLP stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP.
 
 ## Further Resources
 - [macOS 26 Beta Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-26-release-notes)
