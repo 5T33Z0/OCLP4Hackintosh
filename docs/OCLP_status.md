@@ -7,7 +7,8 @@
 ## Release History
 
 ### 2025
-- **May 15th,2023**: OCLP 2.4.0 is [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.4.0) which primarily focuses on macOS 15.5 support. A mentiobable feature is reduced CPU usage in the User Interface thread.
+- **June 9th, 2025**: macOS Tahoe beta is released. No official statement from Dortania regarding milestones for OCLP support.
+- **May 15th,2025**: OCLP 2.4.0 is [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.4.0) which primarily focuses on macOS 15.5 support. A mentiobable feature is reduced CPU usage in the User Interface thread.
 - **March 31st, 2025**: OCLP 2.3.0 is [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.3.0), focussing on macOS 15.4 support.
 
 ### 2024
