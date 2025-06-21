@@ -63,6 +63,10 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 - On my Ivy Bridge Notebook installation worked without effort. But the system crashes after completing the first stage of the install assistant.
 - Couldn't get it to work on my Z490 system with a Comet Lake CPU and a Polaris GPU. I've read that disabling it and using the iGPU works
 
+## Outlook
+
+- khronokernel, one of the cornerstone developers of OpenCore stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP.
+
 ## Further Resources
 - [macOS 26 Beta Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-26-release-notes)
 - [macOS Tahoe 26 on Unsupported Macs](https://forums.macrumors.com/threads/macos-tahoe-26-on-unsupported-macs-discussion.2458481/) – Thread on macrumors.com. A good source for current developments regarding OCLP
