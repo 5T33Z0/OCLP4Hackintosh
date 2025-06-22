@@ -20,7 +20,8 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 
 ## New features
 
-- Nothing really noteable besided an overhaul of Spotlight
+- Nothing really notable besides an overhaul of Spotlight
+- Horrible overhaul of the on-screen display  
 
 ## Current OCLP Status
 
