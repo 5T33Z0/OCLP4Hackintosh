@@ -24,10 +24,9 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 
 ## Current OCLP Status
 
-- Unknown yet. Waiting for official statements by Dortania et. al. So don't install macOS Tahoe yet! Wait for updated kexts and OpenCore builds.
-- khronokernel, one of the cornerstone developers of OpenCore and OCLP stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP. My guess is that this will slow down future OCLP development signficantly.
+- Unknown yet. Waiting for official statements by Dortania et. al.
 
-## Technical challenges
+## Technical challenges/issues
 
 - [ ] Metal 4 support
 - [x] DRM issues. Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
@@ -53,12 +52,22 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 - [x] USB issues due to changed parameters ([**Fix available**](/Enable_Features/USB_Tahoe.md))
 - [ ] GPUs: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
 - [ ] Bluetooth: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
+- [ ] File Vault: According to OC dev M. Haeuser, there seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. When loading the previous drivers from macOS 15 (`usr/standalone/i386/apfs_aligned.efi`), File Vault 2 works as expected ([Source](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802857#post802857))
 
 ## Observations
 
-- Board-ID Skip and RestrictEvents still seem to work
-- On my Ivy Bridge Notebook installation worked without effort. But the system crashes after completing the first stage of the install assistant.
-- Couldn't get it to work on my Z490 system with a Comet Lake CPU and a Polaris GPU. I've read that disabling it and using the iGPU works
+- Board-ID Skip and RestrictEvents kext still work
+- On my Ivy Bridge Notebook, installation worked without effort. But the system crashes after completing the first stage of the install assistant.
+- Couldn't get it to work on my Z490 system with a Comet Lake CPU and a Polaris GPU (RX580). **Workaround**: disable GPU (`-wegnoegpu`) and use on-board graphics
+
+## Recommendations
+
+- You can install macOS Tahoe if your system has a Kabylake or newer CPU (board-id check skip is required when using an unsupported SMBIOS).
+- Don't install macOS Tahoe if your GPU and/or iGPU is incompatible. So no 11. Gen CPUs or newer and no Legacy GPUs (including AMD Radeon RX5xx).
+
+## Outlook
+
+- khronokernel, one of the cornerstone developers of OpenCore and OCLP stated in his [OpenCore Legacy Patcher retrospective](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) blog post that he has quit working on OCLP.
 
 ## Further Resources
 - [macOS 26 Beta Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-26-release-notes)
