@@ -63,7 +63,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Recommendations
 
 - You can install macOS Tahoe if your system has a Kabylake or newer CPU and does not require root patches by OCLP (board-id check skip is required when using an unsupported SMBIOS).
-- Don't install macOS Tahoe if your GPU and/or iGPU is incompatible. So no 11. Gen CPUs or newer and no Legacy GPUs (including AMD Radeon RX5xx).
+- Don't install macOS Tahoe if your GPU and/or iGPU is incompatible and requires root patches. So no 11. Gen CPUs or newer and no Legacy GPUs (including AMD Radeon RX5xx).
 
 ## Outlook
 
