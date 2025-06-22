@@ -29,7 +29,9 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges/issues
 
 - [ ] Metal 4 support
-- [x] DRM issues. Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
+- [ ] **GPUs**: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
+- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
+- [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
 - [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
 
   A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
@@ -49,10 +51,8 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
   
   > In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
   
-- [x] USB issues due to changed parameters ([**Fix available**](/Enable_Features/USB_Tahoe.md))
-- [ ] GPUs: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
-- [ ] Bluetooth: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
-- [ ] File Vault: According to OC dev M. Haeuser, there seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. When loading the previous drivers from macOS 15 (`usr/standalone/i386/apfs_aligned.efi`), File Vault 2 works as expected ([Source](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802857#post802857))
+- [x] **USB**: USB issues due to changed parameters ([**Fix**](/Enable_Features/USB_Tahoe.md))
+- [x] **File Vault**: According to OC dev M. Haeuser, there seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. If the previous driver from macOS 15 is injected via OpenCore (loacted at `usr/standalone/i386/apfs_aligned.efi`), File Vault 2 works as expected ([**Source**](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802857#post802857))
 
 ## Observations
 
