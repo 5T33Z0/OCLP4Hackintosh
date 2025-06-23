@@ -108,6 +108,10 @@ Once you have verified that the required kext are actually loaded, you can conti
 - Wi-Fi is working again: <br>![access](https://github.com/5T33Z0/OC-Little-Translated/assets/76865553/11e57c0e-fd81-4aea-ae5b-475b7cf013b2)
 </details>
 
+> [!TIP]
+> 
+> If Wi-Fi stops working after updating kexts included in the [BrcmPatchRam](https://github.com/acidanthera/BrcmPatchRAM) package (like BluetoolFixup, for example) to 2.7.0 or newer, add `-btlfxboardid` boot argument to patch board-id on macOS 14+. Because automatic board-id patching was disabled, since it is unused by Intel BT.
+
 ---
 
 ## Instructions (Intel)
