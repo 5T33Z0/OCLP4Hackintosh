@@ -30,6 +30,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges/issues
 
 - [ ] Metal 4 support
+- [ ] **Audio issues**: On-board audio stopped working on macOS Tahoe beta 2. Maybe something has to be adjusted in AppleALC.kext?
 - [ ] **GPUs**: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
 - [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
