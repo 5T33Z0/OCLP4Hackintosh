@@ -31,7 +31,7 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 
 - [ ] Metal 4 support
 - [ ] **Audio issues**:
-  - [ ] On-board audio stopped working on macOS Tahoe beta 2. `AppleHDA` has been removed from macOS Tahoe beta 2 – it's no longer present in `System/Libray/Extensions`. That's bad news becasue without it, AppleALC is useless. Trying to inject AppleHDA via OpenCore doesn't work (no boot).
+  - [ ] On-board audio stopped working on macOS Tahoe beta 2. `AppleHDA` has been removed – it's no longer present in `System/Libray/Extensions`. That's bad news becasue without it, AppleALC is useless. Trying to inject AppleHDA via OpenCore doesn't work (no boot).
 - [ ] **Video**:
   - [ ] AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in Tahoe beta1. although the required kext is still present. According to a post on Hackintosh-Forums this was fixed in beta 2
 - [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
