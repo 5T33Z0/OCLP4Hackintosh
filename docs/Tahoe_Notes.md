@@ -30,8 +30,10 @@ Since the board-id check skip still works, macOS Tahoe can be installed with a n
 ## Technical challenges/issues
 
 - [ ] Metal 4 support
-- [ ] **Audio issues**: On-board audio stopped working on macOS Tahoe beta 2. According to [this post](https://forums.macrumors.com/threads/macos-tahoe-26-on-unsupported-macs-discussion.2458481/page-9?post=33975897#post-33975897) on MacRumors Forums, AppleHDA has been removed from macOS Tahoe beta 2. Tha's bad news.
-- [ ] **GPUs**: AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in macOS Tahoe although the required kext is still present
+- [ ] **Audio issues**:
+  - [ ] On-board audio stopped working on macOS Tahoe beta 2. `AppleHDA` has been removed from macOS Tahoe beta 2 – it's no longer present in `System/Libray/Extensions`. That's bad news becasue without it, AppleALC is useless. Trying to inject AppleHDA via OpenCore doesn't work (no boot).
+- [ ] **Video**:
+  - [ ] AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in Tahoe beta1. although the required kext is still present. According to a post on Hackintosh-Forums this was fixed in beta 2
 - [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
 - [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
