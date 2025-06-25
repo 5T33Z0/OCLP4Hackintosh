@@ -25,8 +25,7 @@ CPU Family | Mac Model/ <br>SMBIOS | Intel Core <br>Gen.
 **Skylake**  | <ul><li>MacBook9,1 <li>MacBookPro13,x <li> iMac17,1 | 6th
 **Kaby Lake**  | <ul><li>MacBook10,1 <li>MacBookPro14,x <li> iMac18,x | 7th
 **Coffee Lake**,<br> **Whiskey Lake**  | <ul><li>MacBookPro15,x <li>MacBookPro16,1 <li> Macmini8,1<li> iMac19,x | 8th/9th
-**Comet Lake**, <br> **Ice Lake** |  <ul><li> iMac20,x <li> MacBookPro16,2 | 10th
-**Cascade Lake** | <ul><li>MacPro7,1 | 10th
+**Comet Lake**, <br> **Ice Lake**, <br>**Cascade Lake**|  <ul><li> iMac20,x <li> MacBookPro16,2 <li>MacPro7,1 | 10th
 
 ## Lists of Apple Mac Models
 Listed below, you find official links to every Intel/ARM-based Apple Mac model, including additional info such as tech specs, etc. This might help to figure out the suited SMBIOS for your Wintel PC.
