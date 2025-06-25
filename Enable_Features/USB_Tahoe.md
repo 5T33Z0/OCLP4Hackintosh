@@ -33,6 +33,10 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 - Save the config
 - Boot into macoOS Test and it
 
+> [!TIP]
+>
+> If you change the SMBIOS on your system (which there is no need for), you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work.
+
 ### Screenshots
 
 Listed below are screenshots of the `info.plist` in the USBMap.kext. On the left is the original file and on the right the modified plist with the changes required for macOS Tahoe for direct comparison:
