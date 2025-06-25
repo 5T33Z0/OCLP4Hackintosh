@@ -16,7 +16,7 @@
 	- [Audio Issues](#audio-issues)
 	- [GPU issues](#gpu-issues)
 	- [Networking](#networking)
-- [Config changes](#config-changes)
+- [Config Adjustments](#config-adjustments)
 - [Kext Adjustments](#kext-adjustments)
 - [Testing the changes](#testing-the-changes)
 - [Getting and installing macOS Tahoe](#getting-and-installing-macos-tahoe)
@@ -49,7 +49,9 @@ If your system is using the iGPU for driving the graphics output, the changes th
 ### Networking
 It seems that Apple has made changes to AppleVTD so that any NIC requiring AppleVTD might or might not work based on chipset and used kext (the kext has to support AppleVTD as well).
 
-## Config changes
+## Config Adjustments
+
+Listed in the table below are the required config changes for installing/booting macOS Tahoe on systems with Intel Kaby Lake or newer.
 
 Config Section | Action | Description
 :-------------:| ------ | ------------
@@ -64,14 +66,6 @@ Config Section | Action | Description
 **`NVRAM/Add/...-FE41995C9F82`** | **Change** **`csr-active-config`** to: <ul><li>**`03080000`** <li> When using an NVIDIA GPU, set it to: **`030A0000`** </ul> **Add the following**`boot-args`: <ul><li> **`amfi=0x80`** (only necessary if root patches can't be applied)<li> **`ipc_control_port_options=0`** <li> **`-disable_sidecar_mac`** </ul>**Optional boot-args for GPUs** (Select based on GPU Vendor): <ul> <li> **`-igfxvesa`** <li> **`-radvesa`** <li> **`nv_disable=1`** <li> **`ngfxcompat=1`**<li>**`ngfxgl=1`**<li> **`nvda_drv_vrl=1`** <li> **`agdpmod=vit9696`** | <ul> <li>**`amfi=0x80`**: Disables Apple Mobile File Integrity validation. Required for applying Root Patches with OCLP ~~and booting macOS 12+~~. :bulb: No longer needed for booting thanks to AMFIPass.kext – only for installing Root Patches with OCLP. Disabling AMFI causes issues with [3rd party apps' access to Mics and Cameras](https://github.com/5T33Z0/OC-Little-Translated/blob/main/13_Peripherals/Fixing_Webcams.md).<li> **`ipc_control_port_options=0`**: Required for Intel HD Graphics. Fixes issues with Firefox and electron-based apps like Discord. <li> **`-disable_sidecar_mac`**: For FeatureUnlock &rarr; Disables Sidecar/AirPlay/Universal Control patches. <li> **`-igfvesa`** (Intel iGPU): Disables Intel iGPU acceleration (optional). Might be required before re-installing Skylake iGPU drivers with OCLP <li> **`-radvesa`** (AMD only): Disables hardware acceleration and puts the card in VESA mode. Only required if your screen turns off after installing macOS 12+. Once you've installed the GPU drivers with OCLP, **disable it** so graphics acceleration works! <li> **`nv_disable=1`** (NVIDIA only): Disables hardware acceleration and puts the card in VESA mode. Only required if your screen turns off after installing macOS. Kepler Cards switch into VESA mode automatically without it. Once you've installed the GPU drivers with OCLP, **disable it** so graphics acceleration works! <li>**`ngfxcompat=1`** (NVIDIA only): Ignores compatibility check in `NVDAStartupWeb`. Not required for Kepler GPUs <li>**`ngfxgl=1`** (NVIDIA only): Disables Metal Spport so OpenGL is used for rendering instead. Not required for Kepler GPUs. <li> **`nvda_drv_vrl=1`** (NVIDIA only): Enables Web Drivers. Not required for Kepler GPUs. <li> **`agdpmod=vit9696`** &rarr; Disables board-id check. Useful if screen turns black after booting macOS which can happen after installing NVIDIA Webdrivers. <li> **`-wegnoigpu`** &rarr; Optional. Disables the iGPU in macOS. **ONLY** required when using an AMD GPU and an SMBIOS for a CPU without on-board graphics (i.e. `iMacPro1,1` or `MacPro7,1`) to let the GPU handle background rendering and other tasks. Requires Polaris or Vega cards to work properly (Navi is not supported by OCLP). Combine with `unfairgva=x` bitmask (x= 1 to 7) to [address DRM issues](https://github.com/5T33Z0/OC-Little-Translated/tree/main/H_Boot-args#unfairgva-overrides)
 **`UEFI/Drivers`** and <br> **`EFI/OC/Drivers`**| <ul> <li> Add `ResetNvramEntry.efi` to `EFI/OC/Drivers` <li> And to your config:<br> ![resetnvram](https://github.com/5T33Z0/OC-Little-Translated/assets/76865553/8d955605-fb27-401f-abdd-2c616b233418) | Adds a boot menu entry to perform an NVRAM reset but without resetting the order of the boot drives. Requires a BIOS with UEFI support.
 **`PlatformInfo/Generic`**|  **SMBIOS**: leave as is | Board-ID check skip will allow installing macOS on unsupported board-ids and RestrictEvents kext will enable receiving System Updates, so no need to change the SMBIOS!
-
-> [!CAUTION]
-> 
-> Don't add the NVRAM parameter `OCLP-Version` to your config – it's meant for real Macs only! It checks if your `config.plist` is up to par with the one provided by OCLP. If the version in your config is lower, a pop-up will appear asking you if you would like to update OpenCore:
->
-> ![oclp-version](https://github.com/user-attachments/assets/3376afa3-da56-4311-9960-a9ec90e6010f)
->
-> If you would press "OK" in this scenario, your `OC` folder would be replaced by the one created for the corresponding Mac model leaving your macOS installation in an unbootable state!
 
 ## Kext Adjustments
 
