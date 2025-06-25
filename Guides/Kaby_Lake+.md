@@ -75,7 +75,7 @@ Config Section | Action | Description
 
 ## Kext Adjustments
 
-In order for `USBMap.kext` to work in macOS Tahoe, some settings have to be adjusted. &rarr; [**Instructions**](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/USB_Tahoe.md) 
+In order for `USBMap.kext` to work in macOS Tahoe, some settings have to be adjusted. &rarr; [**Instructions**](/Enable_Features/USB_Tahoe.md) 
 
 ## Testing the changes
 Once you've added the required kexts and made the necessary changes to your `config.plist`, save, reboot and perform an NVRAM Reset. If your system still boots fine after that, you can now prepare the system for installing macOS 13 and newer.
@@ -89,10 +89,6 @@ Once you've added the required kexts and made the necessary changes to your `con
 - This will prepare the installation (copy the files over to the newly created volume)
 - Once that's done, the system will reboot and there will be a new entry in the boot menu "Install macOS" or similar
 - Select it to continue with the install
-
-> [!NOTE]
->
-> OCLP can also create a USB Installer if you want to perform a clean install (highly recommended)
 
 ## Credits
 - Acidanthera for OpenCore, OCLP and numerous Kexts
