@@ -40,27 +40,27 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 		- NICs requiring `AppleVTD` to be present *might* work based on mainboard and chipset ([Example](https://github.com/SongXiaoXi/AppleIGC/issues/23#issuecomment-3002214327))
 	- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
-
-  A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
-
-  > Currently, the following Ethernet drivers support **AppleVTD** in the current version (provided the motherboard cooperates), but can also operate without it:
-  >
-  > - LucyRTL8125Ethernet
-  > - RealtekRTL8111
-  > - AtherosE2200Ethernet
-  > - IntelLucy
-  > - [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet/releases) (v2.5.5d0, recently updated to support AppleVTD!)
-  >
-  
-  > The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing: 
-  >
-  > - IntelMausi
-  
-  > In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
-  
 - [x] **USB**: USB issues due to changed parameters ([**Fix**](/Enable_Features/USB_Tahoe.md))
 - [x] **File Vault**: According to OC dev M. Haeuser, there seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. If the previous driver from macOS 15 is injected via OpenCore (loacted at `usr/standalone/i386/apfs_aligned.efi`), File Vault 2 works as expected ([**Source**](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802857#post802857))
 
+### AppleVTD support
+
+A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
+
+> Currently, the following Ethernet drivers support **AppleVTD** in the current version (provided the motherboard cooperates), but can also operate without it:
+>
+> - LucyRTL8125Ethernet
+> - RealtekRTL8111
+> - AtherosE2200Ethernet
+> - IntelLucy
+> - [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet/releases) (v2.5.5d0, recently updated to support AppleVTD!)
+>
+> The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing: 
+>
+> - IntelMausi
+>
+> In contrast, all drivers provided by Apple _strictly require AppleVTD_ and cannot operate without it, as they no longer run in kernel-space but in user-space.
+  
 ## Observations
 
 - Board-ID Skip and RestrictEvents kext still work
