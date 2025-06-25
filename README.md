@@ -47,6 +47,7 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 - [**Installing macOS 13+ on Ivy Bridge systems**](/Guides/Ivy_Bridge.md)
 - [**Installing macOS 13+ on Haswell/Broadwell systems**](/Guides/Haswell-Broadwell.md)
 - [**Installing macOS 13+ on Skylake systems**](/Guides/Skylake.md)
+- [**Installing macOS 26 on Kaby Lake or newer**](/Guides/Kaby_Lake+.md)
 - [**General CPU and SMBIOS Guide**](/Guides/CPU_to_SMBIOS.md)
 
 > [!IMPORTANT]
