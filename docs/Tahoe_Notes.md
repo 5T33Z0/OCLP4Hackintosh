@@ -16,27 +16,30 @@ It looks like Dortania has a lot of work to do to support all of these newly dro
 - **Desktops**: `iMac20,1` and `iMac20,2`
 - The rest: dropped
 
-Since the board-id check skip still works, macOS Tahoe can be installed with a native SMBIOS for the used CPU family.
+Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe can be installed with a native SMBIOS for the used CPU family and system updates can be obtained as well.
 
 ## New features
 
 - Nothing really notable besides an overhaul of Spotlight
-- Horrible overhaul of the on-screen display  
+- Horrible overhaul of the on-screen display
 
 ## Current OCLP Status
 
 - Unknown yet. Waiting for official statements by Dortania et. al.
 
-## Technical challenges/issues
+## Known Issues
 
-- [ ] Metal 4 support
-- [ ] **Audio issues**:
-  - [ ] On-board audio stopped working on macOS Tahoe beta 2. `AppleHDA` has been removed – it's no longer present in `System/Libray/Extensions`. That's bad news becasue without it, AppleALC is useless. Trying to inject AppleHDA via OpenCore doesn't work (no boot).
+- [ ] **Audio**:
+	- [ ] **On-board audio**: `AppleHDA` has been removed from Tahoe beta 2 (not present at `System/Libray/Extensions`). Without it, AppleALC is useless and on-board audio CODECs won't work. Injectig AppleHDA via OpenCore is not an option (no boot). Audio over GPU (HDMI/DP) still works.
 - [ ] **Video**:
-  - [ ] AMD Polaris GPUs: I couldn't get my AMD Radeon RX580 to work in Tahoe beta1. although the required kext is still present. According to a post on Hackintosh-Forums this was fixed in beta 2
-- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
+	- [ ] **Metal 4 support**: Apple Silicon only.
+	- [x] **AMD Polaris GPUs**: can be enabled in beta 2 by disabling WhateverGreen during install.
+- **Connectivity**
+	- [x] **Ethernet**: 
+		- Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
+		- NICs requiring `AppleVTD` to be present *might* work based on mainboard and chipset.
+	- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
-- [x] **Ethernet**: Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
 
   A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802677#post802677), developer of IntelMausiEthernet:
 
