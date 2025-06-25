@@ -37,7 +37,7 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 - **Connectivity**
 	- [x] **Ethernet**: 
 		- Intel NICs requiring **IntelMausiEthernet** (and derivates therof) won't work due to incomplete **AppleVTD** support. **Workaround**: enable **`DisableIoMapper`** Quirk!
-		- NICs requiring `AppleVTD` to be present *might* work based on mainboard and chipset.
+		- NICs requiring `AppleVTD` to be present *might* work based on mainboard and chipset ([Example](https://github.com/SongXiaoXi/AppleIGC/issues/23#issuecomment-3002214327))
 	- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
 
