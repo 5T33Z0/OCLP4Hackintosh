@@ -42,12 +42,12 @@ What you may not know is: some of the settings, kexts and root-patches can  be u
 ## Configuration Guides
 Listed below are configuration guides to update your OpenCore EFI and `config.plist` with the required settings and kext to run macOS 13 and newer:
 
-- [**Installing macOS 13+ on 1st Gen Intel Core systems**](/Guides/Nehalem-Westmere-Lynnfield.md)
-- [**Installing macOS 13+ on Sandy Bridge systems**](/Guides/Sandy_Bridge.md)
-- [**Installing macOS 13+ on Ivy Bridge systems**](/Guides/Ivy_Bridge.md)
-- [**Installing macOS 13+ on Haswell/Broadwell systems**](/Guides/Haswell-Broadwell.md)
-- [**Installing macOS 13+ on Skylake systems**](/Guides/Skylake.md)
 - [**Installing macOS 26 on Kaby Lake or newer**](/Guides/Kaby_Lake+.md)
+- [**Installing macOS 13+ on Skylake systems**](/Guides/Skylake.md)
+- [**Installing macOS 13+ on Haswell/Broadwell systems**](/Guides/Haswell-Broadwell.md)
+- [**Installing macOS 13+ on Ivy Bridge systems**](/Guides/Ivy_Bridge.md)
+- [**Installing macOS 13+ on Sandy Bridge systems**](/Guides/Sandy_Bridge.md)
+- [**Installing macOS 13+ on 1st Gen Intel Core systems**](/Guides/Nehalem-Westmere-Lynnfield.md)
 - [**General CPU and SMBIOS Guide**](/Guides/CPU_to_SMBIOS.md)
 
 > [!IMPORTANT]
