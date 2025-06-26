@@ -29,7 +29,7 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 
 ## Known Issues
 
-- [ ] **Audio**:
+- [x] **Audio**:
 	- [x] **On-board audio**: `AppleHDA` has been removed from Tahoe beta 2 (not present at `System/Libray/Extensions`). Without it, AppleALC is useless and on-board audio CODECs won't work. Injectig AppleHDA via OpenCore is not an option (no boot). Audio over GPU (HDMI/DP) still works. But there's a [modded version of OCLP](https://github.com/laobamac/OCLP-Mod/actions/runs/15883186157) avaialble which runs on macOS Tahoe and can apply root patches – including the reinstall of AppleHDA. Requires Github Account to download.
 - [ ] **Video**:
 	- [ ] **Metal 4 support**: Apple Silicon only.
