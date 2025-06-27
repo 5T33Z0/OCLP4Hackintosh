@@ -15,7 +15,7 @@
 - **December 11th**: OCLP 2.2.0 is [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.2.0) and brings a lot of improvements for non-metal machines on Sonoma/Sequoia!
 - **September 14th**: OCLP 2.0.0 is officially [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.0.0)!
 - **September 6th**: OCLP Development branch been merged with the master branch &rarr; see [Changelog](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/CHANGELOG.md#200) for details
-- **September 2nd**: New nightly build of OpenCore Legacy Patcher 1.6.0 based on Sequoia Development branch is [avaialble here](https://github.com/dortania/OpenCore-Legacy-Patcher/pull/1137#issuecomment-2295376562) which can re-enable Ivy Bridge iGPUs and NVDIA Kepler Cards
+- **September 2nd**: New nightly build of OpenCore Legacy Patcher 1.6.0 based on Sequoia Development branch is [avaialble here](https://github.com/dortania/OpenCore-Legacy-Patcher/pull/1137#issuecomment-2295376562) which can re-enable Ivy Bridge iGPUs and NVIDIA Kepler Cards
 - **August 18th**: [Early macOS Sequoia support available](https://github.com/dortania/OpenCore-Legacy-Patcher/pull/1137#issuecomment-2295376562). Things look bad for: Sandy Bridge, Ivy Bridge, Haswell, Nvidia cards, AMD Terascale
 - **June 28th**: [AMFIPass.kext updated to 1.4.1](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/sequoia-development/payloads/Kexts/Acidanthera/AMFIPass-v1.4.1-RELEASE.zip)
 - OCLP v. 1.6.0 added to [Changelog](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/CHANGELOG.md#opencore-legacy-patcher-changelog)
