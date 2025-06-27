@@ -2,7 +2,7 @@
 
 | ⚠️ Important updates |
 |:----------------------------|
-| Don't install macOS Tahoe beta yet!
+| Don't install macOS Tahoe beta yet if your system requires root patches for enabling graphics output!
 
 ## 2025
 - **June 26th**: OCLP Mod released. This can be executed on macOS Tahoe and applies existing patches. It also re-enables on-board audio by bringing back AppleHDA in macOS 26 beta 2. Since this is not an official release, I would advise against using it if your system requires any root patches for enabling graphics output (iGPU/GPU).
