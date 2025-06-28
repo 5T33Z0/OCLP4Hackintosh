@@ -2,7 +2,7 @@
 
 :construction: WORK in PROGRESS
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-26b2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26b2-white.svg)
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary><br>
@@ -29,8 +29,8 @@ Although it is possible to install and run macOS Tahoe and newer on machines wit
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
-| No OCLP Support for Kaby Lake or newer is available yet. 
-| Don't install macOS Tahoe if you don't have a compatible GPU and your CPU does not have an iGPU!
+| Don't install macOS Tahoe if you don't have a compatible iGPU/GPU in your system!
+| No official OCLP Support for Kaby Lake or newer is available yet. There's an [OCLP Mod](https://github.com/laobamac/OCLP-Mod) which can reinstall AppleHDA so on-board audio works again.
 
 ## How Kaby Lake systems and newer are affected
 

@@ -1,6 +1,6 @@
 # Installing macOS Ventura and newer on legacy Intel CPUs
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.5-white.svg)
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary><br>
@@ -42,7 +42,8 @@ Besides installing macOS Ventura+ on unsupported platforms like Sandy/Ivy Bridge
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
-| All good.
+| Don't install macOS Tahoe if you don't have a compatible iGPU/GPU in your system!
+| No official OCLP Support for Kaby Lake or newer is available yet. There's an [OCLP Mod](https://github.com/laobamac/OCLP-Mod) which can reinstall AppleHDA so on-board audio works again.
 
 ### Disclaimer
 This guide is intended to provide general information for adjusting your EFI and config.plist to install and run macOS Monterey and newer on unsupported Wintel systems. Since I only have an iMac11,3 that uses an i7-870 to check the kext and settings it uses, this guide must be considered experimental! I created it to lay out the basic principle of how one could go about attempting to install macOS 13+ on ancient harwdware – it's not a given that it'll work! So please refrain from using the "report issue" function to seek individualized assistance for fixing your config. Such issue reports will be closed immediately!

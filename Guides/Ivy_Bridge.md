@@ -1,6 +1,6 @@
 # Installing macOS Ventura and newer on Ivy Bridge systems
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.5-white.svg)
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary><br>
@@ -41,7 +41,7 @@ Although installing macOS Ventura and newer on systems with Intel CPUs of the Iv
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
-| All good.
+| Don't attempt install macOS Tahoe yet. The Install Assistant crashes before completing setting up a user account. 
 
 ### How Ivy Bridge systems are affected
 In macOS Ventura, support for CPU families prior to Kaby Lake was dropped. For Ivy Bridge systems this affects CPU Instructions (missing AVX 2.0 instructions), CPU Power Management (removed `ACPI_SMC_PlatformPlugin`), integrated Graphics and Metal support. So what we will do is prepare the config with the required patches, settings and kexts for installing and running macOS Ventura and then add iGPU/GPU drivers in Post-Install using OpenCore Legacy Patcher.

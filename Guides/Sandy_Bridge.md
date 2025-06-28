@@ -1,6 +1,6 @@
 # Installing macOS Ventura and newer on Sandy Bridge systems
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.5-white.svg)
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary><br>
@@ -43,7 +43,8 @@ This guide was created based on my experiences root patching my 27" `iMac12,2` w
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
-| All good.
+| Don't install macOS Tahoe if you don't have a compatible iGPU/GPU in your system!
+| No official OCLP Support for Kaby Lake or newer is available yet. There's an [OCLP Mod](https://github.com/laobamac/OCLP-Mod) which can reinstall AppleHDA so on-board audio works again.
 
 ### How Sandy Bridge systems are affected
 In macOS Ventura+, support for CPU families prior to Kaby Lake was dropped. For Sandy Bridge systems this mainly affects the CPU (missing AVX 2.0 and [rdrand](https://github.com/reenigneorcim/SurPlus) instructions), CPU Power Management (removed `ACPI_SMC_PlatformPlugin`), integrated Graphics and Metal support. So what we will do is prepare the config with the required patches, settings and kexts for installing and running macOS Ventura and then add iGPU/GPU drivers in Post-Install using OpenCore Legacy Patcher.

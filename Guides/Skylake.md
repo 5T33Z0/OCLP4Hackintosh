@@ -1,6 +1,6 @@
 # Installing macOS Ventura and newer on Skylake systems
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26b2-white.svg)
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary>
@@ -46,7 +46,8 @@ Although it is possible to utilize OpenCore and the OpenCore Legacy Patcher (OCL
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
-| All good.
+| Don't install macOS Tahoe if you don't have a compatible iGPU/GPU in your system!
+| No official OCLP Support for Kaby Lake or newer is available yet. There's an [OCLP Mod](https://github.com/laobamac/OCLP-Mod) which can reinstall AppleHDA so on-board audio works again.
 
 ### How Skylake systems are affected
 With the release of macOS 13, Apple dropped support for all CPU families prior to Kaby Lake. For Skylake CPUs this mainly affects integrated Graphics and Metal support. So what we will do is prepare the config with the required patches, settings and kexts for installing and running macOS Ventura (or newer) and then add iGPU/GPU drivers in Post-Install using OpenCore Legacy Patcher.
