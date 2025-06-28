@@ -90,8 +90,8 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Restart macOS when prompted to
 - Once macOS is up and running again, the audio device will be present and working as shown in this example:<br>![Hackintool](https://github.com/user-attachments/assets/eae77186-9515-4f3f-8a2b-1309b7d769f7)
 
-### Option 2: Using VoodooHDA
-As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`.
+### Option 2: Using VoodooHDA (untested)
+As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. I haven't tested this, since I don't like VoodooHDA, so results may vary.
 
 - Download [VoodooHDA](https://github.com/CloverHackyColor/VoodooHDA/releases) from Github and extract it
 - Add to your OpenCore EFI and `config.plist`.  
