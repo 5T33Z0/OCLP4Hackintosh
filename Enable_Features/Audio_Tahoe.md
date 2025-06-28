@@ -48,36 +48,36 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 
 #### Pre-Requisites
 
-The following changes are required so that root-patches can be applied
-
-1. In your `config.plist`, change `csr-active-config` to `03080000`
-2. Add [`AMFIPass.kext`](https://github.com/bluppus20/AMFIPass/releases) to `EFI/OC/Kexts` and your `config.plist`. 
-3. Update `AppleACL.kext` to the [**latest nightly version**](https://dortania.github.io/builds/?product=AppleALC&viewall=true)
-4. Add the following NVRAM Settings to your config:
-    ```xml
-    […]
-    <dict>
-        <key>NVRAM</key>
-        <dict>
-            <key>Add</key>
-            <dict>
-                <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
-                <dict>
-                    <key>OCLP-Settings</key>
-                    <string>-allow_fv -allow_amfi</string>
-                </dict>
-            <key>Delete</key>
-            <dict>
-                <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
-                <array>
-                    <string>OCLP-Settings</string>
-                </array>
-            </dict>
-        </dict>
-    </dict>
-    […]
-    ```
-5. Save your `config.plist` and reboot
+- In general: an OpenCore EFI and `config.plist` prepared to run macOS 13 and newer is required (&rarr; see [Configuration Guides](https://github.com/5T33Z0/OCLP4Hackintosh/tree/main?tab=readme-ov-file#configuration-guides)).
+- If macOS Tahoe is up and running already, the following changes are required so that root-patches can be applied:
+  - In your `config.plist`, change `csr-active-config` to `03080000`
+  - Add [`AMFIPass.kext`](https://github.com/bluppus20/AMFIPass/releases) to `EFI/OC/Kexts` and your `config.plist`. 
+  - Update `AppleACL.kext` to the [**latest nightly version**](https://dortania.github.io/builds/?product=AppleALC&viewall=true)
+  - Add the following NVRAM Settings to your config:
+      ```xml
+      […]
+      <dict>
+          <key>NVRAM</key>
+          <dict>
+              <key>Add</key>
+              <dict>
+                  <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+                  <dict>
+                      <key>OCLP-Settings</key>
+                      <string>-allow_fv -allow_amfi</string>
+                  </dict>
+              <key>Delete</key>
+              <dict>
+                  <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+                  <array>
+                      <string>OCLP-Settings</string>
+                  </array>
+              </dict>
+          </dict>
+      </dict>
+      […]
+      ```
+  - Save your `config.plist` and reboot
 
 #### Instructions
 
@@ -91,9 +91,9 @@ The following changes are required so that root-patches can be applied
 - Once macOS is up and running again, the audio device will be present and working as shown in this example:<br>![Hackintool](https://github.com/user-attachments/assets/eae77186-9515-4f3f-8a2b-1309b7d769f7)
 
 ### Option 2: Using VoodooHDA
+As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`.
 
-- As a fallback, install `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`.  
-- Download from [VoodooHDA GitHub](https://github.com/acidanthera/VoodooHDA).  
+- Download [VoodooHDA](https://github.com/CloverHackyColor/VoodooHDA/releases) from Github and extract it
 - Add to your OpenCore EFI and `config.plist`.  
 - Be aware that `VoodooHDA` may have lower audio quality or compatibility issues compared to `AppleALC`.
 
