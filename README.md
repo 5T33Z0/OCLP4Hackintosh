@@ -1,6 +1,6 @@
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
 
-**INDEX**
+**TABLE oF CONTENTS**
 
 - [About](#about)
 - [Latest updates](#latest-updates)
