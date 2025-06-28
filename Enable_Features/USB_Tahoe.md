@@ -35,7 +35,7 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 
 > [!TIP]
 >
-> If you change the SMBIOS on your system (which there is no need for), you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work.
+> If you've changed the SMBIOS of your system, you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work. Ideally, you don't change your SMBIOS at all. Instead, you add the [board-id check skip](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Config/config.plist#L220-L243) (Booter/Patch), [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) and `revpatch=sbvmmm` boot-arg to your EFI and `config.plist`. This allows booting macOS with an unsupported SMBIOS/Board-id and receiving System Updates, which wouldn't be possible otherwise.
 
 ### Screenshots
 
