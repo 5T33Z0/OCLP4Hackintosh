@@ -93,19 +93,18 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 ### Option 2: Using VoodooHDA (untested)
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. I haven't tested this, since I don't like VoodooHDA, so results may vary.
 
+- [Disable Gatekeeper](/Guides/Disable_Gatekeeper.md)
 - Download [VoodooHDA_Installer.zip](/Guides/files/VodooHDA_Installer.zip) and unpack it
 - Open Terminal and enter: `cd ~/Downloads/VodooHDA_Installer`
-- Next, drag `makeInstall.sh` into the Terminal window and hit enter
+- Next, drag `makeInstall.sh` into the Terminal window and press <kbd>Enter</kbd>y
 - This will create 4 packages (.pkg)
-- Install the `prefpane.pkg`
-- Download [VoodooHDA](https://github.com/CloverHackyColor/VoodooHDA/releases), extract it and add it to `EFI/OC/Kexts` and your `config.plist`
+- Install the `prefpane.pkg` and `VoodooHDA.pkg`
 - Change csr-active-config to `850A0000`
 - Save your `config.plist` and reboot
-- Adjust Audio Settings via the VoodooHDA Prefpan in System Settings
+- Adjust Audio Settings via the VoodooHDA Prefpane in System Settings
 
 > [!NOTE]
 > 
-> - If injecting VoodooHDA via OpenCore doesn't work, run the `VoodooHDA.pkg` to install the kext locally in Library/Extensions. 
 > - Be aware that `VoodooHDA` may have lower audio quality or compatibility issues compared to `AppleALC`.
 
 ## Troubleshooting
