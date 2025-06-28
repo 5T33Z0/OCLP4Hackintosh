@@ -1,4 +1,4 @@
-# Fixing `USBMap.Kext` for use with macOS 26 "Tahoe"
+# Fixing `USBMap.kext` for use with macOS 26 "Tahoe"
 
 Apple introduced some changes to the USB stack in macOS 26 “Tahoe”, causing the standard `USBMap.kext` to stop functioning as expected. This guide explains how to adapt an existing `USBMap.kext` to work reliably under macOS Tahoe without having to create a new USBmap kext or resorting to [mapping USB ports via ACPI](https://github.com/5T33Z0/OC-Little-Translated/tree/main/03_USB_Fixes/ACPI_Mapping_USB_Ports) which is a rather tedious process.
 
