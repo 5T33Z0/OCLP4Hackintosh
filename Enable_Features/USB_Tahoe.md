@@ -15,7 +15,7 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 
 > [!TIP]
 >
-> If you've changed the SMBIOS of your system, you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work. Ideally, you would not change the SMBIOS at all, or even better, use the SMBIOS that's native to your CPU family. Next, add the [board-id check skip](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Config/config.plist#L220-L243) (Booter/Patch), [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) and `revpatch=sbvmmm` boot-arg to your EFI and `config.plist`. This allows booting macOS with an unsupported SMBIOS/Board-id and receiving System Updates, which wouldn't be possible otherwise.
+> If you've changed the SMBIOS of your system, you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work. Ideally, you would not change the SMBIOS at all, or even better, use the SMBIOS that's native to your CPU family. Next, add the [board-id check skip](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Config/config.plist#L220-L243) (Booter/Patch), [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) and `revpatch=sbvmmm` boot-arg to your EFI and `config.plist`. This allows booting macOS with an unsupported SMBIOS/Board-id as well as receiving System Updates, which wouldn't be possible otherwise.
 >
 > Alternatively, you could temporarily enable the `XhciPortlimit` quirk to get USB working (not recommended, since it's a hack that could lead to system instabilities).
 
@@ -41,7 +41,7 @@ CorpNewt recently updated his [**USBMap**](https://github.com/corpnewt/USBMap) p
 
 > [!TIP]
 >
-> If you've changed the SMBIOS of your system, you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work. Ideally, you would not change the SMBIOS at all, or even better, use the SMBIOS that's native to your CPU family. Next, add the [board-id check skip](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Config/config.plist#L220-L243) (Booter/Patch), [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) and `revpatch=sbvmmm` boot-arg to your EFI and `config.plist`. This allows booting macOS with an unsupported SMBIOS/Board-id and receiving System Updates, which wouldn't be possible otherwise.
+> If you've changed the SMBIOS of your system, you also must adjust the `model` entry in the `info.plist` as well. Otherwise the USB port map won't work. Ideally, you would not change the SMBIOS at all, or even better, use the SMBIOS that's native to your CPU family. Next, add the [board-id check skip](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Config/config.plist#L220-L243) (Booter/Patch), [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) and `revpatch=sbvmmm` boot-arg to your EFI and `config.plist`. This allows booting macOS with an unsupported SMBIOS/Board-id as well as receiving System Updates, which wouldn't be possible otherwise.
 >
 > Alternatively, you could temporarily enable the `XhciPortlimit` quirk to get USB working (not recommended, since it's a hack that could lead to system instabilities).
 
