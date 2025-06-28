@@ -25,7 +25,8 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 
 ## Current OCLP Status
 
-- Unknown yet. Waiting for official statements by Dortania et. al.
+- Waiting for official statements by Dortania et. al.
+- There's now a OCLP Mod available which can run in macOS Tahoe.
 
 ## Known Issues
 
