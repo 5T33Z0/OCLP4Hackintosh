@@ -54,5 +54,5 @@ Previous macOS | macOS Tahoe
 ![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![ports_new](https://github.com/user-attachments/assets/5cfd37e3-5e7c-40a9-ae21-7fd0796f7881)
 
 ## Credits
-- **JustFun** from for his original instructions [fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
+- **JustFun** from hackintosh-forum.de for original instructions [fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
 - **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
