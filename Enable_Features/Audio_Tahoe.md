@@ -9,7 +9,7 @@
   - [Option 1: Using OCLP-Mod](#option-1-using-oclp-mod)
     - [Pre-Requisites](#pre-requisites)
     - [Instructions](#instructions)
-  - [Option 2: Using VoodooHDA](#option-2-using-voodoohda)
+  - [Option 2: Using VoodooHDA](#option-2-using-voodoohda-untested)
 - [Troubleshooting](#troubleshooting)
 
 ---
@@ -93,9 +93,20 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 ### Option 2: Using VoodooHDA (untested)
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. I haven't tested this, since I don't like VoodooHDA, so results may vary.
 
-- Download [VoodooHDA](https://github.com/CloverHackyColor/VoodooHDA/releases) from Github and extract it
-- Add to your OpenCore EFI and `config.plist`.  
-- Be aware that `VoodooHDA` may have lower audio quality or compatibility issues compared to `AppleALC`.
+- Download [VoodooHDA_Installer.zip](/Guides/files/VodooHDA_Installer.zip) and unpack it
+- Open Terminal and enter: `cd ~/Downloads/VodooHDA_Installer`
+- Next, drag `makeInstall.sh` into the Terminal window and hit enter
+- This will create 4 packages (.pkg)
+- Install the `prefpane.pkg`
+- Download [VoodooHDA](https://github.com/CloverHackyColor/VoodooHDA/releases), extract it and add it to `EFI/OC/Kexts` and your `config.plist`
+- Change csr-active-config to `850A0000`
+- Save your `config.plist` and reboot
+- Adjust Audio Settings via the VoodooHDA Prefpan in System Settings
+
+> [!NOTE]
+> 
+> - If injecting VoodooHDA via OpenCore doesn't work, run the `VoodooHDA.pkg` to install the kext locally in Library/Extensions. 
+> - Be aware that `VoodooHDA` may have lower audio quality or compatibility issues compared to `AppleALC`.
 
 ## Troubleshooting
 
@@ -109,4 +120,12 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
     ```bash
     sudo kextcache -i /
     ```
- - **SIP conflicts**: Ensure that SIP is disabled
+- **SIP conflicts**: Ensure that SIP is disabled
+
+## Credits and Thank Yous
+- Dortania for OCLP
+- laobamac for OCLP Mod
+- bluppus20 for AMFIPass kext
+- Rodion Shingarev for VoodooHDA Instaler 
+- Slice for VoodooHDA kext
+- Max.1974 for Voodoo Install Instructions
