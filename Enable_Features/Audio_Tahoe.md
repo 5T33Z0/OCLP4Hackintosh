@@ -105,6 +105,7 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 > [!NOTE]
 > 
 > - Be aware that `VoodooHDA` may have lower audio quality or compatibility issues compared to `AppleALC`.
+> - Unlike AppleALC which can detect plugged in devices and switch audio sources automatically, you have to do it manually in VoodooHDA!
 
 ## Troubleshooting
 
