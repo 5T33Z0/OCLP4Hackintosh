@@ -9,8 +9,11 @@
   - [Option 1: Using OCLP-Mod](#option-1-using-oclp-mod)
     - [Pre-Requisites](#pre-requisites)
     - [Instructions](#instructions)
-  - [Option 2: Using VoodooHDA](#option-2-using-voodoohda-untested)
+  - [Option 2: Using VoodooHDA](#option-2-using-voodoohda)
+    - [Pre-Requisites](#pre-requisites-1)
+    - [Instructions](#instructions-1)
 - [Troubleshooting](#troubleshooting)
+- [Credits and Thank Yous](#credits-and-thank-yous)
 
 ---
 
@@ -89,18 +92,28 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Restart macOS when prompted to
 - Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
-### Option 2: Using VoodooHDA (untested)
-As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. I haven't tested this, since I don't like VoodooHDA, so results may vary.
+### Option 2: Using VoodooHDA
+As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us Chris1111 has updated his VoodooHDA Installer for macOS Tahoe.
 
+#### Pre-Requisites
 - [Disable Gatekeeper](/Guides/Disable_Gatekeeper.md)
-- Download [VoodooHDA_Installer.zip](/Guides/files/VodooHDA_Installer.zip) and unpack it
-- Open Terminal and enter: `cd ~/Downloads/VodooHDA_Installer`
-- Next, drag `makeInstall.sh` into the Terminal window and press <kbd>Enter</kbd>y
-- This will create 4 packages (.pkg)
-- Install the `prefpane.pkg` and `VoodooHDA.pkg`
-- Change csr-active-config to `850A0000`
+- Mount your EFI and open your `config.plist`
+- Change `csr-active-config` to `03080000` or `850A0000`
+- Disable `AppleALC.kext` if present
 - Save your `config.plist` and reboot
-- Adjust Audio Settings via the VoodooHDA Prefpane in System Settings
+- Continue with the instructions
+ 
+#### Instructions
+
+- Head to Chris1111's [VoodooHDA-Tahoe](https://github.com/chris1111/VoodooHDA-Tahoe) repo
+- Click on `<>Code` and select `Download zip`
+- In Finder, open the downloads folder and extract `VoodooHDA-Tahoe-main.zip` 
+- Double-click on `Package.command` 
+- A Terminal window opens and the latest `VoodooHDA.kext` and VoodooHDA installer are build
+- Once done, `VoodooHDA-Tahoe.pkg` will be present in the `VoodooHDA-Tahoe-main` folder
+- Double-click the `VoodooHDA-Tahoe.pkg` to install the driver and the preference pane on your system
+- Once that is completed, reboot your system
+- Open System Preferences and find the VoodooHDA PrefPane to select your audio source
 
 > [!NOTE]
 > 
