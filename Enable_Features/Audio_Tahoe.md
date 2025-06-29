@@ -80,7 +80,7 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
   - Save your `config.plist` and reboot
 
 #### Instructions
-- Ensure that your system is connected to the internet
+- Ensure that your system is connected to the internet. This is mandatory because OCLP Mod needs to download additional files required for root patching!
 - Download [**OCLP-Mod.pkg**](https://github.com/laobamac/OCLP-Mod/actions) and install it
 - Run it. The GUI is in Chinese, unfortunately
 - Press the upper right button for the root patching:<br>![oclp_mod01](https://github.com/user-attachments/assets/ad42427a-3726-480e-89a3-d2bd98754c3c)
