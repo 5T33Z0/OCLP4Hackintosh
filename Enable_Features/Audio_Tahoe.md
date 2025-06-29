@@ -138,6 +138,5 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 - Dortania for OCLP
 - laobamac for OCLP Mod
 - bluppus20 for AMFIPass kext
-- Rodion Shingarev for VoodooHDA Instaler 
 - Slice for VoodooHDA kext
-- Max.1974 for VoodooHDA Install Instructions
+- Chris1111 for VoodooHDA-Tahoe
