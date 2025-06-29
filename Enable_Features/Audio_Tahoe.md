@@ -104,16 +104,19 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 - Continue with the instructions
  
 #### Instructions
-
-- Head to Chris1111's [VoodooHDA-Tahoe](https://github.com/chris1111/VoodooHDA-Tahoe) repo
-- Click on `<>Code` and select `Download zip`
-- In Finder, open the downloads folder and extract `VoodooHDA-Tahoe-main.zip` 
-- Double-click on `Package.command` 
-- A Terminal window opens and the latest `VoodooHDA.kext` and VoodooHDA installer are build
-- Once done, `VoodooHDA-Tahoe.pkg` will be present in the `VoodooHDA-Tahoe-main` folder
-- Double-click the `VoodooHDA-Tahoe.pkg` to install the driver and the preference pane on your system
-- Once that is completed, reboot your system
-- Open System Preferences and find the VoodooHDA PrefPane to select your audio source
+- Open Terminal
+- Run the following command:
+    ```bash
+    git clone https://github.com/chris1111/VoodooHDA-Tahoe.git && cd $HOME/VoodooHDA-Tahoe && ./Package.command && open -R $HOME/VoodooHDA-Tahoe/VoodooHDA-Tahoe.pkg
+    ```
+- This will build the VoodooHDA Installer package
+- Open Finder
+- Navigate to your home folder (or press <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>)
+- Open the "VoodooHDA-Tahoe folder"
+- Double-click the `VoodooHDA-Tahoe.pkg` to install the driver and PrefPane
+- Once that's done, reboot your system
+- Open System Preferences and find the VoodooHDA PrefPane to select your audio source.
+- Enjoy!
 
 > [!NOTE]
 > 
@@ -139,4 +142,4 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 - laobamac for OCLP Mod
 - bluppus20 for AMFIPass kext
 - Slice for VoodooHDA kext
-- Chris1111 for VoodooHDA-Tahoe
+- Chris1111 for [VoodooHDA-Tahoe](https://github.com/chris1111/VoodooHDA-Tahoe)
