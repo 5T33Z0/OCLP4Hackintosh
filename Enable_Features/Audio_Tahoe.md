@@ -127,4 +127,4 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 - bluppus20 for AMFIPass kext
 - Rodion Shingarev for VoodooHDA Instaler 
 - Slice for VoodooHDA kext
-- Max.1974 for Voodoo Install Instructions
+- Max.1974 for VoodooHDA Install Instructions
