@@ -87,7 +87,7 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Next, press the upper button to install patches and wait until patching is completed:<br>![oclp_mod02](https://github.com/user-attachments/assets/25e5fc28-05de-4cdd-ac3d-d5a28d06d1db)
 - If required, it will automatically download KDK or Metalibs
 - Restart macOS when prompted to
-- Once macOS is up and running again, the audio device will be present and working as shown in this example:<br>![after](https://github.com/user-attachments/assets/461ce28f-5fc1-4e1c-8373-1eb23f5c1e7c)
+- Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
 ### Option 2: Using VoodooHDA (untested)
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. I haven't tested this, since I don't like VoodooHDA, so results may vary.
