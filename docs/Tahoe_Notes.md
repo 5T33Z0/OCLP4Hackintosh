@@ -42,7 +42,7 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 	- [ ] **Bluetooth**: Intel Bluetooth doesn't work on my systems currently. Maybe BluetoolFixup needs an update.
 - [x] **DRM issues**: Apple Music not playing back any music (online or local). **Fix**: add boot-arg `unfairvga=7` Thanks to [patriczeq](https://github.com/5T33Z0/Thinkpad-T490-Hackintosh-OpenCore/issues/57#issuecomment-2977474242) for the tip
 - [x] **USB**: USB issues due to changed parameters ([**Fix**](/Enable_Features/USB_Tahoe.md))
-- [x] **File Vault**: There seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. If the previous driver from macOS 15 is injected via OpenCore, File Vault 2 should works as expected ([**Source**](https://github.com/acidanthera/bugtracker/issues/2499) 
+- [x] **File Vault**: There seems to be a bug in the APFS driver of the Tahoe beta release that causes issues with File Vault 2. If the previous driver from macOS 15 is injected via OpenCore, File Vault 2 should works as expected ([**Source**](https://github.com/acidanthera/bugtracker/issues/2499))
 
 ### AppleVTD support
 
