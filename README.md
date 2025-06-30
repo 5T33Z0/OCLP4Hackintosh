@@ -35,7 +35,7 @@ What you may not know is: some of the OCLPs settings, kexts and root-patches can
  
 ## Latest updates
 - [**OCLP update status**](/docs/OCLP_status.md)
-- [**macOS Tahoe Updates**](/docs/Tahoe_Notes.md) (Contains the latest findings, fixes and stuff for Apples latest OS)
+- [**macOS Tahoe Updates**](/docs/Tahoe_Notes.md) (Contains the latest findings, fixes and stuff for Apple's latest OS)
 - [**macOS Sequoia OCLP Notes**](/docs/Sequoia_Notes.md)
 - [**macOS Sonoma OCLP Notes**](/docs/Sonoma_Notes.md)
 
