@@ -45,7 +45,7 @@ With `AppleHDA` gone from S/L/E, `AppleALC` — which is designed to inject thes
 
 Since there's no official OCLP version available for macOS Tahoe yet, you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – which will also install AppleHDA, thereby re-enabling audio. To download the latest build, you need a Github account.
 
-> [!WARNING]
+> [!CAUTION]
 >
 > Don't use OCLP-Mod if your system requires root patches for enabling graphics output (either iGPU or GPU). In this case, you should wait for an official OCLP release by Dortania! Don't blame me if your system doesn't boot into macOS after applying root patches with OCLP Mod!
 
