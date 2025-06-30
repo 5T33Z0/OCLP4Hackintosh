@@ -93,7 +93,7 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
 ### Option 2: Using VoodooHDA
-As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us, Chris1111 has updated his VoodooHDA Installer for macOS Tahoe.
+As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us, Chris1111 has updated his [**VoodooHDA Installer for macOS Tahoe**](https://github.com/chris1111/VoodooHDA-Tahoe).
 
 #### Pre-Requisites
 - [Disable Gatekeeper](/Guides/Disable_Gatekeeper.md)
@@ -142,4 +142,4 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
 - laobamac for OCLP Mod
 - bluppus20 for AMFIPass kext
 - Slice for VoodooHDA kext
-- Chris1111 for [VoodooHDA-Tahoe](https://github.com/chris1111/VoodooHDA-Tahoe)
+- Chris1111 for VoodooHDA-Tahoe
