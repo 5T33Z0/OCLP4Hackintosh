@@ -109,7 +109,7 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
     ```bash
     git clone https://github.com/chris1111/VoodooHDA-Tahoe.git && cd $HOME/VoodooHDA-Tahoe && ./Package.command && open -R $HOME/VoodooHDA-Tahoe/VoodooHDA-Tahoe.pkg
     ```
-- This will build the VoodooHDA Installer package:<br>![vodoohda_build](https://github.com/user-attachments/assets/4ccfb4ef-64af-47d0-861e-51f5aa516604)
+- This will build the VoodooHDA Installer package:<br>![vodoohda_build](https://github.com/user-attachments/assets/25444a0b-5bb3-4c10-a14e-48f456398000)
 - Once the build process has finished, Open Finder
 - Navigate to your home folder (or press <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>)
 - Open the "VoodooHDA-Tahoe folder"
