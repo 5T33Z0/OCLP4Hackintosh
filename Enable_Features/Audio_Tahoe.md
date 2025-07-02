@@ -28,9 +28,9 @@ In macOS Tahoe beta 2, on-board audio stopped working. Since `AppleALC.kext` was
 
 > AppleHDA is a fairly simple kernel extension for setting up audio support for devices. It does this by parsing the Layout ID detected in the firmware (via DeviceProperties) and loads the associated audio map off of disk.
 >
-> - These maps [used to] be located at `/System/Library/Extensions/AppleHDA.kext/Contents/Resources/`
+> - These maps [used to be] located at `/System/Library/Extensions/AppleHDA.kext/Contents/Resources/`
 > - Layout IDs are present on the HDEF device in IOService as layout-id, data is generally presented in Hexadecimal form but supports Integer and ASCII
->- Layout data is generally presented as 2 files: `layout{x}.xml` and `Platforms.xml`. `Platforms.xml` represents chipset definitions while `layout.xml` is reserved for model-specific data.
+> - Layout data is generally presented as 2 files: `layout{x}.xml` and `Platforms.xml`. `Platforms.xml` represents chipset definitions while `layout.xml` is reserved for model-specific data.
 >
 > […]
 **Source**: [Mykola's Blog](https://khronokernel.com/macos/2021/10/24/OCLP-AUDIO.html)
