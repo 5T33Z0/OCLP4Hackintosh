@@ -33,6 +33,7 @@ In macOS Tahoe beta 2, on-board audio stopped working. Since `AppleALC.kext` was
 > - Layout data is generally presented as 2 files: `layout{x}.xml` and `Platforms.xml`. `Platforms.xml` represents chipset definitions while `layout.xml` is reserved for model-specific data.
 >
 > […]
+
 **Source**: [Mykola's Blog](https://khronokernel.com/macos/2021/10/24/OCLP-AUDIO.html)
 
 ***So why is there no sound?***
