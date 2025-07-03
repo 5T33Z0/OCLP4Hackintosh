@@ -87,6 +87,8 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Ensure that your system is connected to the internet. This is mandatory because OCLP Mod needs to download additional files required for root patching!
 - Download [**OCLP-Mod.pkg**](https://github.com/laobamac/OCLP-Mod/actions) and install it
 - Run it. The GUI is in Chinese, unfortunately
+- Open the settings:<br>![OCLP_mod01](https://github.com/user-attachments/assets/275e1bea-617b-4196-8c40-bb2c24eb73f0)
+- Click on the shown Tab and enable the options you need (here AppleHDA) and press "Ok" at the bottom:<br>![OCLP_mod02](https://github.com/user-attachments/assets/a846ce14-0aa7-4cb0-b7fd-8d83706db3f3)
 - Press the upper right button for the root patching:<br>![oclp_mod01](https://github.com/user-attachments/assets/ad42427a-3726-480e-89a3-d2bd98754c3c)
 - Next, press the upper button to install patches and wait until patching is completed:<br>![oclp_mod02](https://github.com/user-attachments/assets/25e5fc28-05de-4cdd-ac3d-d5a28d06d1db)
 - If required, it will automatically download KDK or Metalibs
