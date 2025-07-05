@@ -89,7 +89,6 @@ This guide walks you through using **OCLP Mod**, a modified version of OpenCore 
 - Restart macOS when prompted to
 - Once macOS is up and running again, USB Wi-FI dongles should work again.
 
-
 ## Credits
 - **JustFun** from hackintosh-forum.de for original instructions [fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
 - **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
