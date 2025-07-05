@@ -87,7 +87,7 @@ This guide walks you through using **OCLP Mod**, a modified version of OpenCore 
 - Next, press the upper button to install patches and wait until patching is completed:<br>![oclp_mod02](https://github.com/user-attachments/assets/25e5fc28-05de-4cdd-ac3d-d5a28d06d1db)
 - If required, it will automatically download KDK or Metalibs
 - Restart macOS when prompted to
-- Once macOS is up and running again, you can use Chris1111's [Wireless-USB-Installer](https://github.com/chris1111/Wireless-USB-OC-Big-Sur-Adapter) for using USB Wi-Fi dongles with Raltek chipsets.
+- Once macOS is up and running again, you can use Chris1111's [Wireless-USB-Installer](https://github.com/chris1111/Wireless-USB-OC-Big-Sur-Adapter) for using USB Wi-Fi Realtek 802.11n and 802.11ac dongles.
 
 ## Credits
 - **JustFun** from hackintosh-forum.de for the [manual info-plist fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
