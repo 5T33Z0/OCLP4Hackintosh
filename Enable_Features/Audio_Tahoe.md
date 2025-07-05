@@ -1,6 +1,6 @@
 [![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26b2-white.svg)
 
-# Re-enabling Audio in macOS Tahoe
+# Re-enabling Audio in macOS Tahoe beta 2
 
 **TABLE of CONTENTS**
 
@@ -18,7 +18,7 @@
 ---
 
 ## Introduction
-In macOS Tahoe beta 2, on-board audio stopped working. Since `AppleALC.kext` was updated for macOS 26 compatibility, the culprit was found quick: `AppleHDA` has been removed from Apple's latest and last x86-compatible iteration of macOS.
+In macOS Tahoe beta 2, analog audio stopped working. Since `AppleALC.kext` was updated for macOS 26 compatibility, the culprit was found quick: `AppleHDA` has been removed from Apple's latest and last x86-compatible iteration of macOS.
 
 ***So what does AppleHDA do?***
 
@@ -38,7 +38,9 @@ In macOS Tahoe beta 2, on-board audio stopped working. Since `AppleALC.kext` was
 
 ***So why is there no sound?***
 
-With `AppleHDA` gone from S/L/E, `AppleALC` — which is designed to inject these codec-specific files into the macOS HDEF device to enable audio — lacks a target framework to work with. As a result, onboard audio fails to function in macOS Tahoe.
+Not only AppleHDA has been removed, but the associated dylib has also been deleted from the `dyld_shared_cache`[^1]. To restore functionality, the Kernel Development Kit (KDK) from Tahoe beta 1 is required to overwrite the root directory and reinstall the missing files. Since `AppleHDA` operates at the system user level and cannot be injected via OpenCore (otherwise the system crashes during boot), both the kext and dylib need to be reinstated through root patches.
+
+[^1]: **Source**: [laobamac_yyds](https://www.insanelymac.com/forum/topic/361249-oclp-mod-releaseissuediscussion/page/2/#findComment-2835718)
 
 ## Re-enabling Audio-support in macOS Tahoe
 
