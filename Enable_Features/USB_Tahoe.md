@@ -92,3 +92,4 @@ This guide walks you through using **OCLP Mod**, a modified version of OpenCore 
 ## Credits
 - **JustFun** from hackintosh-forum.de for the [manual info-plist fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
 - **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
+- **laobamac** for [OCLP-Mod](https://github.com/laobamac/OCLP-Mod/releases) 
