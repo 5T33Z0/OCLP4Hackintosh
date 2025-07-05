@@ -82,7 +82,7 @@ This guide walks you through using **OCLP Mod**, a modified version of OpenCore 
 - Download [**OCLP-Mod.pkg**](https://github.com/laobamac/OCLP-Mod/releases) and install it
 - Run it. The GUI is in Chinese, unfortunately
 - Open the settings:<br>![OCLP_mod01](https://github.com/user-attachments/assets/275e1bea-617b-4196-8c40-bb2c24eb73f0)
-- Click on the shown Tab and enable the options you need (here USB) and press "Ok" at the bottom:<br>![alt text](iousbfamily.png)
+- Click on the shown Tab and enable the options you need (here USB) and press "Ok" at the bottom:<br>![iousbfamily](https://github.com/user-attachments/assets/e4b219be-4e44-4042-bf1a-a6475b3875fc)
 - Press the upper right button for the root patching:<br>![oclp_mod01](https://github.com/user-attachments/assets/ad42427a-3726-480e-89a3-d2bd98754c3c)
 - Next, press the upper button to install patches and wait until patching is completed:<br>![oclp_mod02](https://github.com/user-attachments/assets/25e5fc28-05de-4cdd-ac3d-d5a28d06d1db)
 - If required, it will automatically download KDK or Metalibs
