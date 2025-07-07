@@ -25,13 +25,13 @@ As you may know, Dortania developed the [**OpenCore Legacy Patcher**](https://gi
 
 Additionally, OCLP applies [on-disk patches](https://dortania.github.io/OpenCore-Legacy-Patcher/PATCHEXPLAIN.html#on-disk-patches) ("root-patches") in Post-Install to re-enable crucial features like hardware graphics acceleration (iGPU/GPU) as well as WiFi/BT to extend the lifecycle of these expansive machines.
 
-What you may not know is: some of the OCLPs settings, kexts and root-patches can be utilized on Wintel systems as well. However, the required modifications to the `config.plist` and the selection of kexts to inject (as some are only needed for Apple systems) are not officially documented nor supported by Dortania, and you won’t find assistance for this on Discord. That’s why I’ve created detailed configuration guides to help your older Hackintosh run macOS Ventura up to Tahoe.
+What you may not know is: some of OCLPs config settings, kexts and root-patches can be utilized on Wintel systems (aka Hackintoshes) as well. However, the required modifications to the `config.plist` and the selection of kexts to inject (as some are only needed for Apple systems) are not officially documented nor supported by Dortania, and you won’t find assistance for this on Discord. That’s why I’ve created detailed configuration guides to prepare legacy systems to install and run macOS Ventura to Tahoe.
 
 **Patches relevant to us are**:
 
 - iGPU drivers (to [reinstate graphics acceleration and Metal Graphics API support](https://khronokernel.github.io/macos/2022/11/01/LEGACY-METAL-PART-1.html)) 
 - GPU drivers for legacy (non-metal) AMD and NVIDIA Kepler Cards 
-- Frameworks for re-enabling previously supported Wi-Fi/Bluetooth cards
+- Frameworks for re-enabling USB, Wi-Fi and Bluetooth
  
 ## Latest updates
 - [**OCLP update status**](/docs/OCLP_status.md)
