@@ -1,6 +1,6 @@
 [![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-1.0.5+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26b2-white.svg)
 
-# Re-enabling Audio in macOS Tahoe beta 2
+# Re-enabling Audio in macOS Tahoe beta 2+
 
 **TABLE of CONTENTS**
 
