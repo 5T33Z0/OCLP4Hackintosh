@@ -6,7 +6,7 @@
 
 ## 2025
 - **June 30th**: Details released for [macOS Tahoe 26 and OCLP Support](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1167). **ETA**: Winter 2025
-- **June 26th**: OCLP Mod released. This can be executed on macOS Tahoe and applies existing patches. It also re-enables on-board audio by bringing back AppleHDA in macOS 26 beta 2. Since this is not an official release, I would advise against using it if your system requires any root patches for enabling graphics output (iGPU/GPU).
+- **June 26th**: [OCLP-Mod](https://github.com/laobamac/OCLP-Mod) released. This can be executed on macOS Tahoe and applies existing patches. It also re-enables legacy USB and on-board audio by bringing back AppleHDA in macOS 26 beta 2. Since this is not an official release, I would advise against using it if your system requires any root patches for enabling graphics output (iGPU/GPU).
 - **June 20th**: [Khrnokernel resigns from further developing for OCLP](https://khronokernel.com/macos/2025/06/20/OCLP-RETROSPECTIVE.html) since he is working for Apple now
 - **June 9th5**: macOS Tahoe beta is released. No official statement from Dortania regarding milestones for OCLP support.
 - **May 15th**: OCLP 2.4.0 is [released](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/tag/2.4.0) which primarily focuses on macOS 15.5 support. A mentiobable feature is reduced CPU usage in the User Interface thread.
