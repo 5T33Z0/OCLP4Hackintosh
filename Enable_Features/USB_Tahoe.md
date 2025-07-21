@@ -80,7 +80,7 @@ This guide walks you through using **OCLP Mod**, a modified version of OpenCore 
 
 - Ensure that your system is connected to the internet. This is mandatory because OCLP Mod needs to download additional files required for root patching!
 - Download [**OCLP-Mod.pkg**](https://github.com/laobamac/OCLP-Mod/releases) and install it
-- Run it. The GUI is in Chinese, unfortunately
+- Run it. The GUI is in Chinese, unfortunately, for english, you might want to look into [compiling a mulitilingual version](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Guides/OCLP-mod_Multilingual.md)
 - Open the settings:<br>![OCLP_mod01](https://github.com/user-attachments/assets/275e1bea-617b-4196-8c40-bb2c24eb73f0)
 - Click on the shown Tab and enable the options you need (here USB) and press "Ok" at the bottom:<br>![iousbfamily](https://github.com/user-attachments/assets/e4b219be-4e44-4042-bf1a-a6475b3875fc)
 - Press the upper right button for the root patching:<br>![oclp_mod01](https://github.com/user-attachments/assets/ad42427a-3726-480e-89a3-d2bd98754c3c)
