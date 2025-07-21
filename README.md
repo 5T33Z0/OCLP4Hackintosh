@@ -63,6 +63,9 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 - [**How to enable auto-root-patching during macOS installation**](/Guides/Auto-Patching.md)
 - [**Force-enabling root-patches Patches in OCLP**](/Enable_Features/Force-enable_Root-Patches.md)
 
+## OCLP-Mod
+- [How to build the multilingual version of OCLP-Mod](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Guides/OCLP-mod_Multilingual.md)
+
 ## Troubleshooting
 - [**Dos and Don'ts of running macOS beta versions**](/docs/Beta_dos_donts.md)
 - [**Recovering from failed root patching attempts**](/Guides/Reverting_Root_Patches.md)
