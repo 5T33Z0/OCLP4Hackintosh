@@ -40,6 +40,9 @@
 
 ![](/Volumes/macOS Sonoma - Data/Users/5t33z0/Desktop/GUI_ml.png)
 
+## Notes
+The translation is incomplete.
+
 ## Credits
 
 Based on [guide by to schrup21](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=803772#post803772) from Hackintosh-Forum.de 
