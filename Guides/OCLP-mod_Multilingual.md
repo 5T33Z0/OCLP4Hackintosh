@@ -1,4 +1,6 @@
-# How to compile the and use the multilingual version of OCLP-Mod 
+[![OCLP-Mod](https://img.shields.io/badge/OCLPMod:-2.6.6+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-26.b2-white.svg)
+
+# How to compile and use the multilingual version of OCLP-Mod 
 
 1. Install Python if you haven't already
 2. Clone the OCLP-Mod repo: 
@@ -38,7 +40,7 @@
 
 ## Screenshot
 
-![](/Volumes/macOS Sonoma - Data/Users/5t33z0/Desktop/GUI_ml.png)
+<img width="600" height="373" alt="GUI_ml" src="https://github.com/user-attachments/assets/bc9197d6-4f50-423c-b7ec-58cf28a1d47e" />
 
 ## Notes
 The translation is incomplete.
