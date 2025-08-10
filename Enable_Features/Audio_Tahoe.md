@@ -22,7 +22,7 @@ In macOS Tahoe beta 2, analog audio stopped working. Since `AppleALC.kext` was u
 
 ***So what does AppleHDA do?***
 
-`AppleHDA` is a core audio driver framework used in macOS to manage audio hardware functionality. It acts as a bridge between the operating system’s audio stack and the hardware, enabling audio input and output for various devices like speakers, microphones, and headsets. Below is an explanation of how it works and what it does, tailored to be concise yet comprehensive.
+`AppleHDA` is a core audio driver framework used in macOS to manage audio hardware functionality. It acts as a bridge between the operating system’s audio stack and the hardware, enabling audio input and output for various devices like speakers, microphones, headsets – even external USB Audio Interfaces need this kext in order to be selectable as an audio output source. Below is an explanation of how it works and what it does, tailored to be concise yet comprehensive.
 
 ***How does AppleHDA work?***
 
