@@ -41,6 +41,17 @@ Besides patching Wifi/BT cards officially used in Apple products, OCLP also supp
 - device-id `pci12e4,43B1` &rarr; BCM4352
 - device-id `pci12e4,43B2` &rarr; BCM4352 (2.4 GHz).
 
+> [!IMPORTANT]
+>
+> If you have one of the following Broadcom WiFi/BT card, you don't have to apply root patches to get them working in macOS Sonoma+:
+>
+> | Chip Name | Device ID      | Card Names                                       |
+> |-----------|----------------|--------------------------------------------------|
+> | BCM43602  | 0x14E4, 0x43BA | BCM943602BAED, BCM943602CDP, BCM943602CS, DW1830 |
+> | BCM4350   | 0x14E4, 0x43A3 | BCM94350ZAE, DW1820A                             |
+>
+> Instead, you can use [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) by 0xFireWold. Make sure to read the [manual](https://github.com/0xFireWolf/AppleBCMWLANCompanion/blob/main/Documentation/GettingStarted.md) to configure it correctly.
+
 ### What about Bluetooth?
 
 Generally speaking, if a) your system's USB ports are mapped correctly and b) the latest kexts required for enabling Bluetooth are present in your EFI folder, BT will most likely work already  after installing macOS 14. macOS Sequoia requires additional NVRAM entries in the `config.plist` in order for BT to work.
