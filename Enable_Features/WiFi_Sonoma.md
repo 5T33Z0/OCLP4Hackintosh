@@ -43,7 +43,7 @@ Besides patching Wifi/BT cards officially used in Apple products, OCLP also supp
 
 > [!IMPORTANT]
 >
-> If you have one of the following Broadcom WiFi/BT card, you don't have to apply root patches to get them working in macOS Sonoma+:
+> If you have one of the following Broadcom WiFi/BT cards, you don't have to apply root patches to get them working in macOS Sonoma+:
 >
 > | Chip Name | Device ID      | Card Names                                       |
 > |-----------|----------------|--------------------------------------------------|
