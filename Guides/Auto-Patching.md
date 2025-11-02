@@ -47,7 +47,8 @@ If you use OCLP to download the macOS Installer app to install a newer version o
 8. Navigate to `Library`
 9. Create a new folder and name it `Packages`
 10. Copy the `AutoPkg-Assets.pkg` into the `Packages` folder:<br>![pkg](https://github.com/user-attachments/assets/fa8ceb1d-2faa-42cb-9695-c2b23314fde0)
-11. Install macOS
+11. Add the latest version of the Kernel Development Kit (KDK) to the same loation as well: https://github.com/dortania/KdkSupportPkg/releases
+12. Install macOS
 
 Once the installation reaches the first-time setup stage, iGPU/GPU acceleration, external displays, Wi-Fi, and Bluetooth will work already.
 
