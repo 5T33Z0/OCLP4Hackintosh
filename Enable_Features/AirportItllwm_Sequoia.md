@@ -1,4 +1,4 @@
-# Using `AirportItlwm.kext` in macOS Sequoia and fixing iServices in macOS Sonoma
+# Using `AirportItlwm.kext` for Intel WiFi/BT Cards in macOS Sequoia and Tahoe
 
 ![intel_spoof07](https://github.com/user-attachments/assets/255406e1-554e-4b6c-9b67-5d24b9fcb962)
 
@@ -8,14 +8,14 @@ As you may know, Apple removed support for various system kexts and frameworks r
 
 Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app (`Heliport`) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
 
-Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportItlwm` in Sequoia again!
+Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
 
 ## Patching principle
 
-1. Inject `IOName` of a BRCM 4360 Broadcom card via `DeviceProperties` to trigger "Modern WiFi" patches in OCLP 
+1. Block Original `com.apple.iokit.IOSkywalkFamily`
 2. Inject the required kexts for re-enabling legacy WiFi cards
-3. Add `AirportItlwm.kext` for macOS Ventura 
-3. Apply root patches
+3. Add `AirportItlwm.kext` from macOS Ventura 
+3. Apply root patches with OCLP-Mod
 4. Reboot to macOS Sequoia, voila, `AirportItlwm.kext` is working again 
 
 > [!NOTE]
@@ -28,36 +28,11 @@ We need to prepare the `config.plist` and EFI folder content to make `AirportItl
 
 ⚠️ Make sure to adjust the PCI path of the WiFi card so that it matches the location of the WiFi card in your system!
 
-### 1.1 Add `IOName` spoof
+### 1.1 Disable/Delete `IOName` spoof
 
-In your `config.plist`, create an entry for a Broadcom BCM4360 device in `DeviceProperties`:
+If present, disable (#) or delete `IOName` spoof from your config's `DeviceProperties` to prevent OCLP-Mod to apply root patches for Broadcom Cards:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>DeviceProperties</key>
-	<dict>
-		<key>Add</key>
-		<dict>
-			<key>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>IOName</key>
-				<string>pci14e4,43a0</string>
-			</dict>
-		</dict>
-	</dict>
-</dict>
-</plist>
-```
-**Screenshot**:<br> ![IOName1](https://github.com/user-attachments/assets/6b261d32-b140-4f0f-8a98-7cf60277eb3e)
-
-### 1.2 Adjust the PCI path
-
-- Get the correct PCI device path for *your* Intel WiFi card. 
-- You can do this with Hackintool. Just find the entry for the Wireless Network Controler, right-click and select "Copy Device Path":<br>![intel_spoof01](https://github.com/user-attachments/assets/44f21ce0-63ca-45f4-b15c-55cbe3c98a1d)
-- Adjust the PCI path to match *your* system:<br>![IOName2](https://github.com/user-attachments/assets/6848f554-5fe1-420c-a85b-1c0c87310ab2)
+<img width="894" height="123" alt="01" src="https://github.com/user-attachments/assets/a75f8b8d-9b28-43d9-854c-375fb7498328" />
 
 ### 2. Block new `IOSkywalk` kext
 
@@ -82,7 +57,7 @@ Under `Kernel/Block`, add the following rule:
 </dict>
 ```
 
-**Screenshot**:<br>![intel_spoof08](https://github.com/user-attachments/assets/0d5a08a1-035c-4079-8128-a8e5435bec59)
+**Screenshot**:<br> <img width="920" height="240" alt="03" src="https://github.com/user-attachments/assets/b9760a94-a449-45f1-8289-c542e1262e65" />
 
 ### 3. Add Kexts
 - Disable `Itlwm.kext`, if present!
@@ -97,10 +72,10 @@ Under `Kernel/Block`, add the following rule:
 
 Under `Misc`, change `SecureBootModel` to `Disabled`
 
-### 5. NVRAM Entries (optional)
-- Change `csr-active-config` to `03080000` (resp. `030A0000` if you are using an NVIDIA GPU)
-- Enable `-lilubetaall` boot.arg if WiFi/BT is not working in macOS Sequoia
-- If Bluetooth stops working after root patching, add the following entries to the NVRAM section:
+### 5. Add/Adjust NVRAM Entries
+- Change `csr-active-config` to `03080000` (resp. `030A0000`, if you are using an NVIDIA GPU)
+- Add `-amfipassbeta` boot-arg if WiFi/BT is not working in macOS Sequoia/Tahoe
+- If Bluetooth stops working after root patching, add the following entries to the NVRAM section, so that Intel BlueTooth will work:
 
 ```xml
 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
@@ -115,20 +90,20 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 	<data>AwgAAA==</data>
 </dict>
 ```
-**Screenshot**:<br>![nvram](https://github.com/user-attachments/assets/b322597d-98d0-4961-81d3-19ec8ecb9bf9)
+**Screenshot**:<br><img width="1139" height="395" alt="04" src="https://github.com/user-attachments/assets/d8c45364-066b-4f30-91ff-e7bd227ccf77" />
 
 - Save your `config.plist`
 
-### 6. Download OCLP
-- Since you won't have internet Access in macOS Sequoia, [download the latest release of OCLP](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) before rebooting into macOS
+### 6. Download OCLP-Mod
+- Since you won't have internet Access in macOS Sequoia, [download the latest release of OCLP-Mod](https://github.com/laobamac/OCLP-Mod/releases) before rebooting into macOS
 - Now reboot into macOS Sequoia
 
 ### 7. Apply root patches with OCLP
 
-- Run OCLP
-- Click on "Apply Root Patch" button
-- "Networking: Modern WiFi" should be available:<br>![intel_spoof05](https://github.com/user-attachments/assets/8b072d05-93f5-4151-b6e1-1d8e0c6c555e)
-- Click "Start Root Patching"
+- Run OCLP-Mod
+- Click the top right button:<br> <img width="600" height="331" alt="patch01" src="https://github.com/user-attachments/assets/19dc7610-829c-4bd5-9e99-a0938331b50e" />
+- There should say "Intel" somewhere in the Chines text of the Patches that will be applied
+- Click the first button from the top to start root patching.
 - It will install the necessary Frameworks required for `AirportItlwm` to work:<br> ![intel_spoof06](https://github.com/user-attachments/assets/ced653f7-0807-4aef-82cb-eabf35b08884)
 
 ### 8. Reboot and enjoy!
@@ -152,7 +127,7 @@ On some systems excluding the IOSkywalkFamily kext may cause a Kernel panic. In 
 
 ## Using this fix to enable iServices in macOS Sonoma
 
-As it turns out, this fix is also required if you need working iServices in macOS Sonoma (screenshot from OpCore Simplify):
+As it turns out, this fix is also required if you need working iServices in macOS Sonoma (Screenshot from OpCore Simplify):
 
 ![wifi](https://github.com/user-attachments/assets/af01d107-12b8-4441-b858-bc3720b2fe7a)
 
