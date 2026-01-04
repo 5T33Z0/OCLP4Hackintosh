@@ -6,7 +6,7 @@
 
 As you may know, Apple removed support for various system kexts and frameworks required by Broadcom WiFi cards from macOS Sequoia. Although Apple never shipped any systems with Intel WiFi/BT cards, `AirportItlwm.kext` also requires these system kexts and frameworks to function properly. So in macOS Sequoia, users with Intel WiFi/BT cards had to resort to the `Itlwm.kext` instead. 
 
-Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app (`Heliport`) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
+Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app ([**Heliport**](https://github.com/OpenIntelWireless/HeliPort/releases)) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
 
 Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
 
