@@ -8,7 +8,7 @@ As you may know, Apple removed support for various system kexts and frameworks r
 
 Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app ([**Heliport**](https://github.com/OpenIntelWireless/HeliPort/releases)) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
 
-Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
+Luckily for us, we can utilize [**OCLP-Mod**](https://github.com/laobamac/OCLP-Mod/releases) to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
 
 ## Patching principle
 
@@ -16,7 +16,7 @@ Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportIt
 2. Inject the required kexts for re-enabling legacy WiFi cards
 3. Add `AirportItlwm.kext` from macOS Ventura 
 3. Apply root patches with OCLP-Mod
-4. Reboot to macOS Sequoia, voila, `AirportItlwm.kext` is working again 
+4. Reboot to macOS Sequoia/Tahoe and voilà: `AirportItlwm.kext` is working again 
 
 > [!NOTE]
 > 
@@ -24,7 +24,7 @@ Luckily for us, we can utilize OpenCore Legacy patcher to make use of `AirportIt
 
 ## Instructions
 
-We need to prepare the `config.plist` and EFI folder content to make `AirportItlwm.kext` work again! You can either follow the instructions below, or [copy the settings from this plist](/plist/AirportItlwm_Sequoia.plist).
+We need to prepare the `config.plist` and EFI folder content to make `AirportItlwm.kext` work in macOS Sequoia and Tahoe. You can either follow the instructions below, or [copy the settings from this plist](/plist/AirportItlwm_Sequoia.plist).
 
 ⚠️ Make sure to adjust the PCI path of the WiFi card so that it matches the location of the WiFi card in your system!
 
