@@ -58,7 +58,9 @@ Generally speaking, if a) your system's USB ports are mapped correctly and b) th
 
 ### What about Intel?
 
-Since Apple never used Intel Wi-Fi/BT cards in their Macs, there are no root patches available nor required. Wi-Fi and Bluetooth are handled kexts provided by the [**OpenIntelWireless**](https://openintelwireless.github.io/General/Installation.html) project (except for `BluetoolFixup.kext` which is part of [**BrcmPatchRAM**](https://github.com/acidanthera/BrcmPatchRAM)). The required kexts and config setting are also listed in the examples for [Kext Loading Sequence](https://github.com/5T33Z0/OC-Little-Translated/tree/main/10_Kexts_Loading_Sequence_Examples#example-8a-intel-wifi-airportitlwm-and-bluetooth-intelbluetoothfirmware). macOS Sequoia requires additional NVRAM entries in the `config.plist` in order for BT to work.
+In general, Wi-Fi and Bluetooth are handled by kexts provided by the [**OpenIntelWireless**](https://openintelwireless.github.io/General/Installation.html) project (except for `BluetoolFixup.kext` contained in [**BrcmPatchRAM**](https://github.com/acidanthera/BrcmPatchRAM)). The required kexts and config setting are also listed in the examples for [Kext Loading Sequence](https://github.com/5T33Z0/OC-Little-Translated/tree/main/Content/10_Kexts_Loading_Sequence_Examples#example-8a-intel-wifi-airportitlwm-and-bluetooth-intelbluetoothfirmware). macOS Sequoia and Tahoe require additional NVRAM entries in the `config.plist` in order for BT to work.
+
+Although Intel Wi-Fi/BT cards were never used in Apple Macs, root patches can be applied to downgrade the Apple Skywalk component used for WiFi in oder to use `AirportItlwm.kext` in macOS Sequoia and Tahoe (&rarr; [Guide](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItllwm_Sequoia.md))
 
 ## Instructions (Broadcom and Atheros)
 
