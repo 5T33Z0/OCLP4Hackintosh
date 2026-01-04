@@ -102,9 +102,10 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 
 - Run OCLP-Mod
 - Click the top right button:<br> <img width="600" height="331" alt="patch01" src="https://github.com/user-attachments/assets/19dc7610-829c-4bd5-9e99-a0938331b50e" />
-- There should say "Intel" somewhere in the Chines text of the Patches that will be applied
+- There should say "Intel" somewhere in the Chines text of the Patches that will be applied:<br><img width="603" height="332" alt="oclpmod_intel01" src="https://github.com/user-attachments/assets/f49ecc37-e644-4e67-851b-f54fce640935" />
 - Click the first button from the top to start root patching.
-- It will install the necessary Frameworks required for `AirportItlwm` to work:<br> ![intel_spoof06](https://github.com/user-attachments/assets/ced653f7-0807-4aef-82cb-eabf35b08884)
+- Additional files required for patching will be downloadded automatically:<br><img width="415" height="288" alt="oclpmod_intel02" src="https://github.com/user-attachments/assets/391d5440-d3f4-4629-9dbb-e13fe511cbdd" />
+- Once that's done, patching will commence: ![intel_spoof06](https://github.com/user-attachments/assets/ced653f7-0807-4aef-82cb-eabf35b08884)
 
 ### 8. Reboot and enjoy!
 
