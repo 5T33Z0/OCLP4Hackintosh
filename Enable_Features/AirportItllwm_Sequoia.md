@@ -105,7 +105,7 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 - There should say "Intel" somewhere in the Chines text of the Patches that will be applied:<br><img width="603" height="332" alt="oclpmod_intel01" src="https://github.com/user-attachments/assets/f49ecc37-e644-4e67-851b-f54fce640935" />
 - Click the first button from the top to start root patching.
 - Additional files required for patching will be downloadded automatically:<br><img width="415" height="288" alt="oclpmod_intel02" src="https://github.com/user-attachments/assets/391d5440-d3f4-4629-9dbb-e13fe511cbdd" />
-- Once that's done, patching will commence:<br> ![intel_spoof06](https://github.com/user-attachments/assets/ced653f7-0807-4aef-82cb-eabf35b08884)
+- Once that's done, patching will commence:<br> <img width="405" height="559" alt="oclpmodpatch" src="https://github.com/user-attachments/assets/21d95656-c186-4032-be13-665f09b01f6d" />
 
 ### 8. Reboot and enjoy!
 
