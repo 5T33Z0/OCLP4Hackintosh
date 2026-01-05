@@ -111,7 +111,7 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 
 - Reboot the system
 - Perform an NVRAM reset
-- Boot into macOS Sequoia
+- Boot into macOS Sequoia/Tahoe
 - You should now be able to use the Airport-Utility in macOS Sequoia again, to connect to WiFi APs
 
 > [!IMPORTANT]
