@@ -28,7 +28,7 @@ We need to prepare the `config.plist` and EFI folder content to make `AirportItl
 
 ⚠️ Make sure to adjust the PCI path of the WiFi card so that it matches the location of the WiFi card in your system!
 
-### 1.1 Disable/Delete `IOName` spoof
+### 1. Disable/Delete `IOName` spoof
 
 If present, disable (#) or delete `IOName` spoof from your config's `DeviceProperties` to prevent OCLP-Mod to apply root patches for Broadcom Cards:
 
