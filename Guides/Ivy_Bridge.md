@@ -48,7 +48,7 @@ In macOS Ventura, support for CPU families prior to Kaby Lake was dropped. For I
 
 **This guide allows you to**: 
 
-- Install or upgrade to macOS Ventura
+- Install or upgrade to macOS Ventura, Sonoma or Sequoia (OCLP doesn't support Tahoe yet)
 - Re-Install iGPU/GPU drivers in Post-Install so hardware graphics acceleration is working
 - Re-enable SMC CPU Power Management so you have proper CPU Power Management using `SSDT-PM`
 - Use a native SMBIOS for Ivy Bridge CPUs for optimal performance (no more spoofing required)
