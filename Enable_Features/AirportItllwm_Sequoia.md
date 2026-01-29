@@ -73,7 +73,7 @@ Under `Kernel/Block`, add the following rule:
 
 > [!TIP]
 >
-> Once you've verified that WiFi is working, you can check if WiFi works without this quirk. But in my experience on the machines I have, Intel WiFi does not work without this quirk.
+> Once you've verified that WiFi is working, you can check if WiFi works without this quirk as well. But in my experience on the machines I have, Intel WiFi does not work without it.
 
 ### 5. Disable `SecureBootModel`
 
