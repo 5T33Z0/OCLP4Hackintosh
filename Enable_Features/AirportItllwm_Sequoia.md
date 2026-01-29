@@ -68,11 +68,18 @@ Under `Kernel/Block`, add the following rule:
 	- [**`AirportItlwm.kext`**](https://github.com/OpenIntelWireless/itlwm/releases) (inject the one for macOS Ventura! I have renamed it to `AirportItlwm_Sequoia.kext` since I also have macOS Sonoma installed and it requires a different variant of the kext). ⚠️ Make sure it is injected ***after*** `IOSkywalk` and `IO8021FamilyLegacy` kexts!
 - Adjust `MinKernel` and `MaxKernel` settings as shown in the **Screenshot**: <br>![itlwfbt](https://github.com/user-attachments/assets/b3cb9e89-9d91-4eb7-87e3-6ff5516df386)
 
-### 4. Disable `SecureBootModel`
+### 4. Enable Kernel Quirk
+- Enable `DisableIoMapper`
+
+### 5. Disable `SecureBootModel`
 
 Under `Misc`, change `SecureBootModel` to `Disabled`
 
-### 5. Add/Adjust NVRAM Entries
+> [!TIP]
+>
+> Once you've verified that WiFi is working, you can check if WiFi works without this quirk. But in my experience on the machines I have, Intel WiFi does not work without this quirk.
+
+### 6. Add/Adjust NVRAM Entries
 - Change `csr-active-config` to `03080000` (resp. `030A0000`, if you are using an NVIDIA GPU)
 - Add `-amfipassbeta` boot-arg if WiFi/BT is not working in macOS Sequoia/Tahoe
 - If Bluetooth stops working after root patching, add the following entries to the NVRAM section, so that Intel BlueTooth will work:
@@ -94,11 +101,11 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 
 - Save your `config.plist`
 
-### 6. Download OCLP-Mod
+### 7. Download OCLP-Mod
 - Since you won't have internet Access in macOS Sequoia, [download the latest release of OCLP-Mod](https://github.com/laobamac/OCLP-Mod/releases) before rebooting into macOS
 - Now reboot into macOS Sequoia
 
-### 7. Apply root patches with OCLP
+### 8. Apply root patches with OCLP
 
 - Run OCLP-Mod
 - Click the top right button:<br> <img width="600" height="331" alt="patch01" src="https://github.com/user-attachments/assets/19dc7610-829c-4bd5-9e99-a0938331b50e" />
@@ -107,7 +114,7 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 - Additional files required for patching will be downloadded automatically:<br><img width="415" height="288" alt="oclpmod_intel02" src="https://github.com/user-attachments/assets/391d5440-d3f4-4629-9dbb-e13fe511cbdd" />
 - Once that's done, patching will commence:<br> <img width="405" height="559" alt="oclpmodpatch" src="https://github.com/user-attachments/assets/21d95656-c186-4032-be13-665f09b01f6d" />
 
-### 8. Reboot and enjoy!
+### 9. Reboot and enjoy!
 
 - Reboot the system
 - Perform an NVRAM reset
@@ -118,7 +125,7 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 > 
 > Once root patches are applied, the security seal of the volume will be broken. And once it is broken, the complete macOS version will be downloaded every time an OS update is available. The workaround would be to revert root patches before installing updates – but then you won't have WiFi (unless you enable `itlwm` beforehand).
 
-### 9. Troubleshooting
+### 10. Troubleshooting
 
 On some systems excluding the IOSkywalkFamily kext may cause a Kernel panic. In this case the workaround is to add the following rule to the `Kernel/Force` section of your config.plist:
 
