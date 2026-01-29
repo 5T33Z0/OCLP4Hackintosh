@@ -71,13 +71,13 @@ Under `Kernel/Block`, add the following rule:
 ### 4. Enable Kernel Quirk
 - Enable `DisableIoMapper`
 
-### 5. Disable `SecureBootModel`
-
-Under `Misc`, change `SecureBootModel` to `Disabled`
-
 > [!TIP]
 >
 > Once you've verified that WiFi is working, you can check if WiFi works without this quirk. But in my experience on the machines I have, Intel WiFi does not work without this quirk.
+
+### 5. Disable `SecureBootModel`
+
+Under `Misc`, change `SecureBootModel` to `Disabled`
 
 ### 6. Add/Adjust NVRAM Entries
 - Change `csr-active-config` to `03080000` (resp. `030A0000`, if you are using an NVIDIA GPU)
