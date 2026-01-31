@@ -54,7 +54,7 @@ A word from [Mieze](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025
 > - RealtekRTL8111
 > - AtherosE2200Ethernet
 > - IntelLucy
-> - [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet/releases) (v2.5.5d0, recently updated to support AppleVTD!)
+> - [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet/releases) (recently updated to support AppleVTD!)
 >
 > The following drivers currently do _not_ work with **AppleVTD** because approximately 10 lines of code are missing: 
 >
