@@ -73,4 +73,13 @@ List of macOS versions from High Sierra (10.13) to Sequoia (15), including their
 - **Safari Highlights & Reader Mode** – Context-aware browsing and article summaries.  
 - **Messages Upgrades** – Enhanced formatting, "Send Later" feature.  
 - **Notes Enhancements** – Math calculations, collapsible sections, and live transcription.  
-- **Redesigned Calculator** – History tracking, unit conversions.  
+- **Redesigned Calculator** – History tracking, unit conversions.
+
+## macOS Tahoe (26) – 2025/2026
+
+* **Liquid Glass Design** – Major visual overhaul with transparent UI elements, personalized color tints for icons and folders, and redesigned Control Center and menu bar. 
+* **Spotlight Overhaul** – Biggest update ever: execute actions (send emails, create notes) and navigate content faster. 
+* **Phone App on Mac** – First-party Phone app with call list, contacts, voicemail, call filters, and Hold Assist integrated via Continuity.
+* **Apple Intelligence Enhancements** – Live Translation for text and calls, smarter Shortcuts with direct model integration, expanded Genmoji and Image Playground features.
+* **New Apple Games App & Game Overlay** – Central game hub and in-game overlay for settings and social features; Metal 4 with MetalFX improvements.
+* **Updated Apps & Tools** – Revamped Photos, Notes with Markdown import/export and FaceTime/Phone audio recording, accessibility improvements, and more refined Safari.
