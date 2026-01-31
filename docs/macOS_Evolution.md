@@ -1,6 +1,6 @@
-# Evolution of macOS: Key Features from High Sierra to Sequoia 
+# Evolution of macOS: Key Features from High Sierra to Tahoe 
 
-List of macOS versions from High Sierra (10.13) to Sequoia (15), including their most relevant and notable new features:  
+List of macOS versions from macOS High Sierra (10.13) to Tahoe (26), including their most relevant and notable new features.
 
 ---
 
