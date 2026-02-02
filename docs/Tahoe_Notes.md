@@ -1,19 +1,28 @@
 # macOS Tahoe Notes
 
-On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe (Kernel version 25.0). Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
+On June 9th 2025, macOS unveiled macOS 26, aka macOS Tahoe (Kernel version 25.x). Seemingly, Apple decided to drop the version-based naming scheme (macOS 16 would have been the next logical version) to a year-based scheme (26 as in 2026)… I am already not a fan. Apple also announced that "macOS Tahoe will be the final release for Intel Macs".
 
 ## (Officially) Supported Mac Models 
 
-![macOS_talahon](https://github.com/user-attachments/assets/2e3c53c7-4b33-4968-8505-e15247619004)
+- iMac20,1 27", iMac20,2 27" (Comet Lake)
+- MacBookPro16,1, MacBookPro16,2, MacBookPro16,4
+- MacPro7,1
 
-**Source**: https://www.apple.com/os/macos/
+## Newly dropped Mac Models
+
+- iMac19,x
+- iMacPro1,1
+- MacBookAir9,1
+- Macmini8,1
+- MacBookPro15,x
+- MacBookPro16,3
 
 It looks like Dortania has a lot of work to do to support all of these newly dropped Intel Macs via OCLP…
 
 ## Usable SMBIOSes
 
+- **Desktops**: `iMac20,1`, `iMac20,2`, `MacPro7,1`
 - **Noetbooks**: `MacBookPro16,1` and `MacBookPro16,4`
-- **Desktops**: `iMac20,1` and `iMac20,2`
 - The rest: dropped
 
 Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe can be installed with a native SMBIOS for the used CPU family and system updates can be obtained as well.
