@@ -75,7 +75,7 @@ This is what you need to know before attempting to install macOS Monterey and ne
  	- [Status of OpenCore Legacy Patcher Supoort for macOS Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1136) 
 	- [Status of OpenCore Legacy Patcher Support for macOS Sonoma](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1076)
 	- [Status of OpenCore Legacy Patcher Support for macOS Ventura](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/998)
-	- [Legacy Metal Support and macOS Ventura/Sonoma](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1008)
+	- [Legacy Metal Support and macOS Ventura – Sonoma](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1008)
 
 ## Preparations
 I assume you already have a working OpenCore configuration for your Sandy Bridge system. Otherwise follow Dortania's [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html) to create one. The instructions below are only additional steps required to install and boot macOS Monterey and newer.
