@@ -5,7 +5,7 @@
 | Don't install macOS Tahoe beta yet if your system requires root patches for enabling graphics output!
 
 ## 2026
-- **Jnauary, 22nd**: OCLP Mod is discontinued. My guess: it was shut down by Dortania for "borrowing" their code…
+- **Jnauary, 22nd**: OCLP Mod is [discontinued](https://www.reddit.com/r/OpenCoreLegacyPatcher/comments/1qlx2ag/comment/o2th6xc/). My guess: it was shut down by Dortania for "borrowing" their code:<br><img [](https://github.com/user-attachments/assets/32110e5c-efef-4838-9d58-e697641154b6)
 
 ## 2025
 - **June 30th**: Details released for [macOS Tahoe 26 and OCLP Support](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1167). **ETA**: Winter 2025
