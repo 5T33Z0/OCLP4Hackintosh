@@ -1,6 +1,6 @@
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.5-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.x-white.svg)
 
-# Installing macOS Ventura and newer on Haswell/Broadwell systems
+# Installing macOS 13+ on Haswell/Broadwell systems
 
 <details>
 <summary><b>TABLE of CONTENTS</b> (Click to reveal)</summary><br>
