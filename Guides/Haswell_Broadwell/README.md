@@ -46,6 +46,7 @@ Use this [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which cont
 Gif-Animation:<br> ![Booter_patch](https://github.com/user-attachments/assets/e00333d1-cc31-4f50-ada2-4d48c73d0eeb)
 
 </details>
+
 ---
 
 ## 2. DeviceProperties – iGPU Configuration
