@@ -15,7 +15,6 @@ Use this [config.plist](/plist/Haswell-Broadwell_OCLP_Wintel_Patches.plist) whic
 
 1. Open your config.plist in ProperTree
 2. Copy the following code (click the copy button):
-
 	```xml
 	<dict>
 		<key>Arch</key>
@@ -42,7 +41,9 @@ Use this [config.plist](/plist/Haswell-Broadwell_OCLP_Wintel_Patches.plist) whic
 		<integer>0</integer>
 	</dict>
 	```
-3. Paste it in the `Booter/Patch` Section. The result should look like this:<br> ![](/Users/5t33z0/Desktop/Board-ID-Skip.png)
+3. Paste it in the `Booter/Patch` Section (CMD+V):<br> <img width="1146" height="508" alt="Board-ID-Skip" src="https://github.com/user-attachments/assets/751068e7-0d67-4ff3-a6ce-46a2a596a734" />
+
+Gif-Animation:<br> ![Booter_patch](https://github.com/user-attachments/assets/e00333d1-cc31-4f50-ada2-4d48c73d0eeb)
 
 </details>
 ---
