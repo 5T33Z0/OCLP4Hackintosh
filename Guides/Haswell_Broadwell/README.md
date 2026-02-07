@@ -1,8 +1,8 @@
 # Config Edits for macOS Monterey+ on Haswell/Broadwell
 
-Use this [config.plist](/plist/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which contains all the settings below. You can cross-reference or copy entries directly from it.
+:construction: **OVERHAUL in PROGRESS**
 
----
+Use this [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which contains all the settings below. You can cross-reference or copy entries directly from it.
 
 ## 1. Booter Section – Add Board-Id check Skip
 
