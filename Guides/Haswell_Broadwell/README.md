@@ -11,7 +11,7 @@ Use this [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which cont
 - Receive system updates on unsupported hardware (when combined with RestrictEvents kext)
 
 <details>
-<summary><b>Instructions</b> (click to expand)</summary>
+<summary><b>Instructions</b> (click to expand)</summary><br>
 
 1. Open your config.plist in ProperTree
 2. Copy the following code (click the copy button):
