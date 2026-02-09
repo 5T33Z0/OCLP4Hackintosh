@@ -6,7 +6,7 @@
 
 ## EFI and Config Adjustments
 
-Use this [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which contains all the settings below. You can cross-reference or copy entries directly from it.
+You can use his [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) as reference. It contains all the settings below. You can cross-reference or copy entries directly from it.
 
 ### 1. Booter Section – Add Board-Id check Skip
 
