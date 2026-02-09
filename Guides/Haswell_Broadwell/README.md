@@ -2,7 +2,7 @@
 
 # Installing macOS 13+ on Haswell/Broadwell systems
 
-:construction: **OVERHAUL in PROGRESS** Trying a new layout
+:construction: **OVERHAUL in PROGRESS** – Testing a different way to present the information
 
 ## Introduction
 Although installing and running macOS Ventura and newer on Wintel machines with Haswell/Broadwell CPUs is possible with OpenCore and the [**OpenCore Legacy Patcher**](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main) (OCLP), it’s not officially supported by Dortania – their support is limited to Apple Macs. Since no Hackintosh guide exists, I created this one in order to bridge the gap. I wrote it based on my experiences, analyzing the config, EFI folder, and logs after building OpenCore with OCLP for a Haswell system.
