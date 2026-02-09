@@ -6,7 +6,7 @@
 
 ## Config Edits
 
-Listed below, you find the required modifications to prepare your `config.plist` and EFI folder for installing macOS Monterey or newer on Haswell/Broadwell systems. You can use this [.plist](/plist/Haswell-Broadwell_OCLP_Wintel_Patches.plist) which contains all the necessary settings for cross-referencing.
+Listed below, you find the required modifications to prepare your `config.plist` and EFI folder for installing macOS Monterey or newer on Haswell/Broadwell systems. You can use this [.plist](/plist/Haswell-Broadwell_OCLP_Wintel_Patches.plist) for cross-referencing.
 
 Config Section | Action | Description
 :-------------:| ------ | ------------
