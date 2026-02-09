@@ -47,8 +47,6 @@ You can use his [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) as 
 	```
 3. Paste it in the `Booter/Patch` Section (CMD+V):<br> <img width="1146" height="508" alt="Board-ID-Skip" src="https://github.com/user-attachments/assets/751068e7-0d67-4ff3-a6ce-46a2a596a734" />
 
-Gif-Animation:<br> ![Booter_patch](https://github.com/user-attachments/assets/e00333d1-cc31-4f50-ada2-4d48c73d0eeb)
-
 </details>
 
 <details> <summary><b>DeviceProperties (click to expand)</b></summary><br>
@@ -110,7 +108,7 @@ Different combinations of `AAPL,ig-platform-id` and `device-id` may be required 
 </details>
 
 <details>
-<summary><b>Kernel/Add Section (click to expand)</b></summary>
+<summary><b>Kernel Section (click to expand)</b></summary>
 
 **Location**: `Kernel/Add` in config.plist and `EFI/OC/Kexts` folder
 
@@ -242,7 +240,8 @@ Add the patch that matches your macOS version.
 </details>
 </details>
 
-### 6. Misc - Security Settings
+<details>
+<summary><b>Misc Section (click to expand)</b></summary><br>
 
 **Location**: `Misc/Security`
 
@@ -255,14 +254,12 @@ Vault: Optional
 
 ℹ️ Intel iGPU-only users may be able to use `SecureBootModel: Default` - try for yourself if you want to maintain some security features.
 
----
+</details>
 
 <details>
 <summary><b>NVRAM Settings</b></summary>
 
 **Location**: `NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82`
-
----
 
 **System Integrity Protection**
 
@@ -270,8 +267,6 @@ Modify existing `csr-active-config` key:
 
 - **Standard setup**: `03080000`  
 - **If using NVIDIA GPU**: `030A0000`
-
----
 
 **Boot Arguments – Required for All Users**
 
@@ -293,8 +288,6 @@ ipc_control_port_options=0
 
 - `ipc_control_port_options=0`  
   Required for Intel HD Graphics. Fixes Firefox and Electron-based app issues (e.g. Discord).
-
----
 
 <details>
 <summary><b>AMD GPU Users – Additional boot-args</b></summary>
@@ -333,8 +326,6 @@ Optional: Add `unfairgva=` bitmask (1–7) to fix DRM issues:
 https://github.com/5T33Z0/OC-Little-Translated/tree/main/H_Boot-args#unfairgva-overrides
 
 </details>
-
----
 
 <details>
 <summary><b>NVIDIA GPU Users – Additional boot-args</b></summary>
@@ -389,8 +380,6 @@ Purpose: Disables board-ID check.
 
 </details>
 
----
-
 <details>
 <summary><b>FeatureUnlock Users</b></summary>
 
@@ -403,8 +392,6 @@ Purpose: Disables board-ID check.
 Purpose: Disables Sidecar / AirPlay / Universal Control patches.
 
 </details>
-
----
 
 ### OCLP and RestrictEvents NVRAM Keys
 
@@ -420,8 +407,6 @@ Add the following keys:
 | revpatch | String | sbvmm,asset |
 
 Reference: https://github.com/acidanthera/RestrictEvents
-
----
 
 ### NVRAM Delete Entries
 
@@ -439,7 +424,8 @@ Add the following entries:
 **Purpose**: Clears old values before new ones are written, avoiding manual NVRAM resets.
 </details>
 
-### 8. UEFI - Drivers
+<details>
+<summary><b>UEFI Section (click to expand)</b></summary>
 
 **Location**: `UEFI/Drivers` in config.plist and `EFI/OC/Drivers` folder
 
