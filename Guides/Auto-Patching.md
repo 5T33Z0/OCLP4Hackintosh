@@ -28,7 +28,7 @@ If your system requires iGPU and/or GPU (AMD/NVIDIA) root patches to enable hard
 ## Instructions
 
 ### When using a USB Installer
-If you create a macOS USB installer with OpenCore Legacy Patcher, `AutoPkg-Assets.pkg` will be added to the USB installer automatically. You only need to ensure that `AutoPkgInstaller.kext` is present in your OpenCore EFI and in your `config.plist` to enable auto root-patching.
+If you create a macOS USB installer with OpenCore Legacy Patcher, `AutoPkg-Assets.pkg` will be added to the USB installer automatically. You only need to ensure that `AutoPkgInstaller.kext` is present in your OpenCore EFI and in your `config.plist` to enable auto root-patching!
 
 ### When using the macOS Installer app
 If you use OCLP to download the macOS Installer app to install a newer version of macOS on a separate APFS volume or upgrade your existing install, you need to add `AutoPkg-Assets.pkg` to the app manually after the download and assembly of the macOS installer is completed:
