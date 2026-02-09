@@ -240,8 +240,7 @@ Cpuid1Mask: FFFFFFFF 00000000 00000000 00000000
 Add the patch that matches your macOS version.
 
 </details>
-
----
+</details>
 
 ### 6. Misc - Security Settings
 
