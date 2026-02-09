@@ -35,7 +35,6 @@ After making all changes:
 - [ ] **Validate config**: Run `ocvalidate` or use OCAuxiliaryTools/ProperTree to check for errors
 - [ ] **Verify MinKernel settings**: Ensure kexts like AMFIPass and RestrictEvents have correct `MinKernel` values
 - [ ] **Check kext plugins**: If using IO80211FamilyLegacy, ensure `AirPortBrcmNIC.kext` is enabled
-- [ ] **Backup working EFI**: Make a copy of your current working EFI before rebooting with changes
 - [ ] **Review GPU boot-args**: Make sure you only added boot-args relevant to YOUR GPU (not all of them)
 - [ ] **HEDT check**: If you're NOT using Haswell-E/Broadwell-E, ensure `Kernel/Emulate` is empty
 
