@@ -2,10 +2,15 @@
 
 # Installing macOS 13+ on Haswell/Broadwell systems
 
-:construction: **OVERHAUL in PROGRESS**
+:construction: **OVERHAUL in PROGRESS** Trying a new layout
 
 ## Introduction
 Although installing and running macOS Ventura and newer on Wintel machines with Haswell/Broadwell CPUs is possible with OpenCore and the [**OpenCore Legacy Patcher**](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main) (OCLP), it’s not officially supported by Dortania – their support is limited to Apple Macs. Since no Hackintosh guide exists, I created this one in order to bridge the gap. I wrote it based on my experiences, analyzing the config, EFI folder, and logs after building OpenCore with OCLP for a Haswell system.
+
+## How Haswell/Broadwell systems are affected
+In macOS Ventura, support for CPU families prior to Kaby Lake was dropped. For Haswell/Broadwell CPUs this mainly affects integrated graphics and Metal support.
+
+The approach described in this guide prepares the OpenCore configuration with the required patches, settings, and kexts for installing and running macOS Ventura+ and then adds iGPU/GPU drivers post-install using OpenCore Legacy Patcher.
 
 ## Scope and limitations
 This guide is intended to provide general information for adjusting your EFI and `config.plist` to install and run macOS Ventura and newer on unsupported Wintel systems. It is not a comprehensive configuration guide. Please refrain from using the "report issue" function to seek individualized assistance for fixing your config. Such issue reports will be closed immediately.
@@ -25,11 +30,21 @@ Check the links below for in-depth documentation about components/features that 
 - [Legacy Metal Support and macOS Ventura–Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1008)  
 - [Legacy Non-Metal Support and macOS Big Sur–Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/108)
 
-## Technical background
+---
 
-### How Haswell/Broadwell systems are affected
-In macOS Ventura, support for CPU families prior to Kaby Lake was dropped. For Haswell/Broadwell CPUs this mainly affects integrated graphics and Metal support.
+[← **HOME**](/OCLP4Hackintosh/README.md) | [**NEXT: Preparations →**](Prep.md)
 
-The approach described in this guide prepares the OpenCore configuration with the required patches, settings, and kexts for installing and running macOS Ventura+ and then adds iGPU/GPU drivers post-install using OpenCore Legacy Patcher.
+<p align="center">
+  <a href="/OCLP4Hackintosh/README.md">← <strong>HOME</strong></a> |
+  <a href="Prep.md"><strong>NEXT: Preparations →</strong></a>
+</p>
 
-[← **HOME**](/OCLP4Hackintosh/README.md) | [**Next: Preparations →**](Prep.md)
+<br>
+
+<p align="center">
+  <a href="/OCLP4Hackintosh/README.md">← <strong>HOME</strong></a> |
+  <a href="Prep.md"><strong>NEXT: Preparations →</strong></a>
+</p>
+
+<br>
+
