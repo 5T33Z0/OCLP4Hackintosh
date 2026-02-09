@@ -8,14 +8,14 @@
 
 You can use his [config.plist](/Haswell-Broadwell_OCLP_Wintel_Patches.plist) as reference. It contains all the settings below. You can cross-reference or copy entries directly from it.
 
-### 1. Booter Section – Add Board-Id check Skip
-
+<details> <summary><b>Booter Section (click to expand)</b></summary><br>
+	
 **Purpose**: Skips macOS board-id verification, allowing you to:
+
 - Boot macOS with the native SMBIOS best suited for your CPU (instead of spoofed models)
 - Receive system updates on unsupported hardware (when combined with RestrictEvents kext)
 
-<details>
-<summary><b>Instructions</b> (click to expand)</summary><br>
+**Instructions**:
 
 1. Open your config.plist in ProperTree
 2. Copy the following code (click the copy button):
@@ -51,9 +51,7 @@ Gif-Animation:<br> ![Booter_patch](https://github.com/user-attachments/assets/e0
 
 </details>
 
----
-
-### 2. DeviceProperties – iGPU Configuration
+<details> <summary><b>DeviceProperties (click to expand)</b></summary><br>
 
 **Location**: `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
 
@@ -109,10 +107,10 @@ Laptop and NUC configurations require specific framebuffer patches depending on 
 Different combinations of `AAPL,ig-platform-id` and `device-id` may be required based on your specific hardware.
 
 </details>
+</details>
 
----
-
-### 3. Kernel - Kexts
+<details>
+<summary><b>Kernel/Add Section (click to expand)</b></summary>
 
 **Location**: `Kernel/Add` in config.plist and `EFI/OC/Kexts` folder
 
@@ -260,158 +258,187 @@ Vault: Optional
 
 ---
 
-### 7. NVRAM - Settings
-
-#### Part A: Boot Configuration
+<details>
+<summary><b>NVRAM Settings</b></summary>
 
 **Location**: `NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82`
 
-##### System Integrity Protection
+---
 
-**Modify existing `csr-active-config` key**:
-- **Standard setup**: `03080000`
+**System Integrity Protection**
+
+Modify existing `csr-active-config` key:
+
+- **Standard setup**: `03080000`  
 - **If using NVIDIA GPU**: `030A0000`
-
-##### Boot Arguments - Required for All Users
-
-**Add these boot-args**:
-```
-amfi_get_out_of_my_way=0x1
-ipc_control_port_options=0
-```
-
-**Explanations**:
-- `amfi_get_out_of_my_way=0x1`: Disables Apple Mobile File Integrity validation. Required for installing root patches with OCLP. ⚠️ Thanks to AMFIPass.kext, this is no longer needed for booting - only for applying patches. Note: Disabling AMFI causes [issues with 3rd party app access to cameras/microphones](https://github.com/5T33Z0/OC-Little-Translated/blob/main/13_Peripherals/Fixing_Webcams.md).
-- `ipc_control_port_options=0`: Required for Intel HD Graphics. Fixes issues with Firefox and Electron-based apps like Discord.
-
-<details>
-<summary><b>AMD GPU Users - Additional boot-args (click to expand)</b></summary>
-
-### Temporary Boot-Arg (Installation Only)
-
-```
--radvesa
-```
-
-**Purpose**: Disables hardware acceleration and puts the card in VESA mode.
-
-**When to use**: Only if your screen turns black after installing macOS 12+
-
-**⚠️ CRITICAL**: After installing GPU drivers with OCLP, you **MUST disable this boot-arg** or you won't get graphics acceleration!
 
 ---
 
-#### AMD GPU with Headless SMBIOS
+**Boot Arguments – Required for All Users**
 
-**Only if using**:
-- SMBIOS: `iMacPro1,1` or `MacPro7,1` (SMBIOSes for CPUs without iGPU)
-- GPU: Polaris or Vega cards (Navi is not supported by OCLP)
+Add the following boot-args:
 
 ```
+-amfipassbeta
+```
+```
+ipc_control_port_options=0
+
+```
+
+**Notes**
+
+- Required for applying root patches with OCLP.  
+  Thanks to `AMFIPass.kext`, this is no longer required for booting – only for patching.  
+  Disabling AMFI may cause [camera/microphone permission issues in third-party apps](https://github.com/5T33Z0/OC-Little-Translated/blob/main/13_Peripherals/Fixing_Webcams.md).
+
+- `ipc_control_port_options=0`  
+  Required for Intel HD Graphics. Fixes Firefox and Electron-based app issues (e.g. Discord).
+
+---
+
+<details>
+<summary><b>AMD GPU Users – Additional boot-args</b></summary>
+
+**Temporary boot-arg (installation only)**
+
+```
+
+-radvesa
+
+```
+
+Purpose: Disables hardware acceleration and forces VESA mode.  
+Use only if the screen turns black after installing macOS 12+.
+
+⚠️ After installing GPU drivers with OCLP, this boot-arg **must be removed** or graphics acceleration will not work.
+
+---
+
+**AMD GPU with headless SMBIOS**
+
+Use only if:
+
+- SMBIOS: `iMacPro1,1` or `MacPro7,1`  
+- GPU: Polaris or Vega (Navi is not supported by OCLP)
+
+```
+
 -wegnoigpu
+
 ```
 
-**Purpose**: Disables the iGPU in macOS, letting the AMD GPU handle background rendering and compute tasks.
+Purpose: Disables iGPU in macOS and assigns background rendering to the AMD GPU.
 
-**Additional step**: You may need to add `unfairgva=` bitmask (values 1-7) to [address DRM issues](https://github.com/5T33Z0/OC-Little-Translated/tree/main/H_Boot-args#unfairgva-overrides).
+Optional: Add `unfairgva=` bitmask (1–7) to fix DRM issues:  
+https://github.com/5T33Z0/OC-Little-Translated/tree/main/H_Boot-args#unfairgva-overrides
 
 </details>
 
+---
+
 <details>
-<summary><b>NVIDIA GPU Users - Additional boot-args (click to expand)</b></summary>
+<summary><b>NVIDIA GPU Users – Additional boot-args</b></summary>
 
-### Kepler GPU Users (GTX 600/700 series)
+**Kepler GPUs (GTX 600 / 700)**
 
-**Good news**: Kepler GPUs work out of the box on macOS Monterey through Ventura. You don't need any special boot-args - they switch to VESA mode automatically during installation if needed.
+Kepler GPUs work out of the box on Monterey through Ventura.  
+No additional boot-args required.
 
 ---
 
-#### Non-Kepler NVIDIA GPU Users
+**Non-Kepler NVIDIA GPUs**
 
-##### Temporary Boot-Arg (Installation Only)
+Temporary boot-arg (installation only):
 
 ```
+
 nv_disable=1
+
 ```
 
-**Purpose**: Disables hardware acceleration during installation.
-
-**When to use**: Only if your screen turns black after installing macOS Ventura
-
-**⚠️ CRITICAL**: After installing GPU drivers with OCLP, you **MUST disable this boot-arg** or you won't get graphics acceleration!
+Purpose: Disables acceleration during installation.  
+Remove after installing NVIDIA drivers with OCLP.
 
 ---
 
-##### Required Boot-Args for Non-Kepler Cards
+Required boot-args:
 
 ```
+
 ngfxcompat=1
 ngfxgl=1
 nvda_drv_vrl=1
+
 ```
 
-**Explanations**:
-- `ngfxcompat=1`: Ignores compatibility check in `NVDAStartupWeb`
-- `ngfxgl=1`: Disables Metal support, uses OpenGL for rendering instead
-- `nvda_drv_vrl=1`: Enables NVIDIA Web Drivers
+- `ngfxcompat=1` → Bypass NVDAStartupWeb compatibility check  
+- `ngfxgl=1` → Disable Metal, use OpenGL  
+- `nvda_drv_vrl=1` → Enable NVIDIA Web Drivers
 
 ---
 
-##### If Black Screen Occurs After Driver Installation
+If black screen occurs after driver installation:
 
 ```
+
 agdpmod=vit9696
+
 ```
 
-**Purpose**: Disables board-id check. Fixes black screens that can occur after installing NVIDIA Web Drivers.
+Purpose: Disables board-ID check.
 
 </details>
+
+---
 
 <details>
-<summary><b>FeatureUnlock Users (click to expand)</b></summary>
+<summary><b>FeatureUnlock Users</b></summary>
 
 ```
+
 -disable_sidecar_mac
+
 ```
 
-**Purpose**: Disables Sidecar/AirPlay/Universal Control patches from FeatureUnlock.
-
-**When to use**: If you installed FeatureUnlock but don't want these specific features enabled, or if they're causing issues.
+Purpose: Disables Sidecar / AirPlay / Universal Control patches.
 
 </details>
 
 ---
 
-#### Part B: OCLP and RestrictEvents Configuration
+### OCLP and RestrictEvents NVRAM Keys
 
-**Location**: `NVRAM/Add/4D1FDA02-38C7-4BCCA8B30102`
+**Location**  
+`NVRAM/Add/4D1FDA02-38C7-4BCCA8B30102`
 
-**Add these three new keys**:
+Add the following keys:
 
-| Key | Type | Value | Purpose |
-|-----|------|-------|---------|
-| `OCLP-Settings` | String | `-allow_amfi` | OCLP configuration settings |
-| `revblock` | String | `media` | Blocks mediaanalysisd service (fixes graphical issues with Metal 1 GPUs on Ventura+) |
-| `revpatch` | String | `sbvmm,asset` | Enables OTA system updates and content caching on unsupported hardware |
+| Key | Type | Value |
+|----|----|----|
+| OCLP-Settings | String | -allow_amfi |
+| revblock | String | media |
+| revpatch | String | sbvmm,asset |
 
-**Reference**: Check [RestrictEvents documentation](https://github.com/acidanthera/RestrictEvents) for detailed explanations of `revblock` and `revpatch` parameters.
-
----
-
-#### Part C: NVRAM Delete Entries
-
-**Location**: `NVRAM/Delete/4D1FDA02-38C7-4BCCA8B30102`
-
-**Add these strings to the array**:
-```
-OCLP-Settings
-revblock
-revpatch
-```
-
-**Purpose**: Ensures old NVRAM values are cleared before writing new ones. This prevents you from needing to perform manual NVRAM resets every time you change these settings in the `Add` section.
+Reference: https://github.com/acidanthera/RestrictEvents
 
 ---
+
+### NVRAM Delete Entries
+
+**Location**  
+`NVRAM/Delete/4D1FDA02-38C7-4BCCA8B30102`
+
+Add the following entries:
+
+| Key |
+|-----|
+| OCLP-Settings |
+| revblock |
+| revpatch |
+
+**Purpose**: Clears old values before new ones are written, avoiding manual NVRAM resets.
+</details>
 
 ### 8. UEFI - Drivers
 
