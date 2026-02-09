@@ -33,18 +33,3 @@ Check the links below for in-depth documentation about components/features that 
 ---
 
 [← **HOME**](/OCLP4Hackintosh/README.md) | [**NEXT: Preparations →**](Prep.md)
-
-<p align="center">
-  <a href="/OCLP4Hackintosh/README.md">← <strong>HOME</strong></a> |
-  <a href="Prep.md"><strong>NEXT: Preparations →</strong></a>
-</p>
-
-<br>
-
-<p align="center">
-  <a href="/OCLP4Hackintosh/README.md">← <strong>HOME</strong></a> |
-  <a href="Prep.md"><strong>NEXT: Preparations →</strong></a>
-</p>
-
-<br>
-
