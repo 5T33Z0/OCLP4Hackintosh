@@ -18,7 +18,11 @@
 ---
 
 ## Introduction
-In macOS Tahoe beta 2, analog audio stopped working. Since `AppleALC.kext` was updated for macOS 26 compatibility, the culprit was found quick: `AppleHDA` has been removed from Apple's latest and last x86-compatible iteration of macOS.
+In macOS Tahoe beta 2, analog audio stopped working. Although `AppleALC.kext` had already been updated for macOS 26, the cause was quickly identified: Apple removed `AppleHDA` from its final x86-compatible release of macOS.
+
+This change is tied to a broader architectural shift that began with the introduction of the Apple T2 Security Chip in 2017. Starting with the iMac Pro and later expanding to other Intel Macs, audio processing was routed through the T2 chip instead of the legacy AppleHDA controller. Since all Intel Macs still supported by Tahoe rely on T2-managed audio, Apple has now removed `AppleHDA.kext` entirely as of beta 2.
+
+As a result, the driver layer required by `AppleALC.kext` to enable analog onboard audio on Hackintosh systems is no longer present, which is why analog audio no longer works out of the box in macOS Tahoe.
 
 ***So what does AppleHDA do?***
 
