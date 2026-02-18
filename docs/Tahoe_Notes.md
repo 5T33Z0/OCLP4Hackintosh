@@ -38,7 +38,7 @@ Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe 
 - There's now a OCLP Mod available which can run in macOS Tahoe.
 
 ## Known Issues
-
+- [ ] **File System**: HFS+ File System (the one needed for macOS Extended disks) was dropped from macOS 26.4 beta. So if you want to be able to still access those disks in the future, you better convert them to APFS while you can in Disk Utility (right-click the volume and select "Convert to APFS"). 
 - [x] **Audio**:
 	- [x] **On-board audio**: `AppleHDA` has been removed from Tahoe beta 2 (not present at `System/Libray/Extensions`). Without it, AppleALC is useless and on-board audio CODECs won't work. Injectig AppleHDA via OpenCore is not an option (no boot). Audio over GPU (HDMI/DP) still works. But there's a [**fix**](/Enable_Features/Audio_Tahoe.md).
 - [ ] **Video**:
