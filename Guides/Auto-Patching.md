@@ -51,7 +51,8 @@ If you use OCLP to download the macOS Installer app to install a newer version o
 
 12. Install macOS
 
-Once the installation reaches the first-time setup stage, iGPU/GPU acceleration, external displays, Wi-Fi, and Bluetooth will work already.
+- At some point during macOS installation a progress bar with a percentage indicator will be displayed – this indicates the progress of the root patching process: <br> ![](https://github.com/HorizonUnix/PatchSonomaWiFiOnTheFly/raw/main/Img/proof.jpg)
+- Once the installation reaches the first-time setup dialogue, iGPU/GPU acceleration, external displays, Wi-Fi, and Bluetooth will work already.
 
 > [!TIP]
 >
