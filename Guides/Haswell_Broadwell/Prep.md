@@ -15,7 +15,7 @@ Update OpenCore and kexts to the latest version to maximize compatibility with m
 nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version
 ```
 
-For updating OpenCore, Drives  and kexts easily, you can use OpenCore Auxiliary Tools (OCAT) [Instructsions](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Content/D_Updating_OpenCore/Updating_OC.md)
+For updating OpenCore, Drivers and kexts easily, you can use OpenCore Auxiliary Tools (OCAT) &rarr; [Instructions](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Content/D_Updating_OpenCore/Updating_OC.md)
 
 ## Additional Checks
 This is what you need to know before attempting to install macOS Ventura on unsupported systems:
