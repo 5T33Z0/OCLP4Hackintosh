@@ -152,6 +152,7 @@ Based on your system, use one of the following SMBIOSes for Ivy Bridge CPUs. Ope
 - Generate new Serials using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 > [!NOTE]
+> 
 > Once macOS 12 or newer is installed, you can disable the "Reroute kern.hv" and "IOGetVMMPresent" Kernel Patches. RestrictEvents will handle the VMM-Board-id spoof. **Only Exception**: Before running the "Install macOS" App, you have to re-enable the kernel patches again. Otherwise the installer will say the system is incompatible because of the unsupported SMBIOS it detects.
  	
 #### When Upgrading from macOS Catalina or older
