@@ -3,10 +3,11 @@
 ## About
 Whenever a new macOS Update is released, there’s a chance that Apple removed something else from the OS so that the root patches might fail or break something in macOS so that it becomes unusable. This happened with the release of macOS 14.2 beta 3, where you could no longer log into macOS on Ivy Bridge systems after applying root patches with OCLP 1.2.1 to re-enable Intel HD 4000 graphics because it caused the `WindowServer` to crash. Luckily, the issue was resolved in OCLP 1.3.0 but it can happen again any time a new macOS update is released.
 
-Listed below, you find some options to recover from failed root patching attempts. They are sorted from easiest (option 1) to most difficult (option 3).
+Listed below, you find some options to recover from failed root patching attempts. They are sorted from easiest (scenario 1) to most difficult (scenario 3).
 
 ## Preparations
 Prior to reverting root patches, do the following if your system requires root patches in order to access the internet:
+
 - Check if a newer version of [OCLP](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) is available and download it.
 - If the macOS update is newer than the latest official OCLP release, check if newer commits to the source code exists and [download the latest nightly build](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/SOURCE.md) instead. The version number should be higher than the one of the official release.
 - If your system requires root patches to have working network adapters, download the latest [KernelDebugKit](https://github.com/dortania/KdkSupportPkg/releases) (KDK) prior to reverting root patches. Click on "Assets" and download the .dmg file.
@@ -19,7 +20,7 @@ Prior to reverting root patches, do the following if your system requires root p
 > 
 > Just click "Ok" and OCLP will take care of it.
 
-## Option 1: Reverting Root Patches if macOS still can be used
+## Scenario 1: Reverting Root Patches if macOS still can be used
 If you can still boot into macOS and use it, do the following to revert Root Patches.
 
 1. Run the OpenCore Patcher again
@@ -33,7 +34,7 @@ If you can still boot into macOS and use it, do the following to revert Root Pat
 
 Everything should be back to normal again.
 
-## Option 2: Reverting Root Patches in Safe Mode
+## Scenario 2: Reverting Root Patches in Safe Mode
 If you’ve applied root patches that leave macOS in an unusable state, e.g. after installing iGPU/GPU drivers, reverting root patches might be possible by booting macOS into Safe Mode. Because in Safe Mode graphics drivers are not loaded so it might still be possible to get into macOS and revert root patches.
 
 1. In OpenCore’s boot menu, select macOS
@@ -48,7 +49,7 @@ If you’ve applied root patches that leave macOS in an unusable state, e.g. aft
 
 Everything should be back to normal again.
 
-## Option 3: Reverting Root Patches via macOS Recovery and Terminal
+## Scenario 3: Reverting Root Patches via macOS Recovery and Terminal
 This option is the last resort, if macOS won’t boot normally nor in safe mode. The idea is to boot into Recovery and use Terminal to restore the last working, unpatched macOS Snapshot.
 
 1. In OpenCore’s boot menu, press <kbd>Spacebar</kbd> to show hidden entries
@@ -74,6 +75,12 @@ This option is the last resort, if macOS won’t boot normally nor in safe mode.
 17. Reboot
 
 Everything should be back to normal again.
+
+## Scenario 4: Root Patches cannot be applied because a newer version of macOS is downloaded in the background (Message: `Please ensure no updates are pending`)
+
+See &rarr; Fix by Dortania: [**System version mismatch error when root patching**](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/docs/TROUBLESHOOT-APP.md#system-version-mismatch-error-when-root-patching)
+
+---
 
 > [!IMPORTANT]
 >
