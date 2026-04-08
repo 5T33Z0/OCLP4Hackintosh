@@ -27,8 +27,6 @@ As you may know, Dortania developed the [**OpenCore Legacy Patcher**](https://gi
 - Re-enabling legacy SMC CPU Power Management in macOS 13+ (1st to 3rd Gen Intel Core CPUs)
 - Fixing issues with System Updates caused by disabling `SecureBootModel`, System Integrity Protection (`SIP`) and Apple Mobile File Integrity (`AMFI`)
 
-Additionally, OCLP applies [on-disk patches](https://dortania.github.io/OpenCore-Legacy-Patcher/PATCHEXPLAIN.html#on-disk-patches) ("root-patches") in Post-Install to re-enable crucial features like hardware graphics acceleration (iGPU/GPU) as well as WiFi and Bluetooth to extend the artificially lifecycle of these
-
 Aditionally, OCLP applies [*on-disk patches*](https://dortania.github.io/OpenCore-Legacy-Patcher/PATCHEXPLAIN.html#on-disk-patches) (“root patches”) during Post-Install to restore essential functionality such as hardware graphics acceleration (iGPU/GPU), Wi-Fi, and Bluetooth. These patches extend the lifecycle of machines that Apple has artificially blocked from upgrading through board-ID–based software lockouts.
 
 What you may not know is: some of OCLPs config settings, kexts and root-patches can be utilized on Wintel systems (aka Hackintoshes) as well. However, the required modifications to the `config.plist` and the selection of kexts to inject (as some are only needed for Apple systems) are not officially documented nor supported by Dortania, and you won’t find assistance for this on Discord. That’s why I’ve created detailed configuration guides to prepare legacy systems to install and run macOS Ventura to Tahoe.
