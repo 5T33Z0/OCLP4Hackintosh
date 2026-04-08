@@ -79,6 +79,10 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 ## OCLP-Mod
 - [How to build the multilingual version of OCLP-Mod](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Guides/OCLP-mod_Multilingual.md)
 
+> [!TIP]
+> 
+> There's a newer fork of OCLP-Mod called [**OCLP-Plus**](https://github.com/YBronst/OCLP-Plus) which has an english GUI. It's highly recommended to use it insead of OCLP-Mod!
+
 ## Troubleshooting
 - [**Dos and Don'ts of running macOS beta versions**](/docs/Beta_dos_donts.md)
 - [**Recovering from failed root patching attempts**](/Guides/Reverting_Root_Patches.md)
