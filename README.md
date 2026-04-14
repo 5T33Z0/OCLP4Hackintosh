@@ -1,6 +1,6 @@
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
 
-![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.02.16-blueviolet.svg)
+![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.04.14-blueviolet.svg)
 
 ---
 
@@ -117,7 +117,8 @@ For more options, check the [**Utilities**](https://github.com/5T33Z0/OC-Little-
 
 - **OpenCore Bootloader**: https://github.com/acidanthera/OpenCorePkg/releases
 - **OpenCore Legacy Patcher**: https://github.com/dortania/OpenCore-Legacy-Patcher/releases
-- **MetallibSupportPkg**: https://github.com/dortania/MetallibSupportPkg/releases
+- **Kernel Debug Kit Support Package**: https://github.com/dortania/KdkSupportPkg/releases
+- **Metallib Support Package**: https://github.com/dortania/MetallibSupportPkg/releases
 
 ## Contribute
 Although I've created these guides with a lot of attention to detail, there's always room for improvement. As far as verifying the guides are concerned, I only have the following systems for testing: an iMac11,3 (Lynnfield), an iMac12,2 (Sandy Bridge), Some notebooks (Ivy Bridge, Skylake, Whiskey Lake) and some Small Form Factor machines (Kaby Lake and Coffee Lake). So if you have any suggestions or updated instructions to improve the guides or workflows, feel free to create an issue and let me know!
