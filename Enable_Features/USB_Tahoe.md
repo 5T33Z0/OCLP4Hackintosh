@@ -76,10 +76,6 @@ With the release of macOS Tahoe, Apple removed legacy kernel extensions like `IO
 
 This guide walks you through using **OCLP Mod**, a modified version of OpenCore Legacy Patcher, to reintroduce this functionality on unsupported systems. Be aware that patching the USB stack can introduce side effects (e.g., HID receivers may stop working), so apply this only if you're experiencing USB-related issues with Wi-Fi adapters.
 
-> [!TIP]
-> 
-> There's a newer fork of OCLP-Mod called [**OCLP-Plus**](https://github.com/YBronst/OCLP-Plus) which has an english GUI. It's highly recommended to use it insead of OCLP-Mod!
-
 **Instructions**:
 
 - Ensure that your system is connected to the internet. This is mandatory because OCLP Mod needs to download additional files required for root patching!

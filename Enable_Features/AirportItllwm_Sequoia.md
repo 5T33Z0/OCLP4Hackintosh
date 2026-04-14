@@ -114,10 +114,6 @@ Under `Misc`, change `SecureBootModel` to `Disabled`
 - Additional files required for patching will be downloadded automatically:<br><img width="415" height="288" alt="oclpmod_intel02" src="https://github.com/user-attachments/assets/391d5440-d3f4-4629-9dbb-e13fe511cbdd" />
 - Once that's done, patching will commence:<br> <img width="405" height="559" alt="oclpmodpatch" src="https://github.com/user-attachments/assets/21d95656-c186-4032-be13-665f09b01f6d" />
 
-> [!TIP]
-> 
-> There's a newer fork of OCLP-Mod called [**OCLP-Plus**](https://github.com/YBronst/OCLP-Plus) which has an english GUI. It's highly recommended to use it insead!
-
 ### 9. Reboot and enjoy!
 
 - Reboot the system

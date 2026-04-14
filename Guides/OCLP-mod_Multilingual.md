@@ -1,9 +1,5 @@
 [![OCLP-Mod](https://img.shields.io/badge/OCLPMod:-2.6.6+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-26.b2-white.svg)
 
-> [!NOTE]
-> 
-> The following guid is obsolete. There's a newer fork of OCLP-Mod called [**OCLP-Plus**](https://github.com/YBronst/OCLP-Plus) which has an english GUI. It's highly recommended to use it insead!
-
 # How to compile and use the multilingual version of OCLP-Mod 
 
 1. Install Python if you haven't already
