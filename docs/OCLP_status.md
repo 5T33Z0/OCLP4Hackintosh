@@ -5,6 +5,7 @@
 | Don't install macOS Tahoe beta yet if your system requires root patches for enabling graphics output!
 
 ## 2026
+- **May**: Dhink G leaves Dortania and OpenCore Legacy Patcher behind as well: [Epilogue](https://dhinakg.github.io/2026/05/24/epilogue.html)
 - **April**: [OCLP-Plus]([https://github.com/YBronst/OCLP-Plus](https://github.com/YBronst/OCLP-Plus)) fork is released: "Complete root patching support for macOS Tahoe 26.0 (25A5316i) through macOS 26.4 (25E5233c) and beyond. This fork ensures that legacy hardware remains compatible with the latest Darwin 25 kernel." It doesn't contain current metallibs so it's incapable of enabling legacy (i)GPUs. Pro: it has an english GUI! 
 - **Jnauary, 22nd**: OCLP Mod is [discontinued](https://www.reddit.com/r/OpenCoreLegacyPatcher/comments/1qlx2ag/comment/o2th6xc/). My guess: it was shut down by Dortania for "borrowing" their code:<br><img width="806" height="849" alt="oclp-mod" src="https://github.com/user-attachments/assets/03fc35f0-2301-4d6a-a4bf-f6b286fb3d21" />
 
