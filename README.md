@@ -1,8 +1,6 @@
+![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.06.15-blueviolet.svg)
+
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
-
-![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.04.14-blueviolet.svg)
-
----
 
 **TABLE oF CONTENTS**
 
