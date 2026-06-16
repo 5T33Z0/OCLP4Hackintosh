@@ -1,4 +1,4 @@
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤15.5-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤macOS_Sequoia-white.svg)
 
 # Applying root patches during macOS install automatically 
 
@@ -15,7 +15,8 @@ If you add `AutoPkgInstaller.kext` to your OpenCore EFI folder and the `.pkg` fi
 You still have to prepare your EFI folder and `config.plist` as described in my guides to run macOS 13 and newer, but if they are configured correctly, you don't have to run OCLP in Post-Install.
 
 ### Limitations
-Auo-Patching only works when installing macOS either from the "Install macOS" app or when using a USB installer, but not when installung (delta) updates via the Software Update feature in system settings!
+- macOS Tahoe: MetallibSupporPkg is not available for OpenCore Legacy Patcher yet. So, if you're using an Ivy Bridge or older system with an iGPU or an unsupported GPU, you can't enable grpahics acceleration
+- Auo-Patching only works when installing macOS either from the "Install macOS" app or when using a USB installer, but not when installung (delta) updates via the Software Update feature in system settings!
 
 ### Who is this method for?
 
