@@ -8,7 +8,6 @@ From macOS 15.1.1 onward, Apple reverted the necessity of having a configuration
 
 ``` shell
 sudo spctl --master-disable
-Globally disabling the assessment system needs to be confirmed in System Settings.
 ```
 
 - Next, navigate to "System Settings" >> "Privacy & Security"
