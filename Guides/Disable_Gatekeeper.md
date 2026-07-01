@@ -20,8 +20,6 @@ After installing macOS Sequoia beta 3 on a new APFS volume, I wanted to run Corp
 
 ```shell
 sudo spctl --master-disable
-Password:
-This operation is no longer supported. To disable the assessment subsystem, please use configuration profiles.
 ```
 
 So, config profiles it is… 
