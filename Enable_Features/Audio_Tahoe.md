@@ -6,10 +6,11 @@
 
 - [Introduction](#introduction)
 - [Re-enabling Audio-support in macOS Tahoe](#re-enabling-audio-support-in-macos-tahoe)
-  - [Option 1: Using OCLP-Mod](#option-1-using-oclp-mod)
+  - [Option 1: Using MyKextInstaller](#option-1-using-mykextinstaller)
+  - [Option 2: Using OCLP-Mod](#option-2-using-oclp-mod)
     - [Pre-Requisites](#pre-requisites)
     - [Instructions](#instructions)
-  - [Option 2: Using VoodooHDA](#option-2-using-voodoohda)
+  - [Option 3: Using VoodooHDA](#option-3-using-voodoohda)
     - [Pre-Requisites](#pre-requisites-1)
     - [Instructions](#instructions-1)
 - [Troubleshooting](#troubleshooting)
@@ -48,13 +49,17 @@ Not only AppleHDA has been removed, but the associated dylib has also been delet
 
 ## Re-enabling Audio-support in macOS Tahoe
 
-### Option 1: Using OCLP-Mod
+### Option 1: Using MyKextInstaller
 
-Since there's no official OCLP version available for macOS Tahoe yet, you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – which will also install AppleHDA, thereby re-enabling audio. To download the latest build, you need a Github account.
+If your system doesn't require any root patches to run macOS, you can use **MyKextInstaller** to install an older version of the **AppleHDA** kext to re-enable analog audio. Follow the instrcutions on the [MyKextInstaller](https://github.com/Mirone/MyKextInstaller) repo to so.
+
+### Option 2: Using OCLP-Mod
+
+If your system does require root patches to run macOS Tahoe, you should use this option instead. Since there's no official OCLP version available for macOS Tahoe , you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – it will also install an older version of AppleHDA, thereby re-enabling analog audio. To download the latest build, you need a Github account.
 
 > [!CAUTION]
 >
-> Don't use OCLP-Mod if your system requires root patches for enabling graphics output (either iGPU or GPU). In this case, you should wait for an official OCLP release by Dortania! Don't blame me if your system doesn't boot into macOS after applying root patches with OCLP Mod!
+> Don't use OCLP-Mod if your system requires root patches for enabling graphics acceleration (either iGPU or GPU) in macOS Tahoe. In this case, you should wait for an official OCLP release by Dortania! Don't blame me if your system doesn't boot into macOS after applying root patches with OCLP-Mod!
 
 #### Pre-Requisites
 
@@ -101,7 +106,7 @@ Since there's no official OCLP version available for macOS Tahoe yet, you can us
 - Restart macOS when prompted to
 - Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
-### Option 2: Using VoodooHDA
+### Option 3: Using VoodooHDA
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us, Chris1111 has updated his [**VoodooHDA Installer for macOS Tahoe**](https://github.com/chris1111/VoodooHDA-Tahoe).
 
 #### Pre-Requisites
