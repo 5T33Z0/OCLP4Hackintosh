@@ -1,10 +1,10 @@
 # How to re-enable previously supported WiFi/BT cards in macOS Sonoma+
 
-**INDEX**
+**TABLE of CONTENTS**
 
 - [Technical Background](#technical-background)
 	- [What about Bluetooth?](#what-about-bluetooth)
-	- [What about Intel?](#what-about-intel)
+	- [What about Intel Cards?](#what-about-intel-cards)
 - [Instructions (Broadcom and Atheros)](#instructions-broadcom-and-atheros)
 	- [Config and EFI adjustments](#config-and-efi-adjustments)
 	- [Verifying added Kexts](#verifying-added-kexts)
@@ -16,7 +16,7 @@
 - [Links](#links)
 - [Credits](#credits)
 
----
+--- 
 
 ## Technical Background
 During the early stages of macOS Sonoma development, kexts and frameworks required for driving older Broadcom Wi-Fi/BT Cards were removed from the OS, leaving the Wi-Fi portion of commonly used BT/Wi-Fi cards in a non-working state.
@@ -64,7 +64,7 @@ Although Intel Wi-Fi/BT cards were never used in Apple Macs, root patches can be
 
 > [!TIP]
 > 
-> Alternatively, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro). It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 ### Config and EFI adjustments
 Apply the following changes to your config (or copy them over from the plist examples (&rarr; [Legacy WiFi](/plist/Sonoma_WIFI_Legacy.plist) &rarr; [Modern WiFi](/plist/Sonoma_WIFI_Modern.plist)) and add the listed kexts to `EFI/OC/Kexts` folder:
@@ -134,7 +134,7 @@ Once you have verified that the required kext are actually loaded, you can conti
 
 > [!TIP]
 > 
-> Alternatively, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro). It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 ### Wi-Fi
 

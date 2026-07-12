@@ -10,6 +10,10 @@ Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has som
 
 Luckily for us, we can utilize [**OCLP-Mod**](https://github.com/laobamac/OCLP-Mod/releases) to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
 
+> [!TIP]
+> 
+> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+
 ## Patching principle
 
 1. Block Original `com.apple.iokit.IOSkywalkFamily`
@@ -25,10 +29,6 @@ Luckily for us, we can utilize [**OCLP-Mod**](https://github.com/laobamac/OCLP-M
 ## Instructions
 
 We need to prepare the `config.plist` and EFI folder content to make `AirportItlwm.kext` work in macOS Sequoia and Tahoe. You can either follow the instructions below, or [copy the settings from this plist](/plist/AirportItlwm_Sequoia.plist).
-
-> [!TIP]
-> 
-> Alternatively, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro). It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 ### 1. Disable/Delete `IOName` spoof
 
