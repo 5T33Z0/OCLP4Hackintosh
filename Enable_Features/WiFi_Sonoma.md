@@ -1,6 +1,4 @@
-# How to re-enable previously supported WiFi/BT cards in macOS Sonoma+ with OpenCore Legacy Patcher
-
-> **Applicable to**: OCLP 1.0.0+
+# How to re-enable previously supported WiFi/BT cards in macOS Sonoma+
 
 **INDEX**
 
@@ -21,7 +19,7 @@
 ---
 
 ## Technical Background
-During the early stages of macOS Sonoma development, kexts and frameworks required for driving older Wi-Fi/BT Cards were removed from the OS, leaving the Wi-Fi portion of commonly used BT/Wi-Fi cards in a non-working state.
+During the early stages of macOS Sonoma development, kexts and frameworks required for driving older Broadcom Wi-Fi/BT Cards were removed from the OS, leaving the Wi-Fi portion of commonly used BT/Wi-Fi cards in a non-working state.
 
 **This affects the following Wi-Fi card chipsets**:
 
@@ -56,7 +54,7 @@ Besides patching Wifi/BT cards officially used in Apple products, OCLP also supp
 
 Generally speaking, if a) your system's USB ports are mapped correctly and b) the latest kexts required for enabling Bluetooth are present in your EFI folder, BT will most likely work already  after installing macOS 14. macOS Sequoia requires additional NVRAM entries in the `config.plist` in order for BT to work.
 
-### What about Intel?
+### What about Intel Cards?
 
 In general, Wi-Fi and Bluetooth are handled by kexts provided by the [**OpenIntelWireless**](https://openintelwireless.github.io/General/Installation.html) project (except for `BluetoolFixup.kext` contained in [**BrcmPatchRAM**](https://github.com/acidanthera/BrcmPatchRAM)). The required kexts and config setting are also listed in the examples for [Kext Loading Sequence](https://github.com/5T33Z0/OC-Little-Translated/tree/main/Content/10_Kexts_Loading_Sequence_Examples#example-8a-intel-wifi-airportitlwm-and-bluetooth-intelbluetoothfirmware). macOS Sequoia and Tahoe require additional NVRAM entries in the `config.plist` in order for BT to work.
 
@@ -206,3 +204,4 @@ If BT is not working after adding the two kexts, do the following:
 - Acquarius13 for figuring out what to edit in OCLPs Source Code
 - deeveedee for pointing me towards using `brcmfxbeta` boot-arg
 - jrycm for tips with getting Intel Cards to work on Sequoia 15.2
+- Mirone for [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro)

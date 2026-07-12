@@ -20,7 +20,7 @@ Luckily for us, we can utilize [**OCLP-Mod**](https://github.com/laobamac/OCLP-M
 
 > [!NOTE]
 > 
-> When applying root patches for Modern WiFi, OCLP basically rolles back components from macOS Ventura. That's why the AirportItlwm kext for macOS Ventura is required to make WiFi work in Sequoia.
+> When applying root patches for Modern WiFi, OCLP basically rolls back components from macOS Ventura. That's why the AirportItlwm kext for macOS Ventura is required to make WiFi work in Sequoia.
 
 ## Instructions
 
@@ -142,6 +142,7 @@ As it turns out, this fix is also required if you need working iServices in macO
 ![wifi](https://github.com/user-attachments/assets/af01d107-12b8-4441-b858-bc3720b2fe7a)
 
 So, if you need iService in macOS Somona, do the following:
+
 - [ ] Change `MinKenel` of the following Kexts back to `23.0.0`:
 	- [ ] `AirportItlwm.kext` (use the version for macOS Ventura!)
 	- [ ] `IOSkywalkFamily.kext` 
@@ -156,3 +157,4 @@ Once you apply root patches, incremental system updates are no longer an option 
 - sughero, for additional info about the order of the kexts
 - stefanalmare for pointing me to this solution
 - lzhoang2801 for OpCore Simplify and further explanations about the effect on iServices
+- Mirone for [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro)
