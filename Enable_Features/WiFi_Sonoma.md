@@ -64,6 +64,10 @@ Although Intel Wi-Fi/BT cards were never used in Apple Macs, root patches can be
 
 ## Instructions (Broadcom and Atheros)
 
+> [!TIP]
+> 
+> Alternatively, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro). It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+
 ### Config and EFI adjustments
 Apply the following changes to your config (or copy them over from the plist examples (&rarr; [Legacy WiFi](/plist/Sonoma_WIFI_Legacy.plist) &rarr; [Modern WiFi](/plist/Sonoma_WIFI_Modern.plist)) and add the listed kexts to `EFI/OC/Kexts` folder:
 
@@ -129,6 +133,10 @@ Once you have verified that the required kext are actually loaded, you can conti
 ---
 
 ## Instructions (Intel)
+
+> [!TIP]
+> 
+> Alternatively, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro). It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 ### Wi-Fi
 
