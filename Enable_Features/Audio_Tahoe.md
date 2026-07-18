@@ -53,6 +53,10 @@ Not only AppleHDA has been removed, but the associated dylib has also been delet
 
 If your system doesn't require any root patches to run macOS, you can use **MyKextInstaller** to install an older version of the **AppleHDA** kext to re-enable analog audio. Follow the instrcutions on the [MyKextInstaller](https://github.com/Mirone/MyKextInstaller) repo to so.
 
+> [!NOTE]
+>
+> There's also [**HDA Universal**](https://www.insanelymac.com/forum/topic/362932-hdauniversal-applehda-like-audio-kext-for-macos-tahoe-and-hackintosh-systems/), an alternative AppleHDA-like audio solution for macOS Tahoe and Hackintosh systems. However, since it is "developed" by MaLd0n/Olarila and the source code is not publicly available, it is not covered or recommended in this guide. 
+
 ### Option 2: Using OCLP-Mod
 
 If your system does require root patches to run macOS Tahoe, you should use this option instead. Since there's no official OCLP version available for macOS Tahoe , you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – it will also install an older version of AppleHDA, thereby re-enabling analog audio. To download the latest build, you need a Github account.
