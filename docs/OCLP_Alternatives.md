@@ -14,13 +14,13 @@ Fortunately, if your system **does not require graphics root patches** and only 
 
 ## Alternatives to OCLP
 
-### For Wi-Fi
+### 📶 Wi-Fi
 
 If your system doesn't require additional root patches for running macOS besides enabling Wi-Fi, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 **For more details check the guide:** [**Fixing WiFi and Bluetooth in macOS Sonoma+**](/Enable_Features/WiFi_Sonoma.md)
 
-### For Audio
+### 🔊 Audio
 
 **Alternative 1: Using MyKextInstaller**
 
