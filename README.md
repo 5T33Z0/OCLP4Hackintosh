@@ -1,20 +1,6 @@
-![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.06.15-blueviolet.svg)
+![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.07.18-blueviolet.svg)
 
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
-
-**TABLE oF CONTENTS**
-
-- [About](#about)
-- [Latest updates](#latest-updates)
-- [Configuration Guides](#configuration-guides)
-- [(Re-)Enabling Features](#re-enabling-features)
-- [Troubleshooting](#troubleshooting)
-- [Fetching macOS Installers](#fetching-macos-installers)
-- [Miscellaneous](#miscellaneous)
-- [Resources](#resources)
-- [Contribute](#contribute)
-
----
 
 ## About
 **OCLP4Hackintosh** is a streamlined guide for using OpenCore Legacy Patcher (OCLP) to apply macOS patches on Intel-based Hackintosh systems, enabling support for modern macOS versions via OpenCore. This content was originally part of my [OC-Little Translated](https://github.com/5T33Z0/OC-Little-Translated) repository, but due to its significant growth, I decided to move it to a dedicated repo for easier maintenance.
@@ -59,6 +45,7 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 ## (Re-)Enabling Features
 
 ### macOS Tahoe
+- [**Alternatives to Open Core Legacy Patcher**](/docs/OCLP_Alternatives.md)
 - [**Fixing Audio in macOS Tahoe**](/Enable_Features/Audio_Tahoe.md)
 - [**Fixing `USBMap.kext` for macOS Tahoe**](/Enable_Features/USB_Tahoe.md)
 - [**Enabling `AirportItlwm.kext` in macOS Sequoia and Tahoe**](/Enable_Features/AirportItllwm_Sequoia.md)
