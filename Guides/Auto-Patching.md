@@ -49,7 +49,8 @@ If you use OCLP to download the macOS Installer app to install a newer version o
 9. Create a new folder and name it `Packages`
 10. Copy the `AutoPkg-Assets.pkg` into the `Packages` folder:<br>![pkg](https://github.com/user-attachments/assets/fa8ceb1d-2faa-42cb-9695-c2b23314fde0)
 11. Add the latest version of the [Kernel Debug Kit](https://github.com/dortania/KdkSupportPkg/releases) (the `KDK.pkg` contained in the .dmg file) to the same location as well:<br><img width="920" height="464" alt="kdk" src="https://github.com/user-attachments/assets/8eac6ec9-131b-4c6e-a092-b992365cdfdb" />
-12. Install macOS
+12. If your system only supports Metal 1, you also need to add [MetalLibSupportPkg](https://github.com/dortania/MetallibSupportPkg/releases):<br><img width="581" height="237" alt="metallib" src="https://github.com/user-attachments/assets/98e493dd-3c1a-4ec3-ac87-1885252417da" />
+13. Install macOS
 - At some point during macOS installation a progress bar with a percentage indicator will be displayed – this indicates the progress of the root patching process: <br> ![](https://github.com/HorizonUnix/PatchSonomaWiFiOnTheFly/raw/main/Img/proof.jpg)
 - Once the installation reaches the first-time setup dialogue, iGPU/GPU acceleration, external displays, Wi-Fi, and Bluetooth will work already.
 
