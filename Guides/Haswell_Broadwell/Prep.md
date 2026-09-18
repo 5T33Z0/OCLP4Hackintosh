@@ -33,4 +33,4 @@ This is what you need to know before attempting to install macOS Ventura on unsu
 
 ---
 
-[← **Previous: Introduction**](README.md) | [**Next: Config Adjustments →**](Ivy_Config.md)
+[← **Previous: Introduction**](README.md) | [**Next: Config Adjustments →**](Haswell_Config.md)
