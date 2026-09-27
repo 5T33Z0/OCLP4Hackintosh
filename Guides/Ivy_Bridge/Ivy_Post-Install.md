@@ -125,4 +125,4 @@ But as Hackintosh users, we only care about the App updates to apply new, update
 
 ---
 
-[← **HOME**](/OCLP4Hackintosh/README.md) 
+[← **HOME**](/Guides/Ivy_Bridge) 
