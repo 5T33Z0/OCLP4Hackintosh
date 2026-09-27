@@ -8,7 +8,7 @@ Listed below, you find the required modifications to prepare your `config.plist`
 
 > [!TIP]
 >
-> You can use this [plist](/Broadwell_OCLP_Wintel_Patches.plist) which contains the required settings for cross-referencing.
+> You can use this [plist](Haswell-Broadwell_OCLP_Wintel_Patches.plist) which contains the required settings for cross-referencing.
 
 Config Section | Action | Description
 :-------------:| ------ | ------------
