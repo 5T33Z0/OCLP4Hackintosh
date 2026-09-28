@@ -3,7 +3,7 @@
 # Installing macOS Tahoe on Kaby Lake and newer
 
 ## Overview
-Although it is possible to install and run macOS Tahoe and newer on machines with 8th/9th Gen Intel Core CPUs (Coffee Lake), some config adjustments have to be implemented in order to install Apple's last OS for Intel-based systems. Since macOS Tahoe is not supported by OCLP yet. In consequence, any system that previously required root patches for re-enabling Graphics or Wi-Fi won't work.
+Although it is possible to install and run macOS Tahoe and newer on machines with Kaby Lake and newer CPU families (Comet Lake is supported natively), some config adjustments have to be implemented in order to install Apple's last OS for Intel-based systems. Since macOS Tahoe is not supported by OCLP yet. In consequence, any system that previously required root patches for re-enabling Graphics or Wi-Fi won't work.
 
 | ⚠️ Important Status Updates |
 |:----------------------------|
@@ -12,7 +12,7 @@ Although it is possible to install and run macOS Tahoe and newer on machines wit
 
 - **Further Info**:
 	- [Status of OpenCore Legacy Patcher Support for macOS Tahoe](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1167)
- 	- [Status of OpenCore Legacy Patcher Supoort for macOS Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1136) 
+	- [Status of OpenCore Legacy Patcher Supoort for macOS Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1136) 
 	- [Status of OpenCore Legacy Patcher Support for macOS Sonoma](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1076)
 	- [Status of OpenCore Legacy Patcher Support for macOS Ventura](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/998)
 	- [Legacy Metal Support and macOS Ventura - Sequoia](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1008)
