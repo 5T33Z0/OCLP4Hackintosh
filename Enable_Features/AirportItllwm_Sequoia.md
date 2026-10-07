@@ -19,6 +19,7 @@ Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laob
 - Mount your EFI System Partition.
 - Copy your working `EFI` folder to a FAT32-formatted USB flash drive and keep it as a backup.
 - Open your `config.plist`.
+- Enable `DisabledIoMapper` Quirk &rarr; required for macOS Tahoe so WiFi works.
 - Remove the following from `config.plist` and, where applicable, from the `EFI/OC/Kexts` folder:
 	- **Kernel → Block:**
 		- `com.apple.iokit.IOSkywalkFamily`
