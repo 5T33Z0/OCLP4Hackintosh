@@ -8,23 +8,63 @@ As you may know, Apple removed support for various system kexts and frameworks r
 
 Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app ([**Heliport**](https://github.com/OpenIntelWireless/HeliPort/releases)) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
 
-Luckily for us, we can utilize [**OCLP-Mod**](https://github.com/laobamac/OCLP-Mod/releases) to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
+Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laobamac/itlwm), to make use of `AirportItlwm` in macOS Sequoia and Tahoe again – without the need for applying root patches with OpenCore Legacy Patcher.
 
-> [!TIP]
+---
+
+## Instructions
+
+### 1. EFI and Config Changes
+
+- Mount your EFI System Partition.
+- Copy your working `EFI` folder to a FAT32-formatted USB flash drive and keep it as a backup.
+- Open your `config.plist`.
+- Remove the following from `config.plist` and, where applicable, from the `EFI/OC/Kexts` folder:
+	- **Kernel → Block:**
+		- `com.apple.iokit.IOSkywalkFamily`
+	- **Kernel → Add:**
+		- Disable or remove `Itlwm.kext`
+		- `IOSkywalk.kext`
+		- `IO8021FamilyLegacy.kext`
+- Download the latest [Release](https://github.com/laobamac/itlwm/releases) of `AirportItlwm.kext` for your version of macOS (Sequoia or Tahoe) from laobamac's itlwm fork.
+- Add `AirportItlwm.kext` to `EFI/OC/Kexts` and enable it under **Kernel → Add** in your `config.plist`.
+- If you previously used `itlwm.kext`, remove the HeliPort application from your macOS login items/automatic startup configuration.
+
+### 2. Revert OCLP Root Patches
+
+If the only reason you applied OCLP root patches was to enable `AirportItlwm`, revert those root patches:
+
+- Open OCLP-Mod and select **Post-Install Root Patch → Revert Root Patches**.
+- Reboot after reverting the patches.
+
+> [!CAUTION]
+>
+> Do **not** revert root patches if your system requires them for other components, such as graphics acceleration. In that case, only remove the Wi-Fi-related configuration described above and keep the other required root patches.
+
+---
+
+## Previous Patching Method
+
+<details>
+<summary>Legacy method: AirportItlwm with OCLP root patches</summary>
+
+> [!WARNING]
 > 
-> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+> This method is no longer required when using the `laobamac/itlwm` fork. It is kept here for legacy configurations.
 
-## Patching principle
+## Patching Principle
 
 1. Block Original `com.apple.iokit.IOSkywalkFamily`
 2. Inject the required kexts for re-enabling legacy WiFi cards
 3. Add `AirportItlwm.kext` from macOS Ventura 
-3. Apply root patches with OCLP-Mod
+3. Apply root patches with [**OCLP-Mod**](https://github.com/laobamac/OCLP-Mod/releases) to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
 4. Reboot to macOS Sequoia/Tahoe and voilà: `AirportItlwm.kext` is working again 
 
-> [!NOTE]
+When applying root patches for Modern WiFi, OCLP basically rolls back components from macOS Ventura. That's why the AirportItlwm kext for macOS Ventura is required to make WiFi work in Sequoia.
+
+> [!TIP]
 > 
-> When applying root patches for Modern WiFi, OCLP basically rolls back components from macOS Ventura. That's why the AirportItlwm kext for macOS Ventura is required to make WiFi work in Sequoia.
+> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
 
 ## Instructions
 
@@ -152,7 +192,10 @@ So, if you need iService in macOS Somona, do the following:
 
 Once you apply root patches, incremental system updates are no longer an option – every time an updates ist available, the complete installer will be downloaded because root patching brakes the security seal of macOS. If you don't require iService you don't have to do this – WiFi will work in Sonoma without this patch.
 
+</details>
+
 ## Credits and Thank Yous
+- laobamac for OCLP-Mod and itlwm fork
 - lifeknife10A who came up with this [workaround](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2370919270)
 - sughero, for additional info about the order of the kexts
 - stefanalmare for pointing me to this solution
