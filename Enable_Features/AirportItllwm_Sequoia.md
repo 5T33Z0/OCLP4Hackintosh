@@ -46,7 +46,7 @@ If the only reason you applied OCLP root patches was to enable `AirportItlwm`, r
 ## Previous Patching Method
 
 <details>
-<summary>Legacy method: AirportItlwm with OCLP root patches</summary>
+<summary>Legacy method: AirportItlwm with OCLP root patches</summary><br>
 
 > [!WARNING]
 > 
