@@ -44,6 +44,51 @@ If the only reason you applied OCLP root patches was to enable `AirportItlwm`, r
 >
 > Do **not** revert root patches if your system requires them for other components, such as graphics acceleration. In that case, only remove the Wi-Fi-related configuration described above and keep the other required root patches.
 
+## Building itlwm and AirportIlwm from Source Code (requires Xcode)
+
+- Download itlwm Source and extract it to the Downloads folder
+- Run Terminal
+- Navigat to the itlwm-main folder:
+	```
+	cd ~/Downloads/itlwm-main
+	```
+- Add MacKerne SDK:
+	```
+	git clone https://github.com/acidanthera/MacKernelSDK
+	```
+- Delete existingFirmware Binary (if present):
+	```
+	rm include/FwBinary.cpp
+	```
+- Build Firmware:
+	```
+	xcodebuild -project itlwm.xcodeproj -target fw_gen -configuration Release -sdk macosx
+	```
+- Build Kexts:
+	```
+	xcodebuild -alltargets -configuration Release
+	```
+
+This will compile `itlwm.kext` and all variants of `AirportItlwm.kext` (macOS High Sierra up to Tahoe). The compiled kexts will be located at `~/Downloads/itlwm-main/build/Release`. If you only want to compile AirportItlwm for Sequoia, enter:
+
+```
+xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Sequoia \
+  -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
+```
+
+If you only want to compile AirportItlwm for Tahoe, enter:
+
+```
+xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Tahoe \
+  -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
+```
+
+> [!TIP]
+>
+> If you want to add AirportItlwm for more versions of macOS to your OpenCore EFI, just rename the kexts, ie `AirportItlwm_Sequoia` or `AirportItlwm_Tahoe`, add them to your EFI/OC/Kexts folder and config.plist. Finally adjust the `MinKernel` and `MaxKernel` settings, so only the correct one is loaded for the corresponding version of macOS:
+>
+> <img width="1489" height="124" alt="Aiportitlwm_Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
+
 ---
 
 ## Previous Patching Method
