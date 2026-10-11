@@ -28,8 +28,8 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
-| [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
 | [**AppleIGC**](https://github.com/SongXiaoXi/AppleIGC) | [dr0pmead/AppleIGC](https://github.com/dr0pmead/AppleIGC) | Focuses on stability with Intel I225/I226 2.5GbE controllers on macOS Sequoia and Tahoe. Includes fixes for kernel panics caused by malformed network packet buffers, improved sleep/wake handling, and driver optimizations to reduce link instability and buffer-related stalls. |
+| [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
 
 #### Wi-Fi
 
@@ -37,8 +37,8 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
-| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [perez987/HeliPort](https://github.com/perez987/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
+| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 
 ##### Broadcom Wi-Fi
 
