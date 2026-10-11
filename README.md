@@ -1,4 +1,4 @@
-![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.09.24-blueviolet.svg)
+![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.10.11-blueviolet.svg)
 
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
 

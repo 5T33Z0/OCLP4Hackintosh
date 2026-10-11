@@ -1,10 +1,7 @@
 # OCLP status update
 
-| ⚠️ Important updates        |
-|:----------------------------|
-| Don't install macOS Tahoe beta yet if your system requires root patches for enabling graphics output!
-
 ## 2026
+- **October**: [**OCLP 3.0.0 Release Candidates**](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) are availabe which finally bring Metal and non-metal Patches for older systems, improved Wireless Patches, and FIle Vault support for macOS 2026.
 - **September**: OCLP 2.5.1 is released. Still no Metal patches available for Ivy Bridge and older.
 - **May**: Dhink G leaves Dortania and OpenCore Legacy Patcher behind as well: [Epilogue](https://dhinakg.github.io/2026/05/24/epilogue.html)
 - **April**: [OCLP-Plus]([https://github.com/YBronst/OCLP-Plus](https://github.com/YBronst/OCLP-Plus)) fork is released: "Complete root patching support for macOS Tahoe 26.0 (25A5316i) through macOS 26.4 (25E5233c) and beyond. This fork ensures that legacy hardware remains compatible with the latest Darwin 25 kernel." It doesn't contain current metallibs so it's incapable of enabling legacy (i)GPUs. Pro: it has an english GUI! 
