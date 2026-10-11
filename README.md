@@ -22,6 +22,7 @@ What you may not know is: some of OCLPs config settings, kexts and root-patches 
 - Frameworks for re-enabling USB, Wi-Fi and Bluetooth
  
 ## Latest updates
+- [**Alternative Repositories**](/docs/Forks.md) – A collection of actively maintained forks and alternative repositories that extend compatibility, fix long-standing issues, or add features missing from the original kexts, drivers, and tools.
 - [**OCLP update status**](/docs/OCLP_status.md)
 - [**macOS Tahoe Updates**](/docs/Tahoe_Notes.md) (Contains the latest findings, fixes and stuff for Apple's latest OS)
 - [**macOS Sequoia OCLP Notes**](/docs/Sequoia_Notes.md)
@@ -57,7 +58,7 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 ### macOS Sonoma
 - [**Fixing WiFi and Bluetooth in macOS Sonoma+**](/Enable_Features/WiFi_Sonoma.md)
 
-### Misc
+## Misc
 - [**How to enable auto-root-patching during macOS installation**](/Guides/Auto-Patching.md)
 - [**Force-enabling root-patches Patches in OCLP**](/Enable_Features/Force-enable_Root-Patches.md)
 
