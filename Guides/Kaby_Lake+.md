@@ -1,4 +1,4 @@
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26b2-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-0.9.4+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:-≤26.x-white.svg)
 
 # Installing macOS Tahoe on Kaby Lake and newer
 
@@ -46,7 +46,9 @@ Although it is possible to install and run macOS Tahoe and newer on machines wit
 With the beta release of macOS 26, Apple dropped support for most of the remaining Intel-based Macs. The only remaining officially supported SMBIOSes are: `MacBookPro16,1`/`MacBookPro16,4` (I've noticed that MacBookPro16,2 works as well) and `iMac20,1`/`iMac20,2`.
 
 ### Workarounds
-Luckily for us, the board-id check skip booter patch still works so you can still and run macOS Tahoe on Kaby Lake and newer. Since `RestrictEvets.kext` and sbvmm patch also still works, System Updates are possible.
+Luckily for us, the board-id check skip booter patch still works so you can still and run macOS Tahoe on Kaby Lake and newer. Since `RestrictEvets.kext` and `sbvmm` patch also still works, System Updates are possible.
+
+Real incremental System Updates on Systems using a T2 SMBIOS are now possible thanks to `iBridged.kext` ([more details](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Content/S_System_Updates/OTA_Updates.md)).
 
 ### Audio Issues
 `AppleHDA` was removed from Tahoe beta 2, so AppleALC is useless any on-board audio CODEC for now. So Sound won't work unless it's coming from the audio device of your GPU via HDMI or DP. As a workaround you could try VoodooHDA.
