@@ -133,34 +133,36 @@ Once you have verified that the required kext are actually loaded, you can conti
 ## Instructions (Intel)
 
 > [!TIP]
-> 
-> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
+>
+> If your system doesn't require any additional root patches beyond those needed to enable Wi-Fi, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It automates the entire process, including kext installation, configuration changes, and root patching, to restore Broadcom and Intel wireless support.
 
 ### Wi-Fi
 
-For enabling Wi-Fi cards from Intel, there are actually 2 kexts available that can be used: `Itlwm.kext` and `AirportItlwm.kext`. While AirportItlwm acts as a Wi-Fi driver, the card will be detected as an Ethernet Controller when using Itlwm. Both kexts have different pros and cons, so which one to use depends on personal preference and the used OS ([**find out more**](https://openintelwireless.github.io/itlwm/FAQ.html)).
+Two kexts are available for enabling Wi-Fi on Intel wireless cards: `itlwm.kext` and `AirportItlwm.kext`. Both have their pros and cons, so the choice depends on your macOS version and personal preference. See the [**itlwm FAQ**](https://openintelwireless.github.io/itlwm/FAQ.html) for a detailed comparison.
 
-Unlike `Itlwm.kext`, `AirportItlwm.kext` requires a different variant of the kext *per macOS version* (macOS High Sierra up to Sonoma are currently supported). In macOS Sequoia, using `itlwm.kext` is mandatory to get WiFi working. When using `Itlwm.kext`, you also need an additional app called [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort/releases) to connect to Wi-Fi Hotspots.
+Unlike `itlwm.kext`, which requires an additional App ([**HeliPort**](https://github.com/OpenIntelWireless/HeliPort/releases)) to connect to Wi-Fi accesspoints, `AirportItlwm.kext` integrates directly with macOS and requires a separate build for each supported macOS version. The original OpenIntelWireless releases provide builds for macOS High Sierra through Sonoma. For macOS Sequoia and Tahoe, see the compatibility notes below.
 
-If you have multiple versions of macOS installed and want to use `AirportItlwm.kext` in all of them, you have to a) rename the kexts in order to place them all in the "kexts" folder and b) you also have to adjust their `MinKernel` and `MaxKernel` settings, so only the correct one gets loaded.
+If you have multiple macOS versions installed and want to use `AirportItlwm.kext` across them, you must rename the individual kexts so they can coexist in the same `Kexts` folder. You must also configure their `MinKernel` and `MaxKernel` values in `config.plist` to ensure that only the appropriate build loads for each macOS version.
 
-Listed below are instruction of how to cobinate itlwm and AirportIlmw kexts. In this case, itlwm is used for macOS Sequoia, while AirportItlwm is used for macOS Big Sur up to Sonoma.
+The following example combines both kexts: `itlwm.kext` is used for macOS Sequoia, while version-specific `AirportItlwm.kext` builds are used for macOS Big Sur through Sonoma.
 
-1. Visit [**https://github.com/OpenIntelWireless/itlwm/releases**](https://github.com/OpenIntelWireless/itlwm/releases)
-2. Click on “Assets”
-3. Download the builds of the `AirportItlwm` of your choice
-4. Extract and rename them: I usually add an underscore followed by the name of the OS, e.g. `AirportItlwm_Sonoma.kext` (don’t add blank spaces!)
-5. Add them to `EFI/OC/Kexts` and your `config.plist`
-6. Disable `itlwm.kext` (if present)
-7. Next, add `MinKernel` and `MaxKernel` settings to limit the kext to only load the kext for the macOS version it’s designed for:<br>![intelwlan](https://github.com/user-attachments/assets/bf6ebd02-922b-42cf-9095-b103028ffa0d)
-8. Save your config and reboot
+1. Visit the [**OpenIntelWireless/itlwm Releases**](https://github.com/OpenIntelWireless/itlwm/releases) page.
+2. Expand the **Assets** section of the relevant release.
+3. Download the `AirportItlwm.kext` builds for the macOS versions you want to support.
+4. Extract the archives and rename each kext. I usually append an underscore followed by the macOS version, e.g., `AirportItlwm_Sonoma.kext`. **Do not use spaces in the filenames.**
+5. Add the renamed kexts to `EFI/OC/Kexts` and create a corresponding entry for each one in `config.plist`.
+6. Add `itlwm.kext` for macOS Sequoia, if required, and configure its kernel restrictions accordingly.
+7. Set the appropriate `MinKernel` and `MaxKernel` values for each `AirportItlwm.kext` entry so that it loads only on the macOS version it was built for. Use the screenshot below as a reference.
+   ![Example configuration for Intel Wi-Fi kexts](https://github.com/user-attachments/assets/bf6ebd02-922b-42cf-9095-b103028ffa0d)
+8. Save `config.plist` and reboot.
 
 > [!IMPORTANT]
-> 
-> - Use either `AirportItlwm` or `Itlwm` – never both!
-> - When using `AirportItlwm`, adding the correct `MinKernel` and `MaxKernel` settings is *madatory*. Otherwise Wi-Fi won’t work and the system might crash when injecting the kext multiple times!
-> - When renaming kexts, you can’t automatically fetch kext updates for them with tools like OCAT any longer.
-> - When updating macOS Sonoma (14.3 and newer), you _must_ disable `AirportItlwm.kext` in favor of `itlwm.kext` and set `SecureBootModel` to `Disabled` prior to updating. Otherwise the installer will crash ([more info](https://github.com/5T33Z0/OC-Little-Translated/blob/main/W_Workarounds/macOS14.4.md)). Afterwards, you can enable `SecureBootModel` again.
+>
+> - **Never load `itlwm.kext` and `AirportItlwm.kext` simultaneously.** Configure their kernel restrictions so that only the intended driver loads for each macOS version.
+> - **Set `MinKernel` and `MaxKernel` correctly for every `AirportItlwm.kext` build.** Incorrect values can prevent Wi-Fi from working or cause kernel issues if an incompatible build loads.
+> - **Renaming kexts affects update detection.** Tools such as OCAT may no longer automatically recognize or update renamed kexts, so manage their updates manually.
+> - **Sequoia and Tahoe:** For instructions on using `AirportItlwm` on these macOS versions, see [Enabling AirportItlwm in macOS Sequoia/Tahoe](AirportItllwm_Sequoia.md).
+> - When installing or upgrading to macOS 14.4 or later, set `SecureBootModel` to `Disabled` before starting the update to avoid installer crashes ([more information](https://github.com/5T33Z0/OC-Little-Translated/blob/main/W_Workarounds/macOS14.4.md)). You can re-enable it after the update is complete.
 
 ### Bluetooth
 
