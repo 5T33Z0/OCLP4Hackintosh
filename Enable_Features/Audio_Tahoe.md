@@ -1,22 +1,6 @@
-[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-1.0.5+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:26b2+-white.svg)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-1.0.5+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:26.x-white.svg)
 
 # Re-enabling Audio in macOS Tahoe beta 2+
-
-**TABLE of CONTENTS**
-
-- [Introduction](#introduction)
-- [Re-enabling Audio-support in macOS Tahoe](#re-enabling-audio-support-in-macos-tahoe)
-  - [Option 1: Using MyKextInstaller](#option-1-using-mykextinstaller)
-  - [Option 2: Using OCLP-Mod](#option-2-using-oclp-mod)
-    - [Pre-Requisites](#pre-requisites)
-    - [Instructions](#instructions)
-  - [Option 3: Using VoodooHDA](#option-3-using-voodoohda)
-    - [Pre-Requisites](#pre-requisites-1)
-    - [Instructions](#instructions-1)
-- [Troubleshooting](#troubleshooting)
-- [Credits and Thank Yous](#credits-and-thank-yous)
-
----
 
 ## Introduction
 In macOS Tahoe beta 2, analog audio stopped working. Although `AppleALC.kext` had already been updated for macOS 26, the cause was quickly identified: Apple removed `AppleHDA` from its final x86-compatible release of macOS.
@@ -49,7 +33,22 @@ Not only AppleHDA has been removed, but the associated dylib has also been delet
 
 ## Re-enabling Audio-support in macOS Tahoe
 
-### Option 1: Using MyKextInstaller
+### Option 1: Using `SimpleHDA.kext` (Recommended)
+
+laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/SimpleHDA). It's a Lilu plug-in that restores the original AppleHDA stack through OpenCore injection, allowing AppleALC to use your existing audio configuration. It does not modify the system volume or rebuild kernel collections.
+
+**Instructions**
+
+- Download [**SimpleHDA.kext**](https://github.com/laobamac/SimpleHDA/releases) and extract it
+- Add it to `EFI/OC/Kexts` and your `config.plist` (under Kernel/Add)
+- Kext Order: Lilu > AppleALC > SimpleHDA
+- Set `MinKernel` to `25.0.0`, so that it only loads in macOS Tahoe
+- Add boot-arg: `keepsyms=1`
+
+<details>
+<summary>**Previous Options** (Obsolete)</summary><br>
+
+### Option 2: Using MyKextInstaller (Obsolete)
 
 If your system doesn't require any root patches to run macOS, you can use **MyKextInstaller** to install an older version of the **AppleHDA** kext to re-enable analog audio. Follow the instrcutions on the [MyKextInstaller](https://github.com/Mirone/MyKextInstaller) repo to so.
 
@@ -57,7 +56,7 @@ If your system doesn't require any root patches to run macOS, you can use **MyKe
 >
 > There's also [**HDA Universal**](https://www.insanelymac.com/forum/topic/362932-hdauniversal-applehda-like-audio-kext-for-macos-tahoe-and-hackintosh-systems/), an alternative AppleHDA-like audio solution for macOS Tahoe and Hackintosh systems. However, since it is "developed" by MaLd0n/Olarila and the source code is not publicly available, it is not covered or recommended in this guide. 
 
-### Option 2: Using OCLP-Mod
+### Option 3: Using OCLP-Mod (Obsolete)
 
 If your system does require root patches to run macOS Tahoe, you should use this option instead. Since there's no official OCLP version available for macOS Tahoe , you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – it will also install an older version of AppleHDA, thereby re-enabling analog audio. To download the latest build, you need a Github account.
 
@@ -110,7 +109,7 @@ If your system does require root patches to run macOS Tahoe, you should use this
 - Restart macOS when prompted to
 - Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
-### Option 3: Using VoodooHDA
+### Option 4: Using VoodooHDA (Obsolete)
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us, Chris1111 has updated his [**VoodooHDA Installer for macOS Tahoe**](https://github.com/chris1111/VoodooHDA-Tahoe).
 
 #### Pre-Requisites
@@ -155,9 +154,11 @@ As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that do
     ```
 - **SIP conflicts**: Ensure that SIP is disabled
 
+</details>
+
 ## Credits and Thank Yous
 - Dortania for OCLP
-- laobamac for OCLP Mod
+- laobamac for SmpleHDA
 - bluppus20 for AMFIPass kext
 - Slice for VoodooHDA kext
 - Chris1111 for VoodooHDA-Tahoe
