@@ -46,10 +46,10 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 ## (Re-)Enabling Features
 
 ### macOS Tahoe
-- [**Alternatives to Open Core Legacy Patcher**](/docs/OCLP_Alternatives.md)
 - [**Fixing Audio in macOS Tahoe**](/Enable_Features/Audio_Tahoe.md)
 - [**Fixing `USBMap.kext` for macOS Tahoe**](/Enable_Features/USB_Tahoe.md)
 - [**Enabling `AirportItlwm.kext` in macOS Sequoia and Tahoe**](/Enable_Features/AirportItllwm_Sequoia.md)
+- [**Alternatives to Open Core Legacy Patcher**](/docs/OCLP_Alternatives.md)
 
 ### macOS Sequoia
 - [**Enabling `AirportItlwm.kext` in macOS Sequoia and Tahoe**](/Enable_Features/AirportItllwm_Sequoia.md)
