@@ -22,13 +22,13 @@ What you may not know is: some of OCLPs config settings, kexts and root-patches 
 - Frameworks for re-enabling USB, Wi-Fi and Bluetooth
  
 ## Latest updates
-- [**Alternative Repositories**](/docs/Forks.md) – A collection of actively maintained forks and alternative repositories that extend compatibility, fix long-standing issues, or add features missing from the original kexts, drivers, and tools.
 - [**OCLP update status**](/docs/OCLP_status.md)
+- [**Alternative Repositories**](/docs/Forks.md) – A collection of actively maintained forks and alternative repositories that extend compatibility, fix long-standing issues, or add features missing from the original kexts, drivers, and tools.
 - [**macOS Tahoe Updates**](/docs/Tahoe_Notes.md) (Contains the latest findings, fixes and stuff for Apple's latest OS)
 - [**macOS Sequoia OCLP Notes**](/docs/Sequoia_Notes.md)
 - [**macOS Sonoma OCLP Notes**](/docs/Sonoma_Notes.md)
 
-## Configuration Guides
+## OpenCore Configuration Guides
 Listed below are configuration guides to update your OpenCore EFI and `config.plist` with the required settings and kext to run macOS 13 and newer:
 
 - [**Installing macOS 26 on Kaby Lake or newer**](/Guides/Kaby_Lake+.md)
@@ -48,15 +48,15 @@ Listed below are configuration guides to update your OpenCore EFI and `config.pl
 ### macOS Tahoe
 - [**Fixing Audio in macOS Tahoe**](/Enable_Features/Audio_Tahoe.md)
 - [**Fixing `USBMap.kext` for macOS Tahoe**](/Enable_Features/USB_Tahoe.md)
-- [**Enabling `AirportItlwm.kext` in macOS Sequoia and Tahoe**](/Enable_Features/AirportItllwm_Sequoia.md)
+- [**Re-Enabling Wi-Fi and Bluetooth**](/Enable_Features/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel)
 - [**Alternatives to Open Core Legacy Patcher**](/docs/OCLP_Alternatives.md)
 
 ### macOS Sequoia
-- [**Enabling `AirportItlwm.kext` in macOS Sequoia and Tahoe**](/Enable_Features/AirportItllwm_Sequoia.md)
+- [**Re-Enabling Wi-Fi and Bluetooth**](/Enable_Features/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel)
 - [**How to disable Gatekeeper in macOS Sequoia**](/Guides/Disable_Gatekeeper.md)
 
 ### macOS Sonoma
-- [**Fixing WiFi and Bluetooth in macOS Sonoma+**](/Enable_Features/WiFi_Sonoma.md)
+- [**Re-Enabling Wi-Fi and Bluetooth**](/Enable_Features/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel)
 
 ## Misc
 - [**How to enable auto-root-patching during macOS installation**](/Guides/Auto-Patching.md)
