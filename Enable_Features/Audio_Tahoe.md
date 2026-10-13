@@ -1,6 +1,6 @@
 [![OpenCore Version](https://img.shields.io/badge/OpenCore_Version:-1.0.5+-success.svg)](https://github.com/acidanthera/OpenCorePkg) ![macOS](https://img.shields.io/badge/Supported_macOS:26.x-white.svg)
 
-# Re-enabling Audio in macOS Tahoe beta 2+
+# Re-enabling Audio in macOS Tahoe
 
 ## Introduction
 In macOS Tahoe beta 2, analog audio stopped working. Although `AppleALC.kext` had already been updated for macOS 26, the cause was quickly identified: Apple removed `AppleHDA` from its final x86-compatible release of macOS.
@@ -43,10 +43,17 @@ laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/
 - Add it to `EFI/OC/Kexts` and your `config.plist` (under Kernel/Add)
 - Kext Order: Lilu > AppleALC > SimpleHDA
 - Set `MinKernel` to `25.0.0`, so that it only loads in macOS Tahoe
-- Add boot-arg: `keepsyms=1`
+- Add boot-args: `keepsyms=1` `shda-lang=en` (&rarr; sets language for the description of the device in the audio slider)
+- Save your config.plist and reboot
+
+**Screenshot**
+
+<img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
+
+---
 
 <details>
-<summary>**Previous Options** (Obsolete)</summary><br>
+<summary><strong>Previous Options</strong> (Obsolete)</summary><br>
 
 ### Option 2: Using MyKextInstaller (Obsolete)
 
