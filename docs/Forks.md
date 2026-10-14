@@ -22,6 +22,8 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | --- | --- | --- |
 | [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Enables Metal 3 support for modern NVIDIA graphics cards in macOS |
 
+---
+
 ### Networking
 
 #### Ethernet
@@ -46,13 +48,27 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
-| [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
+[**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
+
+---
+
+### Bluetooth
+
+#### Intel Bluetooth Firmware
+
+| Original Kext | Alternative | Improvements/Limitations |
+| --- | --- | --- |
+| [**IntelBluetoothFirmware**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) | [lshbluesky/IntelBluetoothFirmware](https://github.com/lshbluesky/IntelBluetoothFirmware/releases) | Improved BLE pairing; additional and updated firmware; macOS Tahoe compatibility. |
+
+--- 
 
 ### SD Card Readers
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**RealtekCardReader**](https://github.com/0xFireWolf/RealtekCardReader) | [Baio1977/RealtekCardReader](https://github.com/Baio1977/RealtekCardReader) | Adds support for macOS Sonoma through Tahoe |
+
+---
 
 ### UEFI Drivers
 
