@@ -54,7 +54,7 @@ laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/
 
 <img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
 
-**Screenshot** – `prev-lang:kbd` set to `en-US:0`_
+**Screenshot** – `prev-lang:kbd` set to `en-US:0`:
 
 <img width="339" height="107" alt="Thoe_slider_2" src="https://github.com/user-attachments/assets/fb98c4cc-0484-48ba-a7c2-ac9c10078aed" />
 
