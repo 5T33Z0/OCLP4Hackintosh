@@ -84,6 +84,14 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 | [**DisablePROCHOT.efi**](https://github.com/arter97/DisablePROCHOT) | [Magniquick/DisablePROCHOT](https://github.com/Magniquick/DisablePROCHOT/releases) | The original dates back to 2018, while the fork was released in 2026 and includes bug fixes and other improvements. |
 
+---
+
+### Apps/Tools
+
+| Original | Fork | Improvements |
+| --- | --- | --- |
+| [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) | Compatible with macOS Tahoe 26.x
+
 *To be continued…* 
 
 **PS: Create an Issue/PR, if you find more up-to-date repos to add.**
