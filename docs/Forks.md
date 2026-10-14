@@ -14,6 +14,13 @@ The purpose of this document is to provide a list of alternative repositories fo
 
 Below is an incomplete list of actively maintained alternatives to existing kext, driver, and app repositories.
 
+### Audio
+| Original Kext | Alternative | Improvements |
+| --- | --- | --- |
+| [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Enables analog Audio in macOS Tahoe without root patching |
+
+---
+
 ### Graphics
 
 #### NVIDIA
@@ -35,13 +42,6 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 #### Wi-Fi
 
-##### Intel Wi-Fi
-
-| Original Kext/App | Alternative | Improvements |
-| --- | --- | --- |
-| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [perez987/HeliPort](https://github.com/perez987/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
-| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
-
 ##### Broadcom Wi-Fi
 
 This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi cards.
@@ -49,6 +49,13 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
 [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
+
+##### Intel Wi-Fi
+
+| Original Kext/App | Alternative | Improvements |
+| --- | --- | --- |
+| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [perez987/HeliPort](https://github.com/perez987/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
+| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 
 ---
 
