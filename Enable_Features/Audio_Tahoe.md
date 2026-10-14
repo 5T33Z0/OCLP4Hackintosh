@@ -49,14 +49,14 @@ laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/
 > [!NOTE]
 >
 > Stating from verion 1.0.0, the boot-arg `shda-lang=` is no longer needed to set the language of the volume slider. Instead, the language is set based on what's present under `prev-lang:kbd`. If the field is empty/blank, Chinese is used by default.
-
-**Screenshot** – `prev-lang:kbd` empty:
-
-<img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
-
-**Screenshot** – `prev-lang:kbd` set to `en-US:0`:
-
-<img width="339" height="107" alt="Thoe_slider_2" src="https://github.com/user-attachments/assets/fb98c4cc-0484-48ba-a7c2-ac9c10078aed" />
+>
+> **Screenshot** – `prev-lang:kbd` empty:
+>
+> <img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
+>
+> **Screenshot** – `prev-lang:kbd` set to `en-US:0`:
+>
+> <img width="339" height="107" alt="Thoe_slider_2" src="https://github.com/user-attachments/assets/fb98c4cc-0484-48ba-a7c2-ac9c10078aed" />
 
 ---
 
