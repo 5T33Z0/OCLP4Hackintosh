@@ -43,12 +43,16 @@ laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/
 - Add it to `EFI/OC/Kexts` and your `config.plist` (under Kernel/Add)
 - Kext Order: Lilu > AppleALC > SimpleHDA
 - Set `MinKernel` to `25.0.0`, so that it only loads in macOS Tahoe
-- Add boot-args: `keepsyms=1` `shda-lang=en` (&rarr; sets language for the description of the device in the audio slider)
+- Add boot-args: `keepsyms=1`
 - Save your config.plist and reboot
 
 **Screenshot**
 
 <img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
+
+> [!NOTE]
+>
+> Stating from verion 1.0.0, the boot-arg `shda-lang=` is no longer needed to set the language of the volume slider. Instead, the language is set based on what's present in `prev-lang:kbd`. If the field is empty/blank, Chinese is used by default.
 
 ---
 
