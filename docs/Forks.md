@@ -90,7 +90,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original | Fork | Improvements |
 | --- | --- | --- |
-| [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) | Compatible with macOS Tahoe 26.x
+| [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) or as an alernative: [Stats](https://github.com/exelban/stats) | Compatible with macOS Tahoe 26.x
 
 *To be continued…* 
 
