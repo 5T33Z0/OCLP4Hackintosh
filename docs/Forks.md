@@ -54,7 +54,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
-| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [perez987/HeliPort](https://github.com/perez987/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
+| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [joshcalvert47/HeliPort](https://github.com/joshcalvert47/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
 
