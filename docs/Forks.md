@@ -88,6 +88,12 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ### Apps/Tools
 
+#### OpenCore Config Editors
+
+| Original | Fork | Improvements |
+| --- | --- | --- |
+[**OCAuxiliaryTools**](https://github.com/ic005k/OCAuxiliaryTools) | [YBronst/OCAuxiliaryTools](https://github.com/YBronst/OCAuxiliaryTools/releases) | Supports drag and drop of list entries, added more kexts, general improvements
+
 #### System Monitoring
 
 | Original | Fork | Improvements |
