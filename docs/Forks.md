@@ -88,6 +88,8 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ### Apps/Tools
 
+#### System Monitoring
+
 | Original | Fork | Improvements |
 | --- | --- | --- |
 | [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) or as an alernative: [Stats](https://github.com/exelban/stats) | Compatible with macOS Tahoe 26.x
