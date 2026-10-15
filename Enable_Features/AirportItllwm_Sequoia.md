@@ -12,7 +12,7 @@ Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laob
 
 > [!TIP]
 >
-> If you also neead an AppleVTD-compatible build of itlwm.kext, I suggest you use this fork instead: https://github.com/jzrodriguez98/itlwm/releases instead. It contains laobamacs fixes for AirportItlwm.
+> If you also neead an AppleVTD-compatible build of itlwm.kext, I suggest you use this fork instead: https://github.com/jzrodriguez98/itlwm/releases instead. It contains laobamacs fixes for AirportItlwm as well.
 
 ---
 
