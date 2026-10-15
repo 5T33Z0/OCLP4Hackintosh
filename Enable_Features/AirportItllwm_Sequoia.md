@@ -8,7 +8,11 @@ As you may know, Apple removed support for various system kexts and frameworks r
 
 Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app ([**Heliport**](https://github.com/OpenIntelWireless/HeliPort/releases)) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
 
-Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laobamac/itlwm), to make use of `AirportItlwm` in macOS Sequoia and Tahoe again – without the need for applying root patches with OpenCore Legacy Patcher. It also supports AppleVTD in Sequoia/Tahoe
+Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laobamac/itlwm), to make use of `AirportItlwm` in macOS Sequoia and Tahoe again – without the need for applying root patches with OpenCore Legacy Patcher. It also supports AppleVTD in Sequoia/Tahoe.
+
+> [!TIP]
+>
+> If you also neead an AppleVTD-compatible build of itlwm.kext, I suggest you use this fork instead: https://github.com/jzrodriguez98/itlwm/releases instead. It contains laobamacs fixes for AirportItlwm.
 
 ---
 
