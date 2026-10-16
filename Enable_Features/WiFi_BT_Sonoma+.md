@@ -113,49 +113,62 @@ Verify that the required kexts are loaded before applying root patches.
 
 ## Intel Wi-Fi
 
-Intel Wi-Fi is supported by the [OpenIntelWireless project](https://openintelwireless.github.io/General/Installation.html). Two drivers are available:
+Intel Wi-Fi is supported by the [OpenIntelWireless project](https://openintelwireless.github.io/General/Installation.html), which provides two drivers:
 
-- **`itlwm.kext`**: Exposes Wi-Fi as a LAN interface and requires [HeliPort](https://github.com/perez987/HeliPort) to connect to access points.
-- **`AirportItlwm.kext`**: Integrates with macOS natively and does not require HeliPort. Each build is specific to a macOS version.
+- **`itlwm.kext`**: Exposes Wi-Fi as a LAN interface and requires [**HeliPort**](https://github.com/joshcalvert47/HeliPort) to manage Wi-Fi connections.
+- **`AirportItlwm.kext`**: Integrates with macOS's native Wi-Fi interface. Each build is specific to a macOS version.
 
 > [!IMPORTANT]
 >
-> Use either `AirportItlwm.kext` or `Itlwm.kext` – never both!
+> Use either `itlwm.kext` or `AirportItlwm.kext`, never both at the same time.
 
 ### Configure Intel Wi-Fi (macOS High Sierra to Sonoma)
 
-1. Download the required kexts from the [itlwm releases](https://github.com/OpenIntelWireless/itlwm/releases).
-2. Extract the archive and copy the desired kexts to `EFI/OC/Kexts`.
-3. Add each kext under `Kernel → Add` in `config.plist`.
-4. Configure `MinKernel` and `MaxKernel` as required:
-   - For `itlwm.kext`, set the kernel restrictions to cover the macOS versions you want to use it with.
+1. Download the required driver from the [itlwm releases](https://github.com/OpenIntelWireless/itlwm/releases).
+2. Extract the archive and copy the desired kext to `EFI/OC/Kexts`.
+3. Add the kext under `Kernel → Add` in `config.plist`.
+4. Configure `MinKernel` and `MaxKernel` as needed:
+   - For `itlwm.kext`, set the kernel version range to cover the macOS versions you intend to use.
    - For `AirportItlwm.kext`, restrict each build to its corresponding macOS version.
 5. Save `config.plist` and reboot.
 
 > [!TIP]
 >
-> If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g., `AirportItlwm_Sequoia` or `AirportItlwm_Tahoe`), then add them to your `EFI/OC/Kexts` folder and `config.plist`. Finally, adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version:
+> To include multiple `AirportItlwm.kext` builds in one OpenCore EFI, rename them to distinguish their macOS versions (e.g., `AirportItlwm_Sequoia.kext` and `AirportItlwm_Tahoe.kext`). Add each to `EFI/OC/Kexts` and `config.plist`, then configure `MinKernel` and `MaxKernel` so that only the appropriate build loads for each macOS version.
 >
 > <img width="1489" height="124" alt="AirportItlwm Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
+>
 > Renamed kexts may no longer be detected automatically by tools such as OCAT. Manage their updates manually.
 
 ### Configure Intel Wi-Fi (macOS Sequoia and Tahoe)
 
-Conventional `AirportItlwm.kext` builds do not work normally in macOS Sequoia and Tahoe because of changes to Apple's Wi-Fi frameworks. The [laobamac/itlwm fork](https://github.com/laobamac/itlwm) provides compatible builds without requiring Wi-Fi-related OCLP root patches.
+Changes to Apple's Wi-Fi frameworks affect conventional `AirportItlwm.kext` builds on macOS Sequoia and Tahoe. The [laobamac/itlwm fork](https://github.com/laobamac/itlwm) provides compatible builds that work without Wi-Fi-related OCLP root patches.
+
+Choose one of the following options.
+
+#### Option 1: AirportItlwm.kext
+
+Use the [laobamac/itlwm fork](https://github.com/laobamac/itlwm/releases) for Sequoia/Tahoe-compatible builds with native Wi-Fi integration and AppleVTD support.
 
 1. Back up your working EFI folder to a FAT32-formatted USB drive.
-2. Download the appropriate Sequoia or Tahoe build from the [fork's releases](https://github.com/laobamac/itlwm/releases).
-3. Remove or disable `itlwm.kext` and any components left over from the legacy workaround:
+2. Download the appropriate build for your macOS version.
+3. Remove or disable `itlwm.kext` and any components left over from the legacy Wi-Fi workaround:
    - `IOSkywalk.kext`
    - `IO80211FamilyLegacy.kext`
    - The `com.apple.iokit.IOSkywalkFamily` entry under `Kernel → Block`
-4. Add the fork's `AirportItlwm.kext` to `EFI/OC/Kexts` and enable it under `Kernel → Add`.
-5. Enable `DisableIoMapper` if required, particularly on Tahoe. If you need AppleVTD, test with this quirk disabled, provided VT-d is enabled and supported by your system.
-6. Save the configuration and reboot.
+4. Add the downloaded `AirportItlwm.kext` to `EFI/OC/Kexts` and enable it under `Kernel → Add`.
+5. If you require AppleVTD, ensure VT-d is enabled and supported by your system. Configure `DisableIoMapper` according to your setup; AppleVTD use may require disabling this quirk.
+6. Save `config.plist` and reboot.
 
 If OCLP root patches were installed solely for the legacy Intel Wi-Fi workaround, revert them using OCLP-Mod's **Post-Install Root Patch → Revert Root Patches** and reboot. Do not revert patches required by other hardware.
 
-If switching from `itlwm.kext` to `AirportItlwm.kext`, remove HeliPort from automatic startup if it is no longer needed.
+#### Option 2: itlwm.kext
+
+For AppleVTD-compatible `itlwm.kext` builds, use the [jzrodriguez98 fork](https://github.com/jzrodriguez98). It also provides AppleVTD-compatible `AirportItlwm.kext` builds.
+
+The forks evolve independently, so updates and improvements introduced by [laobamac](https://github.com/laobamac/itlwm) may need to be integrated manually into jzrodriguez98's fork.
+
+Follow the standard installation procedure above and install HeliPort to manage Wi-Fi connections. The Sequoia/Tahoe `AirportItlwm.kext` workaround involving `IOSkywalk.kext`, `IO80211FamilyLegacy.kext`, and the `IOSkywalkFamily` block entry is not required for `itlwm.kext`.
 
 ---
 
