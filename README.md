@@ -1,4 +1,4 @@
-![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.10.12-blueviolet.svg)
+![Last Update](https://img.shields.io/badge/Last_Update_\(yy/mm/dd\):-26.10.16-blueviolet.svg)
 
 # OCLP-4-Hackintosh: Installing newer versions of macOS on legacy Wintel systems
 
@@ -22,8 +22,8 @@ What you may not know is: some of OCLPs config settings, kexts and root-patches 
 - Frameworks for re-enabling USB, Wi-Fi and Bluetooth
  
 ## Latest updates
-- [**OCLP update status**](/docs/OCLP_status.md)
-- [**Alternative Repositories**](/docs/Forks.md) – A collection of actively maintained forks and alternative repositories that extend compatibility, fix long-standing issues, or add features missing from the original kexts, drivers, and tools.
+- [**OCLP Development status**](/docs/OCLP_status.md)
+- 💥 [**Alternative Repositories**](/docs/Forks.md) – A collection of actively maintained forks and alternative repos for kexts and tools that extend compatibility, fix long-standing issues, or add features missing from the original kexts, drivers, and tools.
 - [**macOS Tahoe Updates**](/docs/Tahoe_Notes.md) (Contains the latest findings, fixes and stuff for Apple's latest OS)
 - [**macOS Sequoia OCLP Notes**](/docs/Sequoia_Notes.md)
 - [**macOS Sonoma OCLP Notes**](/docs/Sonoma_Notes.md)
