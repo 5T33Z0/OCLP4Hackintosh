@@ -54,9 +54,9 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
-| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [perez987/HeliPort](https://github.com/perez987/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
+| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [joshcalvert47/HeliPort](https://github.com/joshcalvert47/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
-| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Included laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
+| [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
 
 ---
 
@@ -88,9 +88,17 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ### Apps/Tools
 
+#### OpenCore Config Editors
+
 | Original | Fork | Improvements |
 | --- | --- | --- |
-| [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) | Compatible with macOS Tahoe 26.x
+[**OCAuxiliaryTools**](https://github.com/ic005k/OCAuxiliaryTools) | [YBronst/OCAuxiliaryTools](https://github.com/YBronst/OCAuxiliaryTools/releases) | Supports drag and drop of list entries, added more kexts, general improvements
+
+#### System Monitoring
+
+| Original | Fork | Improvements |
+| --- | --- | --- |
+| [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) or as an alernative: [Stats](https://github.com/exelban/stats) | Compatible with macOS Tahoe 26.x
 
 *To be continued…* 
 
