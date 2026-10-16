@@ -3,67 +3,59 @@
 # Re-enabling Audio in macOS Tahoe
 
 ## Introduction
-In macOS Tahoe beta 2, analog audio stopped working. Although `AppleALC.kext` had already been updated for macOS 26, the cause was quickly identified: Apple removed `AppleHDA` from its final x86-compatible release of macOS.
 
-This change is tied to a broader architectural shift that began with the introduction of the Apple T2 Security Chip in 2017. Starting with the iMac Pro and later expanding to other Intel Macs, audio processing was routed through the T2 chip instead of the legacy AppleHDA controller. Since all Intel Macs still supported by Tahoe rely on T2-managed audio, Apple has now removed `AppleHDA.kext` entirely as of beta 2.
+In macOS Tahoe Developer Beta 2, analog onboard audio stopped working because Apple removed `AppleHDA.kext`, the underlying driver required by `AppleALC.kext`.
 
-As a result, the driver layer required by `AppleALC.kext` to enable analog onboard audio on Hackintosh systems is no longer present, which is why analog audio no longer works out of the box in macOS Tahoe.
+This change is related to Apple's transition to T2-managed audio, which began with the iMac Pro in 2017 and was later extended to other Intel Macs. Hackintosh systems lack a T2 chip and still rely on AppleHDA to enable analog onboard audio through AppleALC. With the legacy driver removed in Tahoe, an alternative solution is needed to restore audio functionality.
 
-***So what does AppleHDA do?***
+For more information on how AppleHDA works, see [Mykola's blog post on audio in macOS](https://khronokernel.com/macos/2021/10/24/OCLP-AUDIO.html).
 
-`AppleHDA` is a core audio driver framework used in macOS to manage audio hardware functionality. It acts as a bridge between the operating system’s audio stack and the hardware, enabling audio input and output for various devices like speakers, microphones, headsets – even external USB Audio Interfaces need this kext in order to be selectable as an audio output source. Below is an explanation of how it works and what it does, tailored to be concise yet comprehensive.
+This guide explains how to restore analog onboard audio using `SimpleHDA.kext`, without requiring root patches. **This method is intended for systems that do not require root patches for iGPU or dGPU support.**
 
-***How does AppleHDA work?***
+## Fix: Adding `SimpleHDA.kext`
 
-> AppleHDA is a fairly simple kernel extension for setting up audio support for devices. It does this by parsing the Layout ID detected in the firmware (via DeviceProperties) and loads the associated audio map off of disk.
+[SimpleHDA](https://github.com/laobamac/SimpleHDA) is a Lilu plugin developed by laobamac to restore native AppleHDA functionality in macOS Tahoe.
+
+Instead of modifying the system volume, SimpleHDA restores the AppleHDA stack through OpenCore injection, allowing AppleALC to work with your existing codec configuration and `layout-id`.
+
+This means you can continue using your existing AppleALC setup without reinstalling AppleHDA through root patches.
+
+### Instructions
+
+1. Download [SimpleHDA.kext](https://github.com/laobamac/SimpleHDA/releases) from the project's Releases page and extract it.
+2. Mount your ESP and copy `SimpleHDA.kext` to `EFI/OC/Kexts/`.
+3. Open `config.plist` with your preferred configuration editor and add `SimpleHDA.kext` under `Kernel > Add`.
+4. Set `MinKernel` to `25.0.0` so that SimpleHDA loads only on macOS Tahoe and later.
+5. Make sure the kext load order is correct: `Lilu.kext` → `AppleALC.kext` → `SimpleHDA.kext`
+6. Add `keepsyms=1` to `boot-args`.
+7. Save your configuration and reboot.
+
+> [!IMPORTANT]
 >
-> - These maps [used to be] located at `/System/Library/Extensions/AppleHDA.kext/Contents/Resources/`
-> - Layout IDs are present on the HDEF device in IOService as layout-id, data is generally presented in Hexadecimal form but supports Integer and ASCII
-> - Layout data is generally presented as 2 files: `layout{x}.xml` and `Platforms.xml`. `Platforms.xml` represents chipset definitions while `layout.xml` is reserved for model-specific data.
->
-> […]
+> Keep your existing AppleALC codec configuration and `layout-id`. SimpleHDA restores the missing driver functionality; it does not automatically correct an incompatible layout or an incorrectly configured audio codec.
 
-**Source**: [Mykola's Blog](https://khronokernel.com/macos/2021/10/24/OCLP-AUDIO.html)
+### Volume slider language
 
-***So why is there no sound?***
+Starting with SimpleHDA version 1.0.0, the `shda-lang=` boot argument is no longer required to set the language displayed in the volume slider. Instead, SimpleHDA uses the language specified by `prev-lang:kbd`.
 
-Not only AppleHDA has been removed, but the associated dylib has also been deleted from the `dyld_shared_cache`[^1]. To restore functionality, the Kernel Development Kit (KDK) from Tahoe beta 1 is required to overwrite the root directory and reinstall the missing files. Since `AppleHDA` operates at the system user level and cannot be injected via OpenCore (otherwise the system crashes during boot), both the kext and dylib need to be reinstated through root patches.
+If `prev-lang:kbd` is empty, the volume slider defaults to Chinese.
 
-[^1]: **Source**: [laobamac_yyds](https://www.insanelymac.com/forum/topic/361249-oclp-mod-releaseissuediscussion/page/2/#findComment-2835718)
+**Screenshot — `prev-lang:kbd` is empty:**
 
-## Re-enabling Audio-support in macOS Tahoe
+<img width="326" height="134" alt="Tahoe audio slider with an empty prev-lang:kbd property" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
 
-### Option 1: Using `SimpleHDA.kext` (Recommended)
+**Screenshot — `prev-lang:kbd` is set to `en-US:0`:**
 
-laobamac released a new kext called [**SimpleHDA**](https://github.com/laobamac/SimpleHDA). It's a Lilu plug-in that restores the original AppleHDA stack through OpenCore injection, allowing AppleALC to use your existing audio configuration. It does not modify the system volume or rebuild kernel collections.
-
-**Instructions**
-
-- Download [**SimpleHDA.kext**](https://github.com/laobamac/SimpleHDA/releases) and extract it
-- Add it to `EFI/OC/Kexts` and your `config.plist` (under Kernel/Add)
-- Kext Order: Lilu > AppleALC > SimpleHDA
-- Set `MinKernel` to `25.0.0`, so that it only loads in macOS Tahoe
-- Add boot-args: `keepsyms=1`
-- Save your config.plist and reboot
-
-> [!NOTE]
->
-> Stating from verion 1.0.0, the boot-arg `shda-lang=` is no longer needed to set the language of the volume slider. Instead, the language is set based on what's present under `prev-lang:kbd`. If the field is empty/blank, Chinese is used by default.
->
-> **Screenshot** – `prev-lang:kbd` empty:
->
-> <img width="326" height="134" alt="Tahoe_Audio_slider" src="https://github.com/user-attachments/assets/5153319f-a7b0-4ca0-aeea-8faf4d8e3474" />
->
-> **Screenshot** – `prev-lang:kbd` set to `en-US:0`:
->
-> <img width="339" height="107" alt="Thoe_slider_2" src="https://github.com/user-attachments/assets/fb98c4cc-0484-48ba-a7c2-ac9c10078aed" />
+<img width="339" height="107" alt="Tahoe audio slider with prev-lang:kbd set to en-US:0" src="https://github.com/user-attachments/assets/fb98c4cc-0484-48ba-a7c2-ac9c10078aed" />
 
 ---
 
-<details>
-<summary><strong>Previous Options</strong> (Obsolete)</summary><br>
+## Previous Fixes (Obsolete)
 
-### Option 2: Using MyKextInstaller (Obsolete)
+<details>
+<summary><strong>Click to reveal</strong> (Obsolete)</summary><br>
+
+### Using MyKextInstaller (Obsolete)
 
 If your system doesn't require any root patches to run macOS, you can use **MyKextInstaller** to install an older version of the **AppleHDA** kext to re-enable analog audio. Follow the instrcutions on the [MyKextInstaller](https://github.com/Mirone/MyKextInstaller) repo to so.
 
@@ -71,7 +63,7 @@ If your system doesn't require any root patches to run macOS, you can use **MyKe
 >
 > There's also [**HDA Universal**](https://www.insanelymac.com/forum/topic/362932-hdauniversal-applehda-like-audio-kext-for-macos-tahoe-and-hackintosh-systems/), an alternative AppleHDA-like audio solution for macOS Tahoe and Hackintosh systems. However, since it is "developed" by MaLd0n/Olarila and the source code is not publicly available, it is not covered or recommended in this guide. 
 
-### Option 3: Using OCLP-Mod (Obsolete)
+### Using OCLP-Mod (Obsolete)
 
 If your system does require root patches to run macOS Tahoe, you should use this option instead. Since there's no official OCLP version available for macOS Tahoe , you can use [**OCLP Mod**](https://github.com/laobamac/OCLP-Mod/) to apply root patches – it will also install an older version of AppleHDA, thereby re-enabling analog audio. To download the latest build, you need a Github account.
 
@@ -124,7 +116,7 @@ If your system does require root patches to run macOS Tahoe, you should use this
 - Restart macOS when prompted to
 - Once macOS is up and running again, the audio device will be present and driven by "AppleHDADriver" as shown here (example):<br>![after_patching](https://github.com/user-attachments/assets/99c7eb4d-6306-485f-820e-33619b19d239)
 
-### Option 4: Using VoodooHDA (Obsolete)
+### Using VoodooHDA (Obsolete)
 As a fallback, you can use `VoodooHDA.kext`, an alternative audio driver that doesn’t rely on `AppleHDA`. Luckily for us, Chris1111 has updated his [**VoodooHDA Installer for macOS Tahoe**](https://github.com/chris1111/VoodooHDA-Tahoe).
 
 #### Pre-Requisites
