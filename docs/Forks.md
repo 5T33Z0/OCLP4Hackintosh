@@ -62,6 +62,12 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ### Bluetooth
 
+#### BrcmPathRAM
+
+| Original Kext | Alternative | Improvements/Limitations |
+| --- | --- | --- |
+[**BrcmPathRAM**](https://github.com/acidanthera/BrcmPatchRAM) | [hexxyan/BlueToolFixup-FixA2DP](https://github.com/hexxyan/BlueToolFixup-FixA2DP) | This is from an [open PR](https://github.com/acidanthera/BrcmPatchRAM/pull/38) which hasn't been merged for months. It adds an opt-in runtime patch for `bluetoothd` to **`Bluetoolfixup.kext`** that resolves the infamous "Connected but No Sound" issue when using third-party Bluetooth controllers (e.g. Intel) with modern Apple headphones equipped with W1/H1/H2 chips (AirPods Pro 2, AirPods Pro 3, etc.). Requires additional boot-arg `-btlfxa2dpcheck` to enable the patch, since it intercepts a core system daemon path at the binary level.
+
 #### Intel Bluetooth Firmware
 
 | Original Kext | Alternative | Improvements/Limitations |
