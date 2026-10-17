@@ -81,6 +81,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**RealtekCardReader**](https://github.com/0xFireWolf/RealtekCardReader) | [Baio1977/RealtekCardReader](https://github.com/Baio1977/RealtekCardReader) | Adds support for macOS Sonoma through Tahoe |
+| [**Sinetek-rtsx**](https://github.com/cholonam/Sinetek-rtsx) | [enigma131/Sinetek-rtsx](https://github.com/enigma131/Sinetek-rtsx) | Adds legacy build support for OS X Tiger and Leopard (Xcode 2.5, 32-bit) and Snow Leopard (Xcode 4.2, 64-bit). Provides a universal binary intended to extend compatibility across older and newer macOS versions, including Tahoe. Focuses on build compatibility rather than new chipset support or driver performance improvements. |
 
 ---
 
