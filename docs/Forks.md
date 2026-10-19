@@ -15,9 +15,11 @@ The purpose of this document is to provide a list of alternative repositories fo
 Below is an incomplete list of actively maintained alternatives to existing kext, driver, and app repositories.
 
 ### 🔊 Audio
+
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
-| [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Enables analog Audio in macOS Tahoe without root patching |
+| [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Restores the native AppleHDA stack in macOS Tahoe without root patching, allowing AppleALC to use existing audio configurations. |
+| [**CirrusAudioFixup**](https://github.com/hoaug-tran/CirrusAudioFixup)|  N/A (new kext) | Experimental support for laptops with CS35L41 smart amplifiers. Initializes the amplifier, loads DSP firmware, and enables internal speakers with volume control and sleep/wake support. |
 
 ---
 
