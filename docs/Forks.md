@@ -14,24 +14,30 @@ The purpose of this document is to provide a list of alternative repositories fo
 
 Below is an incomplete list of actively maintained alternatives to existing kext, driver, and app repositories.
 
-### Audio
+### 🔊 Audio
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Enables analog Audio in macOS Tahoe without root patching |
 
 ---
 
-### Graphics
+### 🎨 Graphics
 
-#### NVIDIA
+#### 🟩 NVIDIA
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Enables Metal 3 support for modern NVIDIA graphics cards in macOS |
 
+#### 🟥 AMD
+
+| Original Kext | Alternative | Improvements |
+| --- | --- | --- |
+| N/A (new driver) | [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
+
 ---
 
-### Networking
+### 🌐 Networking
 
 #### Ethernet
 
@@ -40,7 +46,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**AppleIGC**](https://github.com/SongXiaoXi/AppleIGC) | [dr0pmead/AppleIGC](https://github.com/dr0pmead/AppleIGC) | Focuses on stability with Intel I225/I226 2.5GbE controllers on macOS Sequoia and Tahoe. Includes fixes for kernel panics caused by malformed network packet buffers, improved sleep/wake handling, and driver optimizations to reduce link instability and buffer-related stalls. |
 | [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
 
-#### Wi-Fi
+#### 🛜 Wi-Fi
 
 ##### Broadcom Wi-Fi
 
@@ -83,7 +89,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**RealtekCardReader**](https://github.com/0xFireWolf/RealtekCardReader) | [Baio1977/RealtekCardReader](https://github.com/Baio1977/RealtekCardReader) | Adds support for macOS Sonoma through Tahoe |
 | [**Sinetek-rtsx**](https://github.com/cholonam/Sinetek-rtsx) | [enigma131/Sinetek-rtsx](https://github.com/enigma131/Sinetek-rtsx) | Adds legacy build support for OS X Tiger and Leopard (Xcode 2.5, 32-bit) and Snow Leopard (Xcode 4.2, 64-bit). Provides a universal binary intended to extend compatibility across older and newer macOS versions, including Tahoe. Focuses on build compatibility rather than new chipset support or driver performance improvements. |
 
-### System Management
+### ⚙️ System Management
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
@@ -99,7 +105,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-### Apps/Tools
+### 🧰 Apps/Tools
 
 #### OpenCore Config Editors
 
@@ -107,7 +113,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 [**OCAuxiliaryTools**](https://github.com/ic005k/OCAuxiliaryTools) | [YBronst/OCAuxiliaryTools](https://github.com/YBronst/OCAuxiliaryTools/releases) | Supports drag and drop of list entries, added more kexts, general improvements
 
-#### System Monitoring
+#### 📊 System Monitoring
 
 | Original | Fork | Improvements |
 | --- | --- | --- |
