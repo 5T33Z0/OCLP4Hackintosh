@@ -33,7 +33,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
-| N/A (new driver) | [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
+| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
 
 ---
 
