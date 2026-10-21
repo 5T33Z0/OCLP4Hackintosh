@@ -88,6 +88,10 @@ Configure the `MinKernel` and `MaxKernel` values according to the macOS versions
 
 If you use an ECM-based USB Ethernet adapter, also add [ECM-Override.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/main/payloads/Kexts/Misc/ECM-Override-v1.0.0.zip) to prevent potential kernel panics caused by blocking `IOSkywalkFamily`.
 
+> [!TIP]
+>
+> On my real iMac12,2, Atheros WiFi was not working in macOS Tahoe after patching with OCLP 3.0.0 RC 3. I didn't invest the issue further but maybe this helps: [Restore Wi-Fi for Atheros on macOS Monterey to Tahoe](https://github.com/samuelnotfound/miscellaneous-hackintosh-guides/tree/main/Atheros_Wifi_Monterey_and_newer) 
+
 ### Verify kext loading
 
 Save the configuration, reboot, reset NVRAM and boot macOS. In Terminal, inspect the loaded kexts using:
