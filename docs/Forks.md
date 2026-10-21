@@ -20,6 +20,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | --- | --- | --- |
 | [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Restores the native AppleHDA stack in macOS Tahoe without root patching, allowing AppleALC to use existing audio configurations. |
 | [**CirrusAudioFixup**](https://github.com/hoaug-tran/CirrusAudioFixup)|  N/A (new kext) | Experimental support for laptops with CS35L41 smart amplifiers. Initializes the amplifier, loads DSP firmware, and enables internal speakers with volume control and sleep/wake support. |
+| [**AMDMicrophone**](https://github.com/qhuyduong/AMDMicrophone) | N/A (new kext) | Enables digital microphone input on compatible AMD laptops using the Audio Co-Processor (ACP). Primarily targets Renoir-based systems. Requires installation in `/Library/Extensions` and reduced SIP security; AppleALC is still needed for audio output. |
 
 ---
 
