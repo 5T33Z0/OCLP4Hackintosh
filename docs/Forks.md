@@ -64,6 +64,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
+| [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [**SimpleBCM**](https://github.com/laobamac/SimpleBCM) | Aims to restore native Wi-Fi support for legacy Broadcom cards on macOS Sequoia and Tahoe without OCLP root patches. Experimental; check the repository for supported chipsets, macOS versions, and current limitations before use. |
 [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
 
 ##### Intel Wi-Fi
