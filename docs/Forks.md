@@ -93,12 +93,20 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 --- 
 
-### SD Card Readers
+### 🧩 Device Support
+
+#### 💾 SD Card Readers
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**RealtekCardReader**](https://github.com/0xFireWolf/RealtekCardReader) | [Baio1977/RealtekCardReader](https://github.com/Baio1977/RealtekCardReader) | Adds support for macOS Sonoma through Tahoe |
 | [**Sinetek-rtsx**](https://github.com/cholonam/Sinetek-rtsx) | [enigma131/Sinetek-rtsx](https://github.com/enigma131/Sinetek-rtsx) | Adds legacy build support for OS X Tiger and Leopard (Xcode 2.5, 32-bit) and Snow Leopard (Xcode 4.2, 64-bit). Provides a universal binary intended to extend compatibility across older and newer macOS versions, including Tahoe. Focuses on build compatibility rather than new chipset support or driver performance improvements. |
+
+#### 📷 Webcams
+
+| Kext | Alternative | Improvements |
+| --- | --- | --- |
+| [**UVCProbeFix**](https://www.insanelymac.com/forum/topic/363309-uvcprobefix-for-macos-tahoe-fix-broken-usb-webcam-video-and-black-screen-on-hackintosh/) | N/A (new kext) | Experimental fix for USB UVC webcams that are detected by macOS Tahoe but produce a black screen because of malformed UVC PROBE/COMMIT negotiation. Reportedly verified on a Lenovo IdeaPad S145 with Intel Ice Lake graphics. Source code is not publicly provided; compatibility with other webcams is not guaranteed. |
 
 ---
 
