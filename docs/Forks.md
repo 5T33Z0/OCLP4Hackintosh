@@ -58,7 +58,6 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**AppleIGC**](https://github.com/SongXiaoXi/AppleIGC) | [dr0pmead/AppleIGC](https://github.com/dr0pmead/AppleIGC) | Focuses on stability with Intel I225/I226 2.5GbE controllers on macOS Sequoia and Tahoe. Includes fixes for kernel panics caused by malformed network packet buffers, improved sleep/wake handling, and driver optimizations to reduce link instability and buffer-related stalls. |
 | [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
 
-
 #### 🛜 Wi-Fi
 
 ##### Broadcom Wi-Fi
@@ -77,6 +76,13 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [joshcalvert47/HeliPort](https://github.com/joshcalvert47/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
+
+##### Realtek
+
+| Original Kext | Alternative | Improvements |
+| --- | --- | --- |
+| [**Realtek AirPort Family**](https://github.com/xnoah222/Realtek-AirPort-Family) | N/A (new kext) | Collection of native-style AirPort Wi-Fi drivers for selected Realtek wireless chipsets, with support targeting macOS Mojave through Tahoe. Chipset and macOS compatibility vary by driver. |
+| [**RTL8723BE-macOS-WiFi**](https://github.com/AA-EION/RTL8723BE-macOS-WiFi) | N/A (new kext) | Experimental Wi-Fi support for the [Realtek RTL8723BE](https://www.realtek.com/Product/Index?id=609&cate_id=194&menu_id=291) chipset. Provides network scanning and connection to 2.4 GHz WPA2 networks through a menu bar app. Performance and stability may be limited. |
 
 ---
 
