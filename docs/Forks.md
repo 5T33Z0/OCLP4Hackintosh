@@ -122,8 +122,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
-[**YogaSMC**](https://github.com/zhen-zen/YogaSMC) | [hoaug-tran/ReYogaSMC](https://github.com/hoaug-tran/ReYogaSMC/) | Brings support for macOS 11 to 26.
-
+| [**YogaSMC**](https://github.com/zhen-zen/YogaSMC) | [**ReYogaSMC**](https://github.com/hoaug-tran/ReYogaSMC/) | Community-maintained fork extending support for Lenovo laptops running macOS 11 Big Sur through macOS 26 Tahoe. Provides Lenovo-specific power management, hotkey handling, battery information, and hardware monitoring. |
 ---
 
 ### UEFI Drivers
