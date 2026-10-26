@@ -26,6 +26,15 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ### 🎨 Graphics
 
+#### 🟥 AMD
+
+| Original Kext | Alternative | GPU Type / Generation | Description |
+| --- | --- | --- | --- |
+| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | RDNA 3 (Navi 3x) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
+| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | RDNA 4 (Navi 48) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
+| [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A  | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
+| [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
+
 #### 🟦 Intel
 
 | Original Kext | Alternative | Description |
@@ -36,16 +45,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
 | --- | --- | --- | --- |
-| [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Modern NVIDIA GPUs (Turing and newer) | Experimental driver aiming to enable Metal 3 support for modern NVIDIA graphics cards in macOS. |
-
-#### 🟥 AMD
-
-| Original Kext | Alternative | GPU Type / Generation | Description |
-| --- | --- | --- | --- |
-| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | RDNA 3 (Navi 3x) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
-| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | RDNA 4 (Navi 48) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
-| [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A  | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
-| [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
+| [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Modern NVIDIA GPUs (Turing and newer) | Experimental driver aiming to enable Metal 3 support for modern NVIDIA graphics cards in macOS. 
 
 ---
 
@@ -66,7 +66,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
-| [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [**SimpleBCM**](https://github.com/laobamac/SimpleBCM) | Aims to restore native Wi-Fi support for legacy Broadcom cards on macOS Sequoia and Tahoe without OCLP root patches. Experimental; check the repository for supported chipsets, macOS versions, and current limitations before use. |
+| [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [laobamac/SimpleBCM](https://github.com/laobamac/SimpleBCM) | SimpleBCM aims to restore native Wi-Fi support for legacy Broadcom cards on macOS Sequoia and Tahoe without OCLP root patches. Experimental; check the repository for supported chipsets, macOS versions, and current limitations before use. |
 [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
 
 ##### Intel Wi-Fi
