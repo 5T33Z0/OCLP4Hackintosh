@@ -16,7 +16,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ### 🔊 Audio
 
-| Original Kext | Alternative | Improvements |
+| Original Kext | Alternative | Description |
 | --- | --- | --- |
 | [**SimpleHDA**](https://github.com/laobamac/SimpleHDA) | N/A (new kext) | Restores the native AppleHDA stack in macOS Tahoe without root patching, allowing AppleALC to use existing audio configurations. |
 | [**CirrusAudioFixup**](https://github.com/hoaug-tran/CirrusAudioFixup)|  N/A (new kext) | Experimental support for laptops with CS35L41 smart amplifiers. Initializes the amplifier, loads DSP firmware, and enables internal speakers with volume control and sleep/wake support. |
@@ -28,22 +28,24 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 #### 🟦 Intel
 
-| Original Kext | Alternative | Improvements |
-| --- | --- | --- |
+| Original Kext | Alternative | Description |
+| --- | --- | --- 
 | [**WhateverXe**](https://github.com/b00t0x/WhateverXe) | N/A (new kext) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, and a modified AMFIPass. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned; check the repository for current compatibility. |
 
 #### 🟩 NVIDIA
 
-| Original Kext | Alternative | Improvements |
-| --- | --- | --- |
-| [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Enables Metal 3 support for modern NVIDIA graphics cards in macOS |
+| Original Kext | Alternative | GPU Type / Generation | Description |
+| --- | --- | --- | --- |
+| [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Modern NVIDIA GPUs (Turing and newer) | Experimental driver aiming to enable Metal 3 support for modern NVIDIA graphics cards in macOS. |
 
 #### 🟥 AMD
 
-| Original Kext | Alternative | Improvements |
-| --- | --- | --- |
-| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
-| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
+| Original Kext | Alternative | GPU Type / Generation | Description |
+| --- | --- | --- | --- |
+| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | RDNA 3 (Navi 3x) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
+| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | RDNA 4 (Navi 48) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
+| [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A  | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
+| [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
 
 ---
 
@@ -55,6 +57,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | --- | --- | --- |
 | [**AppleIGC**](https://github.com/SongXiaoXi/AppleIGC) | [dr0pmead/AppleIGC](https://github.com/dr0pmead/AppleIGC) | Focuses on stability with Intel I225/I226 2.5GbE controllers on macOS Sequoia and Tahoe. Includes fixes for kernel panics caused by malformed network packet buffers, improved sleep/wake handling, and driver optimizations to reduce link instability and buffer-related stalls. |
 | [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
+
 
 #### 🛜 Wi-Fi
 
@@ -123,6 +126,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**YogaSMC**](https://github.com/zhen-zen/YogaSMC) | [**ReYogaSMC**](https://github.com/hoaug-tran/ReYogaSMC/) | Community-maintained fork extending support for Lenovo laptops running macOS 11 Big Sur through macOS 26 Tahoe. Provides Lenovo-specific power management, hotkey handling, battery information, and hardware monitoring. |
+
 ---
 
 ### UEFI Drivers
