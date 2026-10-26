@@ -30,7 +30,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
-| [**WhateverGreen**](https://github.com/acidanthera/WhateverGreen) | [**WhateverXe**](https://github.com/b00t0x/WhateverXe) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, and a modified AMFIPass. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned; check the repository for current compatibility. |
+| [**WhateverXe**](https://github.com/b00t0x/WhateverXe) | N/A (new kext) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, and a modified AMFIPass. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned; check the repository for current compatibility. |
 
 #### 🟩 NVIDIA
 
