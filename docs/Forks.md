@@ -4,7 +4,7 @@
 
 With the release of macOS 27 (codenamed Golden Gate), Hackintoshing is slowly coming to an end, and several kext repositories have become dormant: development has stalled, pull requests go unmerged, and issues remain unresolved.
 
-But not all is lost! While the main repository of a kext or app may be dormant, plenty of work continues behind the scenes—or, more precisely, in forks. Other community members are picking up development and, with the help of AI-assisted coding, not only keeping projects alive but also addressing long-standing issues that have remained unresolved for years.
+But not all is lost! While the main repository of a kext or app may be dormant, plenty of work continues behind the scenes – or, more precisely, in forks. Other community members are picking up development and, with the help of AI-assisted coding, not only keeping projects alive but also addressing long-standing issues that have remained unresolved for years.
 
 Two prime examples are Intel Wi-Fi support in macOS Sequoia and Tahoe, as well as Metal support for modern NVIDIA graphics cards.
 
