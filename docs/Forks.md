@@ -83,7 +83,8 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 | [**Realtek AirPort Family**](https://github.com/xnoah222/Realtek-AirPort-Family) | N/A (new kext) | Collection of native-style AirPort Wi-Fi drivers for selected Realtek wireless chipsets, with support targeting macOS Mojave through Tahoe. Chipset and macOS compatibility vary by driver. |
 | [**RTL8723BE-macOS-WiFi**](https://github.com/AA-EION/RTL8723BE-macOS-WiFi) | N/A (new kext) | Experimental Wi-Fi support for the [Realtek RTL8723BE](https://www.realtek.com/Product/Index?id=609&cate_id=194&menu_id=291) chipset. Provides network scanning and connection to 2.4 GHz WPA2 networks through a menu bar app. Performance and stability may be limited. |
-
+| [**AirPort_RTW89**](https://github.com/FranciumOS-org/Airport_RTW89) | N/A (new kext) | Native macOS Wi-Fi support for selected Realtek RTL89xx PCIe adapters, based on Linux's `rtw89` driver. Targets Wi-Fi 6/6E/7 chipsets, including RTL8852BE, RTL8852CE, and RTL8922DE. Experimental; support varies by chipset. |
+| [**AirPort_RTW88**](https://github.com/xnoah222/Airport_RTW88) | N/A (new kext) | Native macOS Wi-Fi support for selected Realtek RTL88xx PCIe adapters, based on Linux's `rtw88` driver. Supports RTL8822BE, RTL8822CE, and RTL8821CE. Provides Wi-Fi through macOS's native interface; full AirDrop and AWDL support is not yet available. |
 ---
 
 ### Bluetooth
