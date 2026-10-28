@@ -171,6 +171,10 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 | [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) or as an alernative: [Stats](https://github.com/exelban/stats) | Compatible with macOS Tahoe 26.x
 
+### 🔌 USB Mapping Tools
+
+- [**XHUB-Mapper**](https://github.com/5T33Z0/XHUB-Mapper) — Automates ACPI-based USB port mapping by generating an `SSDT-XHUB.aml` from ACPI tables and USB mapping data. Uses the XHUB/HUBX method to define a macOS-specific USB root hub while preserving the original hub for other operating systems.
+
 *To be continued…* 
 
 **PS: Create an Issue/PR, if you find more up-to-date repos to add.**
