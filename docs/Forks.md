@@ -24,6 +24,17 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ---
 
+### 🧠 CPU
+
+#### 🟥 AMD
+
+| Original Kext / Utility  | CPU Type / Generation | Description |
+| --- | --- | --- |
+| [**SMCAMDProcessor**](https://github.com/trulyspinach/SMCAMDProcessor) | AMD Zen | Provides AMD CPU power management and temperature monitoring through `AMDRyzenCPUPowerManagement.kext` and `SMCAMDProcessor.kext`. |
+| [**ryzenstatus-utils**](https://github.com/DrogaBox/ryzenstatus-utils) | AMD Ryzen | Utilities supporting RyzenStatus for AMD Ryzen CPU monitoring and power management. |
+
+---
+
 ### 🎨 Graphics
 
 #### 🟥 AMD
