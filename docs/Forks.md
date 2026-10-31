@@ -33,7 +33,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ## Chipset
 
-#### 🟥 AMD USB
+### 🟥 AMD USB
 
 | Original Kext | Alternative | Chipset / Controller | Description |
 | --- | --- | --- | --- |
