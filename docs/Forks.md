@@ -10,11 +10,9 @@ Two prime examples are Intel Wi-Fi support in macOS Sequoia and Tahoe, as well a
 
 The purpose of this document is to provide a list of alternative repositories for existing kexts, drivers, and tools that are still actively maintained.
 
-## Kext, Driver, and App Alternatives
-
 Below is an incomplete list of actively maintained alternatives to existing kext, driver, and app repositories.
 
-### 🔊 Audio
+## 🔊 Audio
 
 | Original Kext | Alternative | Description |
 | --- | --- | --- |
@@ -24,16 +22,18 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ---
 
-### 🧠 CPU
+## 🧠 CPU
 
-#### 🟥 AMD
+### 🟥 AMD
 
 | Original Kext / Utility  | CPU Type / Generation | Description |
 | --- | --- | --- |
 | [**SMCAMDProcessor**](https://github.com/trulyspinach/SMCAMDProcessor) | AMD Zen | Provides AMD CPU power management and temperature monitoring through `AMDRyzenCPUPowerManagement.kext` and `SMCAMDProcessor.kext`. |
 | [**ryzenstatus-utils**](https://github.com/DrogaBox/ryzenstatus-utils) | AMD Ryzen | Utilities supporting RyzenStatus for AMD Ryzen CPU monitoring and power management. |
 
-### 🟥 AMD Chipset / USB
+## Chipset
+
+#### 🟥 AMD USB
 
 | Original Kext | Alternative | Chipset / Controller | Description |
 | --- | --- | --- | --- |
@@ -41,9 +41,9 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ---
 
-### 🎨 Graphics
+## 🎨 Graphics
 
-#### 🟥 AMD
+### 🟥 AMD
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
 | --- | --- | --- | --- |
@@ -54,13 +54,13 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
 | [**KaberiRed**](https://github.com/CL0utM4N/KaberiRed) | N/A (new driver) | AMD GCN 2 (Bonaire) | Adapts Apple's GCN 2 drivers for AMD Kabini, Mullins and Kaveri APUs. |
 
-#### 🟦 Intel
+### 🟦 Intel
 
 | Original Kext | Alternative | Description |
 | --- | --- | --- 
 | [**WhateverXe**](https://github.com/b00t0x/WhateverXe) +<br> [**WhateverXe-Graphics**](https://github.com/b00t0x/WhateverXe-Graphics)  | N/A (new driver) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, a modified AMFIPass kext and specific system security settings. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned. Check the repositories for supported GPU IDs, macOS compatibility, and installation instructions. 
 
-#### 🟩 NVIDIA
+### 🟩 NVIDIA
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
 | --- | --- | --- | --- |
@@ -68,18 +68,18 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ---
 
-### 🌐 Networking
+## 🌐 Networking
 
-#### Ethernet
+### Ethernet
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**AppleIGC**](https://github.com/SongXiaoXi/AppleIGC) | [dr0pmead/AppleIGC](https://github.com/dr0pmead/AppleIGC) | Focuses on stability with Intel I225/I226 2.5GbE controllers on macOS Sequoia and Tahoe. Includes fixes for kernel panics caused by malformed network packet buffers, improved sleep/wake handling, and driver optimizations to reduce link instability and buffer-related stalls. |
 | [**IntelMausi**](https://github.com/acidanthera/IntelMausi) | [IntelMausiEthernet](https://github.com/Mieze/IntelMausiEthernet) | Added AppleVTD support in macOS Tahoe |
 
-#### 🛜 Wi-Fi
+### 🛜 Wi-Fi
 
-##### Broadcom Wi-Fi
+#### Broadcom Wi-Fi
 
 This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi cards.
 
@@ -88,7 +88,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [laobamac/SimpleBCM](https://github.com/laobamac/SimpleBCM) | SimpleBCM aims to restore native Wi-Fi support for legacy Broadcom cards on macOS Sequoia and Tahoe without OCLP root patches. Experimental; check the repository for supported chipsets, macOS versions, and current limitations before use. |
 [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
 
-##### Intel Wi-Fi
+#### Intel Wi-Fi
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
@@ -96,7 +96,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
 
-##### Realtek
+#### Realtek
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
@@ -106,15 +106,15 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**AirPort_RTW88**](https://github.com/xnoah222/Airport_RTW88) | N/A (new kext) | Native macOS Wi-Fi support for selected Realtek RTL88xx PCIe adapters, based on Linux's `rtw88` driver. Supports RTL8822BE, RTL8822CE, and RTL8821CE. Provides Wi-Fi through macOS's native interface; full AirDrop and AWDL support is not yet available. |
 ---
 
-### Bluetooth
+## Bluetooth
 
-#### BrcmPathRAM
+### BrcmPathRAM
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
 [**BrcmPathRAM**](https://github.com/acidanthera/BrcmPatchRAM) | [hexxyan/BlueToolFixup-FixA2DP](https://github.com/hexxyan/BlueToolFixup-FixA2DP) | This is from an [open PR](https://github.com/acidanthera/BrcmPatchRAM/pull/38) which hasn't been merged for months. It adds an opt-in runtime patch for `bluetoothd` to **`Bluetoolfixup.kext`** that resolves the infamous "Connected but No Sound" issue when using third-party Bluetooth controllers (e.g. Intel) with modern Apple headphones equipped with W1/H1/H2 chips (AirPods Pro 2, AirPods Pro 3, etc.). Requires additional boot-arg `-btlfxa2dpcheck` to enable the patch, since it intercepts a core system daemon path at the binary level.
 
-#### Intel Bluetooth Firmware
+### Intel Bluetooth Firmware
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
@@ -122,16 +122,16 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 --- 
 
-### 🧩 Device Support
+## 🧩 Device Support
 
-#### 💾 SD Card Readers
+### 💾 SD Card Readers
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
 | [**RealtekCardReader**](https://github.com/0xFireWolf/RealtekCardReader) | [Baio1977/RealtekCardReader](https://github.com/Baio1977/RealtekCardReader) | Adds support for macOS Sonoma through Tahoe |
 | [**Sinetek-rtsx**](https://github.com/cholonam/Sinetek-rtsx) | [enigma131/Sinetek-rtsx](https://github.com/enigma131/Sinetek-rtsx) | Adds legacy build support for OS X Tiger and Leopard (Xcode 2.5, 32-bit) and Snow Leopard (Xcode 4.2, 64-bit). Provides a universal binary intended to extend compatibility across older and newer macOS versions, including Tahoe. Focuses on build compatibility rather than new chipset support or driver performance improvements. |
 
-#### 📷 Webcams
+### 📷 Webcams
 
 | Kext | Alternative | Improvements |
 | --- | --- | --- |
@@ -139,7 +139,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-### 💽 File System Drivers
+## 💽 File System Drivers
 
 | Original Kext / Driver | Alternative | Improvements |
 | --- | --- | --- |
@@ -147,7 +147,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-### ⚙️ System Management
+## ⚙️ System Management
 
 | Original Kext | Alternative | Improvements |
 | --- | --- | --- |
@@ -155,7 +155,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-### UEFI Drivers
+## UEFI Drivers
 
 | Original Driver | Alternative | Improvements |
 | --- | --- | --- |
@@ -163,15 +163,15 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-### 🧰 Apps/Tools
+## 🧰 Apps/Tools
 
-#### OpenCore Config Editors
+### OpenCore Config Editors
 
 | Original | Fork | Improvements |
 | --- | --- | --- |
 [**OCAuxiliaryTools**](https://github.com/ic005k/OCAuxiliaryTools) | [YBronst/OCAuxiliaryTools](https://github.com/YBronst/OCAuxiliaryTools/releases) | Supports drag and drop of list entries, added more kexts, general improvements
 
-#### 📊 System Monitoring
+###📊 System Monitoring
 
 | Original | Fork | Improvements |
 | --- | --- | --- |
