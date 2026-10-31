@@ -33,6 +33,12 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**SMCAMDProcessor**](https://github.com/trulyspinach/SMCAMDProcessor) | AMD Zen | Provides AMD CPU power management and temperature monitoring through `AMDRyzenCPUPowerManagement.kext` and `SMCAMDProcessor.kext`. |
 | [**ryzenstatus-utils**](https://github.com/DrogaBox/ryzenstatus-utils) | AMD Ryzen | Utilities supporting RyzenStatus for AMD Ryzen CPU monitoring and power management. |
 
+### 🟥 AMD Chipset / USB
+
+| Original Kext | Alternative | Chipset / Controller | Description |
+| --- | --- | --- | --- |
+| [**FCHXHCIFix**](https://github.com/CL0utM4N/FCHXHCIFix) | N/A (new kext) | AMD FCH xHCI (1022:7914) | Fixes slow USB performance on AMD Carrizo, Bristol Ridge and Stoney Ridge platforms by addressing an xHCI controller interrupt issue that prevents interrupts from reaching macOS. |
+
 ---
 
 ### 🎨 Graphics
