@@ -43,6 +43,13 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ## 🎨 Graphics
 
+### 🟦 Intel (iGPU)
+
+| Original Kext | Alternative | Description |
+| --- | --- | --- 
+| [**WhateverXe**](https://github.com/b00t0x/WhateverXe) +<br> [**WhateverXe-Graphics**](https://github.com/b00t0x/WhateverXe-Graphics)  | N/A (new driver) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, a modified AMFIPass kext and specific system security settings. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned. Check the repositories for supported GPU IDs, macOS compatibility, and installation instructions.
+| [**NootedGreen**](https://github.com/sgiammori/NootedGreen) | N/A (new kext) | Lilu plugin adapting Apple's Tiger Lake graphics drivers for unsupported Intel iGPUs. Includes experimental acceleration support for newer architectures such as Intel Gen11 / Gen12 (Ice Lake, Tiger Lake, Alder Lake, Raptor Lake). Also retains legacy NootedBlue support for Haswell, Broadwell, Braswell and Gemini Lake. Work in progress; hardware compatibility and graphics acceleration vary by platform. |
+
 ### 🟥 AMD
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
@@ -53,13 +60,6 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A (new driver) | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
 | [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
 | [**KaberiRed**](https://github.com/CL0utM4N/KaberiRed) | N/A (new driver) | AMD GCN 2 (Bonaire) | Adapts Apple's GCN 2 drivers for AMD Kabini, Mullins and Kaveri APUs. |
-
-### 🟦 Intel
-
-| Original Kext | Alternative | Description |
-| --- | --- | --- 
-| [**WhateverXe**](https://github.com/b00t0x/WhateverXe) +<br> [**WhateverXe-Graphics**](https://github.com/b00t0x/WhateverXe-Graphics)  | N/A (new driver) | Experimental graphics acceleration for selected Intel Xe-LP iGPUs, currently targeting Tiger Lake (IDs `9A40`, `9A49`, `9A78`) and Alder Lake-N / Twin Lake (IDs `46D0`–`46D4`). Requires Lilu, a modified OpenCore Legacy Patcher Xe root patch, a modified AMFIPass kext and specific system security settings. Current documented target: macOS Big Sur 11. Additional macOS versions and GPU families are planned. Check the repositories for supported GPU IDs, macOS compatibility, and installation instructions.
-| [**NootedGreen**](https://github.com/sgiammori/NootedGreen) | N/A (new kext) | Lilu plugin adapting Apple's Tiger Lake graphics drivers for unsupported Intel iGPUs. Includes experimental acceleration support for newer architectures such as Intel Gen11 / Gen12 (Ice Lake, Tiger Lake, Alder Lake, Raptor Lake). Also retains legacy NootedBlue support for Haswell, Broadwell, Braswell and Gemini Lake. Work in progress; hardware compatibility and graphics acceleration vary by platform. |
 
 ### 🟩 NVIDIA
 
