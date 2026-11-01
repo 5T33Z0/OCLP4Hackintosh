@@ -140,19 +140,13 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 ---
 
-## 💽 File System Drivers
+## 🍎 macOS Features
 
-| Original Kext / Driver | Alternative | Improvements |
-| --- | --- | --- |
-| [**NTFS Oficial**](https://github.com/dmanske/ntfs-oficial-publico)|  N/A (new driver) | Free, open-source NTFS read/write support for Intel and Apple Silicon Macs without NTFS-3G or macFUSE. Includes automatic mounting, a menu bar app, and tools to verify, repair, and format NTFS volumes. Requires macOS 14 or newer. Experimental project; back up important data before use. |
+### Continuity
 
----
-
-## ⚙️ System Management
-
-| Original Kext | Alternative | Improvements |
-| --- | --- | --- |
-| [**YogaSMC**](https://github.com/zhen-zen/YogaSMC) | [**ReYogaSMC**](https://github.com/hoaug-tran/ReYogaSMC/) | Community-maintained fork extending support for Lenovo laptops running macOS 11 Big Sur through macOS 26 Tahoe. Provides Lenovo-specific power management, hotkey handling, battery information, and hardware monitoring. |
+| Original Kext | Alternative | Platform | Description |
+| --- | --- | --- | --- |
+| [**Acidanthera/FeatureUnlock**](https://github.com/acidanthera/FeatureUnlock) | [**FeatureUnlock-Tahoe**](https://github.com/kgp-macPro/FeatureUnlock-Tahoe) | macOS Tahoe (Darwin 25) | Fork of FeatureUnlock with fixes targeting AirPlay Screen Mirroring on Hackintosh systems running macOS Tahoe. Also includes experimental Sidecar support. |
 
 ---
 
@@ -172,11 +166,19 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 [**OCAuxiliaryTools**](https://github.com/ic005k/OCAuxiliaryTools) | [YBronst/OCAuxiliaryTools](https://github.com/YBronst/OCAuxiliaryTools/releases) | Supports drag and drop of list entries, added more kexts, general improvements
 
-###📊 System Monitoring
+###📊 System Monitoring and Management
 
 | Original | Fork | Improvements |
 | --- | --- | --- |
 | [**MenuMeters**](https://github.com/yujitach/MenuMeters) | [leeliu/MenuMeters](https://github.com/leeliu/MenuMeters/releases) or as an alernative: [Stats](https://github.com/exelban/stats) | Compatible with macOS Tahoe 26.x
+| [**YogaSMC**](https://github.com/zhen-zen/YogaSMC) | [**ReYogaSMC**](https://github.com/hoaug-tran/ReYogaSMC/) | Community-maintained fork extending support for Lenovo laptops running macOS 11 Big Sur through macOS 26 Tahoe. Provides Lenovo-specific power management, hotkey handling, battery information, and hardware monitoring. |
+
+
+### 💽 NTFS Support
+
+| Original Kext / Driver | Alternative | Improvements |
+| --- | --- | --- |
+| [**NTFS Oficial**](https://github.com/dmanske/ntfs-oficial-publico)|  N/A (new driver) | Free, open-source NTFS read/write support for Intel and Apple Silicon Macs without NTFS-3G or macFUSE. Includes automatic mounting, a menu bar app, and tools to verify, repair, and format NTFS volumes. Requires macOS 14 or newer. Experimental project; back up important data before use. |
 
 ### 🔌 USB Mapping Tools
 
