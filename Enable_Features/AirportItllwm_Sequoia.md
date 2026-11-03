@@ -47,7 +47,7 @@ Open `config.plist` and remove the old Wi-Fi patching configuration:
 - **Kernel → Block**
   - Remove the `com.apple.iokit.IOSkywalkFamily` blocking entry.
 - **Kernel → Add**
-  - Remove `IOSkywalk.kext`.
+  - Remove `IOSkywalkFamily.kext`.
   - Remove `IO8021FamilyLegacy.kext`.
   - Remove the old Ventura `AirportItlwm.kext` if present.
   - Disable `AMFIPass.kext` if it was only added for the old Wi-Fi patching method and is not needed elsewhere.
