@@ -1,257 +1,183 @@
-# Using `AirportItlwm.kext` for Intel WiFi/BT Cards in macOS Sequoia and Tahoe
+# Using `AirportItlwm.kext` for Intel Wi-Fi/BT Cards in macOS Sequoia and Tahoe
 
 ![intel_spoof07](https://github.com/user-attachments/assets/255406e1-554e-4b6c-9b67-5d24b9fcb962)
 
 ## About
 
-As you may know, Apple removed support for various system kexts and frameworks required by Broadcom WiFi cards from macOS Sequoia. Although Apple never shipped any systems with Intel WiFi/BT cards, `AirportItlwm.kext` also requires these system kexts and frameworks to function properly. So in macOS Sequoia, users with Intel WiFi/BT cards had to resort to the `Itlwm.kext` instead. 
+Apple removed support for various system kexts and frameworks required by Broadcom Wi-Fi cards from macOS Sequoia. Although Apple never shipped any systems with Intel Wi-Fi/BT cards, `AirportItlwm.kext` also relied on these system components to function properly. Consequently, users with Intel Wi-Fi/BT cards had to resort to `Itlwm.kext` instead.
 
-Since `Itlwm.kext` injects the WiFi card as LAN adapter into macOS, this has some side-effects. For example, the Airport-Utility which lets you connect to WiFi hotspot can no longer be used – a separate app ([**Heliport**](https://github.com/OpenIntelWireless/HeliPort/releases)) has to be used to join WiFi APs. Another issue is that FindMyMac also requires WiFi.
+Since `Itlwm.kext` injects the Wi-Fi card as a LAN adapter into macOS, this has some side effects. For example, the Airport Utility can no longer be used to connect to Wi-Fi hotspots, and a separate application ([HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases)) is required. Some Apple services, such as Find My Mac, may also be affected.
 
-Luckily for us, we can utilize [laobamac’s itlwm fork](https://github.com/laobamac/itlwm), to make use of `AirportItlwm` in macOS Sequoia and Tahoe again – without the need for applying root patches with OpenCore Legacy Patcher. It also supports AppleVTD in Sequoia/Tahoe.
+Luckily, [laobamac's itlwm fork](https://github.com/laobamac/itlwm/releases) brings back native `AirportItlwm.kext` support in macOS Sequoia and Tahoe.
+
+**OCLP root patches are no longer required!**
+
+This fork also supports AppleVTD in Sequoia and Tahoe.
 
 > [!TIP]
->
-> If you also neead an AppleVTD-compatible build of itlwm.kext, I suggest you use this fork instead: https://github.com/jzrodriguez98/itlwm/releases instead. It contains laobamacs fixes for AirportItlwm as well.
+> 
+> If you also need an AppleVTD-compatible build of `itlwm.kext`, consider [jzrodriguez98's fork](https://github.com/jzrodriguez98/itlwm/releases), which includes laobamac's AirportItlwm fixes.
 
 ---
 
 ## Instructions
 
-### 1. EFI and Config Changes
+Choose the appropriate installation path depending on your current configuration.
 
-- Mount your EFI System Partition.
-- Copy your working `EFI` folder to a FAT32-formatted USB flash drive and keep it as a backup.
-- Open your `config.plist`.
-- Enable `DisabledIoMapper` Quirk &rarr; required for macOS Tahoe so WiFi works.
-- Remove the following from `config.plist` and, where applicable, from the `EFI/OC/Kexts` folder:
-	- **Kernel → Block:**
-		- `com.apple.iokit.IOSkywalkFamily`
-	- **Kernel → Add:**
-		- Disable or remove `Itlwm.kext`
-		- `IOSkywalk.kext`
-		- `IO8021FamilyLegacy.kext`
-  	-  **Kernel → Quirks:** (optional)
-  		- If you need `AppleVTD` to be present, unselect `DisableIoMapper` if your system supports VT-D, and it's enabled in BIOS.
-- Download the latest [Release](https://github.com/laobamac/itlwm/releases) of `AirportItlwm.kext` for your version of macOS (Sequoia or Tahoe) from laobamac's itlwm fork.
-- Add `AirportItlwm.kext` to `EFI/OC/Kexts` and enable it under **Kernel → Add** in your `config.plist`.
-- If you previously used `itlwm.kext`, remove the HeliPort application from your macOS login items/automatic startup configuration.
+### 1. Coming from a root-patched installation
 
-### 2. Revert OCLP Root Patches
+If you previously applied OCLP root patches to enable Intel Wi-Fi, revert the old Wi-Fi patching changes first.
 
-If the only reason you applied OCLP root patches was to enable `AirportItlwm`, revert those root patches:
+**Step 1: Revert OCLP root patches**
 
-- Open OCLP-Mod and select **Post-Install Root Patch → Revert Root Patches**.
-- Reboot after reverting the patches.
+- Open OCLP-Mod.
+- Select **Post-Install Root Patch → Revert Root Patches**.
+- Reboot into macOS.
 
 > [!CAUTION]
->
-> Do **not** revert root patches if your system requires them for other components, such as graphics acceleration. In that case, only remove the Wi-Fi-related configuration described above and keep the other required root patches.
+> 
+> Only revert root patches if they were applied exclusively for enabling Wi-Fi. If your system requires other root patches, for example for graphics acceleration, do not revert. Keep the patches required by your other hardware.
+
+**Step 2: Clean up the old EFI configuration**
+
+Mount your EFI System Partition and make a backup of your working EFI folder.
+
+Open `config.plist` and remove the old Wi-Fi patching configuration:
+
+- **Kernel → Block**
+  - Remove the `com.apple.iokit.IOSkywalkFamily` blocking entry.
+- **Kernel → Add**
+  - Remove `IOSkywalk.kext`.
+  - Remove `IO8021FamilyLegacy.kext`.
+  - Remove the old Ventura `AirportItlwm.kext` if present.
+  - Disable `AMFIPass.kext` if it was only added for the old Wi-Fi patching method and is not needed elsewhere.
+- **DeviceProperties**
+  - Delete `IOName` proerty for your WiFi Card, if present.
+
+Keep unrelated kexts, quirks and NVRAM settings required by your system.
+
+**Step 3: Install the new AirportItlwm**
+
+Continue with section 2 below.
+
+### 2. Starting from a vanilla installation
+
+If you are starting with an unpatched installation of macOS Sequoia or Tahoe, you can install the new kext directly.
+
+**Step 1: Prepare your EFI**
+
+- Mount your EFI System Partition.
+- Back up your existing EFI folder to a FAT32-formatted USB flash drive.
+- Open your `config.plist`.
+
+**Step 2: Configure OpenCore**
+
+Configure the appropriate `DisableIoMapper`/`DisabledIoMapper` quirk if required by your hardware and OpenCore version. For Tahoe, check the fork's release notes for the recommended setting.
+
+**Step 3: Download AirportItlwm**
+
+- Visit [laobamac's itlwm releases](https://github.com/laobamac/itlwm/releases).
+- Download the appropriate `AirportItlwm.kext` build for your macOS version:
+  - macOS Sequoia
+  - macOS Tahoe
+
+Make sure you use the correct build for your installed macOS version.
+
+**Step 4: Install the kext**
+
+- Copy `AirportItlwm.kext` into `EFI/OC/Kexts`.
+- Add it to **Kernel → Add** in your `config.plist`.
+- Make sure the entry is enabled.
+- Save your `config.plist`.
+- Adjust MinKernel and MaxKernel Settings:
+	- macOS Sequoia: 24.0.0 (Min), 24.99.99 (Max)
+	- macOS Tahoe: 25.0.0 (Min)
+
+**Important:** Do not install the old OCLP Wi-Fi dependencies. The new fork does not require the old `IOSkywalk.kext` and `IO8021FamilyLegacy.kext` injection method.
+
+You should not need the old Ventura AirportItlwm build, OCLP root patches, or the associated AMFIPass configuration for this method.
+
+### 3. Final checks
+
+Before rebooting, verify the following:
+
+- [ ] Correct AirportItlwm build for Sequoia or Tahoe.
+- [ ] `AirportItlwm.kext` is present in `EFI/OC/Kexts`.
+- [ ] `AirportItlwm.kext` is enabled in `Kernel → Add`.
+- [ ] Old Wi-Fi patching entries have been removed.
+- [ ] No conflicting `Itlwm.kext` is enabled.
+- [ ] Your EFI has been backed up.
+
+Reboot into macOS and check whether Wi-Fi is working.
+
+If you previously used `Itlwm.kext`, you can also remove HeliPort from your login items if you no longer need it.
+
+---
 
 ## Building itlwm and AirportItlwm from Source Code (Requires Xcode)
 
 - Download the itlwm source code and extract it to your Downloads folder.
 - Open Terminal.
 - Navigate to the `itlwm-main` folder:
-	```
-	cd ~/Downloads/itlwm-main
-	```
-- Add the MacKernelSDK:
-	```
-	git clone https://github.com/acidanthera/MacKernelSDK
-	```
-- Delete the existing firmware binary (if present):
-	```
-	rm include/FwBinary.cpp
-	```
-- Build the firmware:
-	```
-	xcodebuild -project itlwm.xcodeproj -target fw_gen -configuration Release -sdk macosx
-	```
-- Build the kexts:
-	```
-	xcodebuild -alltargets -configuration Release
-	```
 
-This will compile `itlwm.kext` and all `AirportItlwm.kext` variants for macOS versions ranging from High Sierra to Tahoe. The compiled kexts will be located in `~/Downloads/itlwm-main/build/Release`.
-
-If you only want to compile AirportItlwm for Sequoia, run:
-
+```bash
+cd ~/Downloads/itlwm-main
 ```
+
+- Add the MacKernelSDK:
+
+```bash
+git clone https://github.com/acidanthera/MacKernelSDK
+```
+
+- Delete the existing firmware binary (if present):
+
+```bash
+rm include/FwBinary.cpp
+```
+
+- Build the firmware:
+
+```bash
+xcodebuild -project itlwm.xcodeproj -target fw_gen -configuration Release -sdk macosx
+```
+
+- Build the kexts:
+
+```bash
+xcodebuild -alltargets -configuration Release
+```
+
+This will compile `itlwm.kext` and the available `AirportItlwm.kext` variants for supported macOS versions, including Sequoia and Tahoe. The compiled kexts will be located in `~/Downloads/itlwm-main/build/Release`.
+
+If you only want to compile AirportItlwm for Sequoia:
+
+```bash
 xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Sequoia \
   -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
 ```
 
-If you only want to compile AirportItlwm for Tahoe, run:
+If you only want to compile AirportItlwm for Tahoe:
 
-```
+```bash
 xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Tahoe \
   -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
 ```
 
 > [!TIP]
+> If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g. `AirportItlwm_Sequoia.kext` or `AirportItlwm_Tahoe.kext`), then add them to `EFI/OC/Kexts` and `config.plist`.
 >
-> If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g., `AirportItlwm_Sequoia` or `AirportItlwm_Tahoe`), then add them to your `EFI/OC/Kexts` folder and `config.plist`. Finally, adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version:
+> Adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version.
 >
 > <img width="1489" height="124" alt="AirportItlwm Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
 
 ---
 
-## Previous Patching Method
-
-<details>
-<summary>Legacy method: AirportItlwm with OCLP root patches</summary><br>
-
-> [!WARNING]
-> 
-> This method is no longer required when using the `laobamac/itlwm` fork. It is kept here for legacy configurations.
-
-## Patching Principle
-
-1. Block Original `com.apple.iokit.IOSkywalkFamily`
-2. Inject the required kexts for re-enabling legacy WiFi cards
-3. Add `AirportItlwm.kext` from macOS Ventura 
-3. Apply root patches with [**OCLP-Mod**](https://github.com/laobamac/OCLP-Mod/releases) to make use of `AirportItlwm` in macOS Sequoia and Tahoe again!
-4. Reboot to macOS Sequoia/Tahoe and voilà: `AirportItlwm.kext` is working again 
-
-When applying root patches for Modern WiFi, OCLP basically rolls back components from macOS Ventura. That's why the AirportItlwm kext for macOS Ventura is required to make WiFi work in Sequoia.
-
-> [!TIP]
-> 
-> If your system doesn't require additional root patches for running macOS besides enabling Wi-FI, you can use [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro) instead. It provides a one-click solution that automates the entire process—including kext installation, config changes, and root patches—to restore Broadcom and Intel wireless support.
-
-## Instructions
-
-We need to prepare the `config.plist` and EFI folder content to make `AirportItlwm.kext` work in macOS Sequoia and Tahoe. You can either follow the instructions below, or [copy the settings from this plist](/plist/AirportItlwm_Sequoia.plist).
-
-### 1. Disable/Delete `IOName` spoof
-
-If present, disable (#) or delete `IOName` spoof from your config's `DeviceProperties` to prevent OCLP-Mod to apply root patches for Broadcom Cards:
-
-<img width="894" height="123" alt="01" src="https://github.com/user-attachments/assets/a75f8b8d-9b28-43d9-854c-375fb7498328" />
-
-### 2. Block new `IOSkywalk` kext
-
-Under `Kernel/Block`, add the following rule:
-
-```xml
-<dict>
-	<key>Arch</key>
-	<string>x86_64</string>
-	<key>Comment</key>
-	<string>Allow IOSkywalk Downgrade</string>
-	<key>Enabled</key>
-	<true/>
-	<key>Identifier</key>
-	<string>com.apple.iokit.IOSkywalkFamily</string>
-	<key>MaxKernel</key>
-	<string></string>
-	<key>MinKernel</key>
-	<string>24.0.0</string>
-	<key>Strategy</key>
-	<string>Exclude</string>
-</dict>
-```
-
-**Screenshot**:<br> <img width="920" height="240" alt="03" src="https://github.com/user-attachments/assets/b9760a94-a449-45f1-8289-c542e1262e65" />
-
-### 3. Add Kexts
-- Disable `Itlwm.kext`, if present!
-- Add the following [**Kexts from the OCLP repo**](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Wifi) to `EFI/OC/Kexts` and your `config.plist`:
-	- [`AMFIPasss.kext`](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) 
-	- `IOSkywalk.kext`
-	- `IO8021FamilyLegacy.kext` (contains plugin `AirportBrcmNIC.kext` which you can disable since it is for Broadcom WiFi cards)
-	- [**`AirportItlwm.kext`**](https://github.com/OpenIntelWireless/itlwm/releases) (inject the one for macOS Ventura! I have renamed it to `AirportItlwm_Sequoia.kext` since I also have macOS Sonoma installed and it requires a different variant of the kext). ⚠️ Make sure it is injected ***after*** `IOSkywalk` and `IO8021FamilyLegacy` kexts!
-- Adjust `MinKernel` and `MaxKernel` settings as shown in the **Screenshot**: <br>![itlwfbt](https://github.com/user-attachments/assets/b3cb9e89-9d91-4eb7-87e3-6ff5516df386)
-
-### 4. Enable Kernel Quirk
-- Enable `DisableIoMapper`
-
-> [!TIP]
->
-> Once you've verified that WiFi is working, you can check if WiFi works without this quirk as well. But in my experience on the machines I have, Intel WiFi does not work without it.
-
-### 5. Disable `SecureBootModel`
-
-Under `Misc`, change `SecureBootModel` to `Disabled`
-
-### 6. Add/Adjust NVRAM Entries
-- Change `csr-active-config` to `03080000` (resp. `030A0000`, if you are using an NVIDIA GPU)
-- Add `-amfipassbeta` boot-arg if WiFi/BT is not working in macOS Sequoia/Tahoe
-- If Bluetooth stops working after root patching, add the following entries to the NVRAM section, so that Intel BlueTooth will work:
-
-```xml
-<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
-<dict>
-	<key>bluetoothExternalDongleFailed</key>
-	<data>AA==</data>
-	<key>bluetoothInternalControllerInfo</key>
-	<data>AAAAAAAAAAAAAAAAAAA=</data>
-	<key>boot-args</key>
-	<string>-lilubetaall</string>
-	<key>csr-active-config</key>
-	<data>AwgAAA==</data>
-</dict>
-```
-**Screenshot**:<br><img width="1139" height="395" alt="04" src="https://github.com/user-attachments/assets/d8c45364-066b-4f30-91ff-e7bd227ccf77" />
-
-- Save your `config.plist`
-
-### 7. Download OCLP-Mod
-- Since you won't have internet Access in macOS Sequoia, [download the latest release of OCLP-Mod](https://github.com/laobamac/OCLP-Mod/releases) before rebooting into macOS
-- Now reboot into macOS Sequoia
-
-### 8. Apply root patches with OCLP
-
-- Run OCLP-Mod
-- Click the top right button:<br> <img width="600" height="331" alt="patch01" src="https://github.com/user-attachments/assets/19dc7610-829c-4bd5-9e99-a0938331b50e" />
-- There should say "Intel" somewhere in the Chines text of the Patches that will be applied:<br><img width="603" height="332" alt="oclpmod_intel01" src="https://github.com/user-attachments/assets/f49ecc37-e644-4e67-851b-f54fce640935" />
-- Click the first button from the top to start root patching.
-- Additional files required for patching will be downloadded automatically:<br><img width="415" height="288" alt="oclpmod_intel02" src="https://github.com/user-attachments/assets/391d5440-d3f4-4629-9dbb-e13fe511cbdd" />
-- Once that's done, patching will commence:<br> <img width="405" height="559" alt="oclpmodpatch" src="https://github.com/user-attachments/assets/21d95656-c186-4032-be13-665f09b01f6d" />
-
-### 9. Reboot and enjoy!
-
-- Reboot the system
-- Perform an NVRAM reset
-- Boot into macOS Sequoia/Tahoe
-- You should now be able to use the Airport-Utility in macOS Sequoia again, to connect to WiFi APs
-
-> [!IMPORTANT]
-> 
-> Once root patches are applied, the security seal of the volume will be broken. And once it is broken, the complete macOS version will be downloaded every time an OS update is available. The workaround would be to revert root patches before installing updates – but then you won't have WiFi (unless you enable `itlwm` beforehand).
-
-### 10. Troubleshooting
-
-On some systems excluding the IOSkywalkFamily kext may cause a Kernel panic. In this case the workaround is to add the following rule to the `Kernel/Force` section of your config.plist:
-
-| Identifier | BundlePath | Enabled | ExecutablePath | MinKernel |
-| ---------- | ---------- | :------: | -------------- | --------- | 
-| com.apple.iokit.IOSkywalkFamily | System/Library/Extensions/IOSkywalkFamily.kext | true | Contents/MacOS/IOSkywalkFamily | 24.0.0 |
-
-## Using this fix to enable iServices in macOS Sonoma
-
-As it turns out, this fix is also required if you need working iServices in macOS Sonoma (Screenshot from OpCore Simplify):
-
-![wifi](https://github.com/user-attachments/assets/af01d107-12b8-4441-b858-bc3720b2fe7a)
-
-So, if you need iService in macOS Somona, do the following:
-
-- [ ] Change `MinKenel` of the following Kexts back to `23.0.0`:
-	- [ ] `AirportItlwm.kext` (use the version for macOS Ventura!)
-	- [ ] `IOSkywalkFamily.kext` 
-	- [ ] `IO80211FamilyLegacy.kext` 
-	- [ ] `com.apple.iokit.IOSkywalkFamily` (under `Kernel/Block`) 
-- [ ] Apply root patches in Post-Install! 
-
-Once you apply root patches, incremental system updates are no longer an option – every time an updates ist available, the complete installer will be downloaded because root patching brakes the security seal of macOS. If you don't require iService you don't have to do this – WiFi will work in Sonoma without this patch.
-
-</details>
-
 ## Credits and Thank Yous
-- laobamac for OCLP-Mod and itlwm fork
-- lifeknife10A who came up with this [workaround](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2370919270)
-- sughero, for additional info about the order of the kexts
-- stefanalmare for pointing me to this solution
-- lzhoang2801 for OpCore Simplify and further explanations about the effect on iServices
-- Mirone for [**Wi-Fi Patcher Pro**](https://github.com/Mirone/WiFiPatcherPro)
+
+- laobamac for the OCLP-Mod project and itlwm fork.
+- lifeknife10A for the original [workaround](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2370919270).
+- sughero for additional information about kext loading order.
+- stefanalmare for pointing me to this solution.
+- lzhoang2801 for OpCore Simplify and further explanations about the effect on iServices.
+- Mirone for [Wi-Fi Patcher Pro](https://github.com/Mirone/WiFiPatcherPro).
