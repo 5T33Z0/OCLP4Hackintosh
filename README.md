@@ -32,7 +32,7 @@ What you may not know is that some of OCLP's configuration settings, kexts, and 
 
 ## OpenCore Configuration Guides
 
-Listed below are configuration guides to update your OpenCore EFI and `config.plist` with the required settings and kexts to run macOS 13 and newer:
+Listed below are configuration guides for updating your OpenCore EFI and `config.plist` with the settings and kexts required to run macOS 13+ and prepare your system for applying OCLP Post-Install Root Patches:
 
 - [**Installing macOS 26 on Kaby Lake or newer**](docs/Guides/Configuration_Guides/Kaby_Lake+/Kaby_Lake+.md)
 - [**Installing macOS 13+ on Skylake systems**](docs/Guides/Configuration_Guides/Skylake/README.md)
