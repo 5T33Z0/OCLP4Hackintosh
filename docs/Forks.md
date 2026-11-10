@@ -44,7 +44,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ## 🎨 Graphics
 
-### 🟦 Intel (iGPU)
+### 🟦 Intel
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
 | --- | --- | --- | --- |
