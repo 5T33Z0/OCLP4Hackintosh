@@ -10,8 +10,8 @@ On Wintel systems it's not a big deal. Still, the overall performance of your sy
 
 Since the virtualization technology cannot be utilized prior to Big Sur 11.3, installing older versions of macOS requires another approach. So between macOS High Sierra and Big Sur, there's a macOS comaptibility gap of two OSes that cannot be installed easily, namely:
 
-- macOS Mojave (last macOS with 32 bit Intel support). Owners of a real Mac can use [Mojave Patcher](https://dosdude1.com/mojave/) to install it.
-- macOS Catalina (slimmest macOS since it only contains 64 bit Intel code). Owners of a real Mac can use [Catalina Patcher](https://dosdude1.com/catalina/) to install it.
+- **macOS Mojave** (last macOS with 32 bit Intel support). Owners of a real Mac can use [Mojave Patcher](https://dosdude1.com/mojave/) to install it.
+- **macOS Catalina** (slimmest macOS since it only contains 64 bit Intel code). Owners of a real Mac can use [Catalina Patcher](https://dosdude1.com/catalina/) to install it.
 
 ## Bridging the Gap
 The following Settings need to be changed in your `config.plist` to install macOS prior to Big Sur 11.3. This mainly concerns SMBIOS, SIP and APFS driver settings:
