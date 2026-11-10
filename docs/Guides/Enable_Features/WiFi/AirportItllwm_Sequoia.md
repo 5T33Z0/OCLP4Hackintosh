@@ -2,21 +2,19 @@
 
 ![intel_spoof07](https://github.com/user-attachments/assets/255406e1-554e-4b6c-9b67-5d24b9fcb962)
 
+> [!IMPORTANT]
+> 
+> [**laobamac's itlwm fork**](https://github.com/laobamac/itlwm/releases) restores native `AirportItlwm.kext` support in macOS Sequoia and Tahoe — **without requiring OCLP root patches!** It also supports **AppleVTD**.
+
 ## About
 
-Apple removed support for various system kexts and frameworks required by Broadcom Wi-Fi cards from macOS Sequoia. Although Apple never shipped any systems with Intel Wi-Fi/BT cards, `AirportItlwm.kext` also relied on these system components to function properly. Consequently, users with Intel Wi-Fi/BT cards had to resort to `Itlwm.kext` instead.
+Apple removed support for several system kexts and frameworks required by Broadcom Wi-Fi cards in macOS Sequoia. Although Apple never shipped Macs with Intel Wi-Fi/BT cards, `AirportItlwm.kext` also relied on some of these system components to function properly. Consequently, users with Intel Wi-Fi/BT cards had to resort to `itlwm.kext` instead.
 
-Since `Itlwm.kext` injects the Wi-Fi card as a LAN adapter into macOS, this has some side effects. For example, the Airport Utility can no longer be used to connect to Wi-Fi hotspots, and a separate application ([HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases)) is required. Some Apple services, such as Find My Mac, may also be affected.
-
-Luckily, [laobamac's itlwm fork](https://github.com/laobamac/itlwm/releases) brings back native `AirportItlwm.kext` support in macOS Sequoia and Tahoe.
-
-**OCLP root patches are no longer required!**
-
-This fork also supports AppleVTD in Sequoia and Tahoe.
+Since `itlwm.kext` exposes the Wi-Fi card as a regular network interface in macOS rather than integrating it with Apple's native Wi-Fi stack, this comes with some limitations. For example, Airport Utility can no longer be used to connect to Wi-Fi hotspots, and a separate application ([HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases)) is required to manage Wi-Fi connections. Some Apple services, such as Find My Mac, may also be affected.
 
 > [!TIP]
 > 
-> If you also need an AppleVTD-compatible build of `itlwm.kext`, consider [jzrodriguez98's fork](https://github.com/jzrodriguez98/itlwm/releases), which includes laobamac's AirportItlwm fixes.
+> If you also need an AppleVTD-compatible build of `itlwm.kext`, consider [jzrodriguez98's fork](https://github.com/jzrodriguez98/itlwm/releases), which incorporates laobamac's AirportItlwm fixes.
 
 ---
 
@@ -120,54 +118,54 @@ If you previously used `Itlwm.kext`, you can also remove HeliPort from your logi
 - Open Terminal.
 - Navigate to the `itlwm-main` folder:
 
-```bash
-cd ~/Downloads/itlwm-main
-```
+  ```bash
+  cd ~/Downloads/itlwm-main
+  ```
 
 - Add the MacKernelSDK:
 
-```bash
-git clone https://github.com/acidanthera/MacKernelSDK
-```
+  ```bash
+  git clone https://github.com/acidanthera/MacKernelSDK
+  ```
 
 - Delete the existing firmware binary (if present):
 
-```bash
-rm include/FwBinary.cpp
-```
+  ```bash
+  rm include/FwBinary.cpp
+  ```
 
 - Build the firmware:
 
-```bash
-xcodebuild -project itlwm.xcodeproj -target fw_gen -configuration Release -sdk macosx
-```
+  ```bash
+  xcodebuild -project itlwm.xcodeproj -target fw_gen -configuration Release -sdk macosx
+  ```
 
 - Build the kexts:
 
-```bash
-xcodebuild -alltargets -configuration Release
-```
+  ```bash
+  xcodebuild -alltargets -configuration Release
+  ```
 
 This will compile `itlwm.kext` and the available `AirportItlwm.kext` variants for supported macOS versions, including Sequoia and Tahoe. The compiled kexts will be located in `~/Downloads/itlwm-main/build/Release`.
 
-If you only want to compile AirportItlwm for Sequoia:
+- If you only want to compile AirportItlwm for Sequoia:
 
-```bash
-xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Sequoia \
-  -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
-```
+  ```bash
+  xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Sequoia \
+    -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
+  ```
 
-If you only want to compile AirportItlwm for Tahoe:
+- If you only want to compile AirportItlwm for Tahoe:
 
-```bash
-xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Tahoe \
-  -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
-```
+  ```bash
+  xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Tahoe \
+    -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
+  ```
 
 > [!TIP]
 > If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g. `AirportItlwm_Sequoia.kext` or `AirportItlwm_Tahoe.kext`), then add them to `EFI/OC/Kexts` and `config.plist`.
 >
-> Adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version.
+> Adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version:
 >
 > <img width="1489" height="124" alt="AirportItlwm Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
 

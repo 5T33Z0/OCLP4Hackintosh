@@ -12,6 +12,8 @@
 - [Intel Wi-Fi](#intel-wi-fi)
   - [Configure Intel Wi-Fi (macOS High Sierra to Sonoma)](#configure-intel-wi-fi-macos-high-sierra-to-sonoma)
   - [Configure Intel Wi-Fi (macOS Sequoia and Tahoe)](#configure-intel-wi-fi-macos-sequoia-and-tahoe)
+    - [Option 1: AirportItlwm.kext](#option-1-airportitlwmkext)
+    - [Option 2: itlwm.kext](#option-2-itlwmkext)
 - [Bluetooth](#bluetooth)
   - [Broadcom Bluetooth](#broadcom-bluetooth)
   - [Intel Bluetooth](#intel-bluetooth)
@@ -65,7 +67,7 @@ Download the Wi-Fi kexts from the [OCLP repository](https://github.com/dortania/
 
 - `corecaptureElCap.kext`
 - `IO80211ElCap.kext`
-- `AirPortAtheros40.kext` for Atheros cards
+- `AirPortAtheros40.kext` for Atheros cards. ⚠️ Currently only working up to macOS Sequoia.
 - `AMFIPass.kext`, if not already present
 
 Download the Wi-Fi kexts from the [OCLP repository](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Wifi) and AMFIPass from [here](https://github.com/bluppus20/AMFIPass/releases)
