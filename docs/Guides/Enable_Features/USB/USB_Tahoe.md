@@ -2,16 +2,12 @@
 
 **TABLE of CONTENTS**
 
-- [Introduction](#introduction)
 - [Fixing USB port mapping for compatibility with macOS Tahoe](#fixing-usb-port-mapping-for-compatibility-with-macos-tahoe)
 	- [Option 1: Automated fix using USBMap Script](#option-1-automated-fix-using-usbmap-script)
 	- [Option 2: Editing the `info.plist` of the `USBMap.kext` manually](#option-2-editing-the-infoplist-of-the-usbmapkext-manually)
 	- [Screenshots](#screenshots)
-- [Fixing Bluetooth and USB Wi-Fi Support in macOS Tahoe](#fixing-bluetooth-and-usb-wi-fi-support-in-macos-tahoe)
+	- [Option 3: Switch to ACPI-based USB Port Mapping](#option-3-switch-to-acpi-based-usb-port-mapping)
 - [Credits](#credits)
-
-## Introduction
-With the release of macOS Tahoe beta, new USB issues arose concerning USBMap kexts as well as the `IOUSBFamily.kext`, which is required in order for USB Wi-Fi dongles to work
 
 ## Fixing USB port mapping for compatibility with macOS Tahoe
 
@@ -70,27 +66,10 @@ Previous macOS | macOS Tahoe
 ---------------|--------------
 ![old](https://github.com/user-attachments/assets/dcea4dc7-37bb-4fa0-acff-474710ea96a7) | ![ports_new](https://github.com/user-attachments/assets/5cfd37e3-5e7c-40a9-ae21-7fd0796f7881)
 
-## Fixing Bluetooth and USB Wi-Fi Support in macOS Tahoe
+### Option 3: Switch to ACPI-based USB Port Mapping
 
-With the release of macOS Tahoe, Apple removed legacy kernel extensions like `IOUSBFamily.kext`, breaking compatibility with many third-party USB Wi-Fi dongles and Bluetooth moduls that depend on this component — particularly those using older USB 2.0 (EHCI) interfaces. If Bluetooh or USB Wi-Fi dongle does no longer work after upgrading to macOS Tahoe, restoring `IOUSBFamily.kext` via root patching is currently the only known workaround.
-
-This guide walks you through using **OCLP Mod**, a modified version of OpenCore Legacy Patcher, to reintroduce this functionality on unsupported systems. Be aware that patching the USB stack can introduce side effects (e.g., HID receivers may stop working), so apply this only if you're experiencing USB-related issues with Wi-Fi adapters.
-
-**Instructions**:
-
-- Ensure that your system is connected to the internet. This is mandatory because OCLP Mod needs to download additional files required for root patching!
-- Download [**OCLP-Mod.pkg**](https://github.com/laobamac/OCLP-Mod/releases) and install it
-- Run it. The GUI is in Chinese, unfortunately, for english, you might want to look into [compiling a mulitilingual version](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Guides/OCLP-mod_Multilingual.md)
-- Open the settings:<br>![OCLP_mod01](https://github.com/user-attachments/assets/275e1bea-617b-4196-8c40-bb2c24eb73f0)
-- Click on the shown Tab and enable the options you need (here USB) and press "Ok" at the bottom:<br>![iousbfamily](https://github.com/user-attachments/assets/e4b219be-4e44-4042-bf1a-a6475b3875fc)
-- Press the upper right button for the root patching:<br>![oclp_mod01](https://github.com/user-attachments/assets/ad42427a-3726-480e-89a3-d2bd98754c3c)
-- Next, press the upper button to install patches and wait until patching is completed:<br>![oclp_mod02](https://github.com/user-attachments/assets/25e5fc28-05de-4cdd-ac3d-d5a28d06d1db)
-- If required, it will automatically download KDK or Metalibs
-- Restart macOS when prompted to
-
-Once macOS is up and running again, Bluetooth should work as expected again. If you are using a USB Wi-Fi dongle, with a Realtek chipset, you can use Chris1111's [Wireless-USB-OC-Adapter](https://github.com/chris1111/Wireless-USB-OC-Big-Sur-Adapter) for installing drivers for 802.11n and 802.11ac Wi-Fi dongles.
+I've developed a Python tool called [XHUB-Mapper](https://github.com/5T33Z0/XHUB-Mapper) that simplifies ACPI-based USB port mapping for Hackintosh systems. It can import existing port mappings from USBMap and USBToolBox, cross-reference them with your system's ACPI tables, identify active USB controllers, and generate a custom SSDT containing only the USB ports you want macOS to use. This allows you to replace traditional kext-based USB mapping with a lightweight, kext-free ACPI solution, so you don't ever have to worry about it again ever – it just works (requires Haswell or newer).
 
 ## Credits
 - **JustFun** from hackintosh-forum.de for the [manual info-plist fix](https://www.hackintosh-forum.de/forum/thread/60350-wwdc-2025-macos-26-hackintosh/?postID=802582#post802582)
 - **CorpNewt** for [USBMap](https://github.com/corpnewt/USBMap)
-- **laobamac** for [OCLP-Mod](https://github.com/laobamac/OCLP-Mod/releases) 
