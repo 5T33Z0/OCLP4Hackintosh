@@ -91,9 +91,17 @@ Make sure you use the correct build for your installed macOS version.
 	- macOS Sequoia: 24.0.0 (Min), 24.99.99 (Max)
 	- macOS Tahoe: 25.0.0 (Min)
 
-**Important:** Do not install the old OCLP Wi-Fi dependencies. The new fork does not require the old `IOSkywalk.kext` and `IO8021FamilyLegacy.kext` injection method.
+> [!IMPORTANT]
+> 
+> Do not install the old OCLP Wi-Fi dependencies. The new fork does not require the old `IOSkywalk.kext` and `IO8021FamilyLegacy.kext` injection method. You don't need the old Ventura AirportItlwm build, OCLP root patches, or the associated AMFIPass configuration for this method.
 
-You should not need the old Ventura AirportItlwm build, OCLP root patches, or the associated AMFIPass configuration for this method.
+> [!TIP]
+> 
+> If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g. `AirportItlwm_Sequoia.kext` or `AirportItlwm_Tahoe.kext`), then add them to `EFI/OC/Kexts` and `config.plist`.
+>
+> Adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version:
+>
+> <img width="1489" height="124" alt="AirportItlwm Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
 
 ### 3. Final checks
 
@@ -161,13 +169,6 @@ This will compile `itlwm.kext` and the available `AirportItlwm.kext` variants fo
   xcodebuild -project itlwm.xcodeproj -scheme AirportItlwm-Tahoe \
     -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
   ```
-
-> [!TIP]
-> If you want to include AirportItlwm variants for multiple macOS versions in your OpenCore EFI, rename the kexts accordingly (e.g. `AirportItlwm_Sequoia.kext` or `AirportItlwm_Tahoe.kext`), then add them to `EFI/OC/Kexts` and `config.plist`.
->
-> Adjust the `MinKernel` and `MaxKernel` settings so that only the appropriate kext is loaded for each macOS version:
->
-> <img width="1489" height="124" alt="AirportItlwm Settings" src="https://github.com/user-attachments/assets/a5cf38f2-2072-479d-b41d-fe6a375917c2" />
 
 ---
 
