@@ -21,11 +21,39 @@ It looks like Dortania has a lot of work to do to support all of these newly dro
 
 ## Usable SMBIOSes
 
-- **Desktops**: `iMac20,1`, `iMac20,2`, `MacPro7,1`
-- **Noetbooks**: `MacBookPro16,1` and `MacBookPro16,4`
-- The rest: dropped
+The following SMBIOS models remain supported by macOS Tahoe:
 
-Since the board-id check skip and `RestrictEvents.kext` still work, macOS Tahoe can be installed with a native SMBIOS for the used CPU family and system updates can be obtained as well.
+- **Desktops:** `iMac20,1`, `iMac20,2`, `MacPro7,1`
+- **Notebooks:** `MacBookPro16,1`, `MacBookPro16,4`
+- **All other models:** Dropped
+
+Since the other models have been dropped, their associated signed Secure Boot manifests are no longer available in macOS Tahoe's Preboot environment.
+
+### SecureBootModel considerations
+
+When using the native SMBIOS for an older CPU family, together with the **Board-ID check bypass**, `RestrictEvents.kext` and `sbvmm`, pay attention to the `Misc → Security → SecureBootModel` setting. If `SecureBootModel` is set to `Default`, OpenCore automatically selects the Secure Boot model associated with the configured SMBIOS.
+
+If that SMBIOS has been dropped from macOS Tahoe, the Apple booter may attempt to load a model-specific signed Boot Kernel Collection manifest that is no longer available in the Preboot environment. This causes Secure Boot verification to fail and the system to reboot before the kernel starts.
+
+To work around this issue, explicitly set `SecureBootModel` to an identifier associated with a still-supported model instead of using `Default`. This allows you to retain the native SMBIOS while using a different Secure Boot model.
+
+### Remaining SecureBootModel entries
+
+The following identifiers can be used (or spoofed) with macOS Tahoe:
+
+| SecureBootModel | SMBIOS |
+|---|---|
+| `j160` | `MacPro7,1` |
+| `j152f` | `MacBookPro16,1` |
+| `j214k` | `MacBookPro16,2` |
+| `j223` | `MacBookPro16,3` |
+| `j215` | `MacBookPro16,4` |
+| `j185` | `iMac20,1` |
+| `j185f` | `iMac20,2` |
+
+> [!NOTE]
+>
+> These are alternative Secure Boot model identifiers; they do not require changing the SMBIOS itself. For example, `j152f` successfully booted macOS Tahoe in testing while using the `MacBookPro15,2` SMBIOS.
 
 ## New features
 
