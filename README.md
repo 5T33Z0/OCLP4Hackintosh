@@ -54,6 +54,7 @@ Listed below are configuration guides for updating your OpenCore EFI and `config
 - [**Fixing `USBMap.kext` for macOS Tahoe**](docs/Guides/Enable_Features/USB/USB_Tahoe.md)
 - [**Re-Enabling Wi-Fi and Bluetooth**](docs/Guides/Enable_Features/WiFi/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel).
 - [**Alternatives to OpenCore Legacy Patcher**](docs/OCLP-related/OCLP_Alternatives.md)
+- [**Re-Enabling Legacy Broadcom Ethernet Controllers**](/docs/Guides/Enable_Features/Ethernet) (macOS 11–26)
 
 ### macOS Sequoia
 
