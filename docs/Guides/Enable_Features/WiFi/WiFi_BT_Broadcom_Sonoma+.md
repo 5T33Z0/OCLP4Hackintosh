@@ -43,7 +43,7 @@ Unlike the traditional OCLP method, SimpleBrcm uses the native `IOSkywalkFamily`
 
 When using Broadcom cards that require `AirportBrcmFixup.kext`, you can place `SimplBrcm.kext` before AirportBrcmFixup and any Plugin kexts after (mind the `MinKernel`/`MaxKernel` settings):
 
-![](/Users/5t33z0/Desktop/simplbrcm.png)
+<img width="1524" height="125" alt="simplbrcm" src="https://github.com/user-attachments/assets/a97a96e2-ee11-4b05-9beb-152c9d9bd310" />
 
 ## 2. OCLP Configuration (Root Patches Required)
 
