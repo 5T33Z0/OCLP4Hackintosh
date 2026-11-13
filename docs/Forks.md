@@ -93,7 +93,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [laobamac/SimpleBCM](https://github.com/laobamac/SimpleBCM) | SimpleBCM aims to restore native Wi-Fi support for legacy Broadcom cards on macOS Sequoia and Tahoe without OCLP root patches. Experimental; check the repository for supported chipsets, macOS versions, and current limitations before use. |
 [**AirportBrcmFixup**](https://github.com/acidanthera/AirportBrcmFixup) | [AppleBCMWLANCompanion](https://github.com/0xFireWolf/AppleBCMWLANCompanion) | Enables the use of supported Broadcom Wi-Fi cards on macOS Sonoma, Sequoia, and Tahoe without root patches. However, only a limited selection of Broadcom FullMAC Wi-Fi cards is supported. |
 
-#### Intel Wi-Fi
+#### 🟦 Intel Wi-Fi
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
 
-#### Realtek
+#### Realtek Wi-Fi
 
 | Original Kext | Alternative | Wi-Fi Chipset | Improvements |
 | --- | --- | --- | --- |
