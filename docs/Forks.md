@@ -97,7 +97,8 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext/App | Alternative | Improvements |
 | --- | --- | --- |
-| [**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [joshcalvert47/HeliPort](https://github.com/joshcalvert47/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
+| [**AirportItlwm**](https://github.com/OpenIntelWireless/itlwm) | [**ForbiddenItlwm**](https://github.com/retropineaple/ForbiddenItlwm) | Fork adding support for Apple Wireless Direct Link to Intel Wi-Fi, enabling AirDrop while maintaining a normal Wi-Fi connection. Also enables Handoff and Universal Clipboard. Experimental public beta; currently tested primarily with Intel AX211. Supports specific builds of macOS Tahoe 26 and Sequoia 15, with a Sonoma 14.8.9 test build. Requires a separate BTLEAdvFixup kext for Bluetooth LE advertising. 
+|[**HeliPort**](https://github.com/OpenIntelWireless/HeliPort) | [joshcalvert47/HeliPort](https://github.com/joshcalvert47/HeliPort) | Adds a signal quality graph and speeds up automatic connection to saved networks at login |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [laobamac/itlwm](https://github.com/laobamac/itlwm/releases) | Provides native AirportItlwm kexts for macOS Sequoia and Tahoe, eliminating the need for OCLP root patches ([More details](https://github.com/5T33Z0/OCLP4Hackintosh/blob/main/Enable_Features/AirportItlwm_Sequoia.md)) |
 | [**itlwm**](https://github.com/OpenIntelWireless/itlwm) | [jzrodriguez98/itlwm](https://github.com/jzrodriguez98/itlwm/tree/laobamac-updates-integration) | Includes laobamacs changes for AirportItlwm in Sequoia/Tahoe but adds Apple-VTD compatibility for `Itlwm.kext`
 
