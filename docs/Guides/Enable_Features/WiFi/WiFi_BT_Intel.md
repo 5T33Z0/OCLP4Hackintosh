@@ -371,7 +371,7 @@ Change the following Settings in **`NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F
 
 **Screenshot:**
 
-![](https://www.insanelymac.com/uploads/monthly_2024_12/Bildschirmfoto2024-12-15um14_18_08.png.d2057e458a2be3cefff9afe2ae40688f.png)
+<img width="1229" height="132" alt="btkexts" src="https://github.com/user-attachments/assets/2053d308-35cf-4e58-b874-a899df7f4ec5" />
 
 Add the following entries t **`NVRAM/Delete/7C436110-AB2A-4BBB-A880-FE41995C9F82`**:
 
