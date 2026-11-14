@@ -21,7 +21,7 @@
 - [Intel Bluetooth](#intel-bluetooth)
   - [Required Kexts](#required-kexts)
   - [Required NVRAM Settings](#required-nvram-settings)
-- [Troubleshooting Bluetooth](#troubleshooting-bluetooth)
+  - [Troubleshooting](#troubleshooting)
 - [Links](#links)
 - [References](#references)
 - [Credits](#credits)
@@ -152,19 +152,13 @@ Refer to the [OpenIntelWireless releases](https://github.com/OpenIntelWireless/i
 
 ## 2. Intel Wi-Fi: macOS Sequoia – Tahoe
 
-Apple's changes to the wireless framework in macOS Sequoia also affected `AirportItlwm.kext`, even though Apple never shipped Intel Wi-Fi cards in its Macs.
-
-As a result, the original OpenIntelWireless builds cannot be used directly in Sequoia and Tahoe.
-
-There are now two approaches to restoring native AirportItlwm support.
+Apple's changes to the wireless framework in macOS Sequoia also affected `AirportItlwm.kext`, even though Apple never shipped Intel Wi-Fi cards in its Macs. As a result, the original OpenIntelWireless builds cannot be used directly in Sequoia and Tahoe. There are now two approaches to restoring native AirportItlwm support.
 
 ### Method 1: Native AirportItlwm (No Wi-Fi Root Patches Required)
 
 [**laobamac's itlwm fork**](https://github.com/laobamac/itlwm) restores native `AirportItlwm.kext` support in macOS Sequoia and Tahoe without requiring OCLP Wi-Fi root patches.
 
-It uses the native wireless frameworks provided by each macOS version rather than injecting the Ventura versions of `IOSkywalkFamily` and `IO80211FamilyLegacy`.
-
-It also supports `AppleVTD`.
+It uses the native wireless frameworks provided by each macOS version rather than injecting the Ventura versions of `IOSkywalkFamily` and `IO80211FamilyLegacy`. It also supports `AppleVTD`.
 
 #### Supported macOS Versions
 
@@ -257,16 +251,14 @@ Add both kexts to `Kernel -> Add` and configure their kernel version ranges so t
 
 Before rebooting, verify the following:
 
-- Correct AirportItlwm build for Sequoia or Tahoe.
-- `AirportItlwm.kext` is present in `EFI/OC/Kexts`.
-- `AirportItlwm.kext` is enabled in `Kernel -> Add`.
-- Old Wi-Fi patching entries have been removed.
-- No conflicting `itlwm.kext` is enabled.
-- Your EFI has been backed up.
+- [ ] Correct AirportItlwm build for Sequoia or Tahoe?
+- [ ] `AirportItlwm.kext` is present in `EFI/OC/Kexts`?
+- [ ] `AirportItlwm.kext` is enabled in `Kernel -> Add`?
+- [ ] Old Wi-Fi patching entries have been removed?
+- [ ] No conflicting `itlwm.kext` is enabled?
+- [ ] Your EFI has been backed up?
 
-Reboot into macOS and check whether Wi-Fi is working.
-
-If you previously used `itlwm.kext`, you can also remove HeliPort from your login items if you no longer need it.
+Reboot into macOS and check whether Wi-Fi is working. If you previously used `itlwm.kext`, you can also remove HeliPort from your login items if you no longer need it.
 
 ### Method 2: Traditional OCLP Root-Patch Method
 
@@ -285,10 +277,10 @@ The general patching procedure is:
 
 | Component | Source |
 |---|---|
+| `AMFIPass.kext` | [OCLP Acidanthera payloads](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) |
 | `IOSkywalkFamily.kext` | [OCLP Wi-Fi payloads](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Wifi) |
 | `IO80211FamilyLegacy.kext` | [OCLP Wi-Fi payloads](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Wifi) |
 | `AirportItlwm.kext` (Ventura build) | [OpenIntelWireless releases](https://github.com/OpenIntelWireless/itlwm/releases) |
-| `AMFIPass.kext` | [OCLP Acidanthera payloads](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) |
 
 #### OpenCore Configuration
 
@@ -325,7 +317,7 @@ Remove any `IOName` spoofing entry for the Intel Wi-Fi device if present, unless
 
 #### Applying OCLP Root Patches
 
-1. Download and install [OCLP-Mod](https://github.com/laobamac/OCLP-Mod).
+1. Download and install [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main).
 2. Boot into macOS Sequoia or Tahoe.
 3. Open OCLP-Mod.
 4. Select **Post-Install Root Patch**.
@@ -390,7 +382,7 @@ Add the following entries t **`NVRAM/Delete/7C436110-AB2A-4BBB-A880-FE41995C9F82
 > - I have noticed that it can take like 10 seconds or so until BT is available after applying these changes.
 > - For using Intel Bluetooth in macOS Monterey and newer, [**read this**](https://openintelwireless.github.io/IntelBluetoothFirmware/FAQ.html#what-additional-steps-should-i-do-to-make-bluetooth-work-on-macos-monterey-and-newer).
 
-## Troubleshooting Bluetooth
+### Troubleshooting
 
 If Bluetooth is not working after adding the two kexts, do the following:
 
