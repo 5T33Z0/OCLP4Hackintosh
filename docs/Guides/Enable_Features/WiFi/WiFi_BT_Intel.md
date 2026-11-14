@@ -371,7 +371,7 @@ Change the following Settings in **`NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F
 
 **Screenshot:**
 
-<img width="813" height="270" alt="NVRAM_del" src="https://github.com/user-attachments/assets/47da0051-0342-4d0a-8011-2af5aecb796b" />
+<img width="1067" height="225" alt="nvram_add" src="https://github.com/user-attachments/assets/60471373-37dc-4195-bd19-9a0aa97dcb56" />
 
 Add the following entries t **`NVRAM/Delete/7C436110-AB2A-4BBB-A880-FE41995C9F82`**:
 
