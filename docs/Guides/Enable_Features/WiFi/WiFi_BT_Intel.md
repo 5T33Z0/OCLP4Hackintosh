@@ -353,7 +353,7 @@ Kext | Note | `MinKernel` | `MaxKernel`
 
 **Screenshot**:
 
-![intelbt](https://github.com/user-attachments/assets/96062780-6a52-430c-a1ac-4b45515c81a6)
+<img width="1229" height="132" alt="btkexts" src="https://github.com/user-attachments/assets/c7c4ba75-df4d-4b9d-acc9-622eb899964b" />
 
 ### Required NVRAM Settings
 
@@ -371,7 +371,7 @@ Change the following Settings in **`NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F
 
 **Screenshot:**
 
-<img width="1229" height="132" alt="btkexts" src="https://github.com/user-attachments/assets/2053d308-35cf-4e58-b874-a899df7f4ec5" />
+<img width="813" height="270" alt="NVRAM_del" src="https://github.com/user-attachments/assets/47da0051-0342-4d0a-8011-2af5aecb796b" />
 
 Add the following entries t **`NVRAM/Delete/7C436110-AB2A-4BBB-A880-FE41995C9F82`**:
 
