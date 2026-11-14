@@ -1,5 +1,33 @@
 # Enabling Intel Wi-Fi and Bluetooth in macOS
 
+**TABLE of CONTENTS**
+
+- [Overview](#overview)
+- [1. Intel Wi-Fi: macOS High Sierra – Sonoma](#1-intel-wi-fi-macos-high-sierra--sonoma)
+  - [itlwm.kext vs. AirportItlwm.kext](#itlwmkext-vs-airportitlwmkext)
+  - [Installation](#installation)
+  - [Multiple macOS Versions](#multiple-macos-versions)
+- [2. Intel Wi-Fi: macOS Sequoia – Tahoe](#2-intel-wi-fi-macos-sequoia--tahoe)
+  - [Method 1: Native AirportItlwm (No Wi-Fi Root Patches Required)](#method-1-native-airportitlwm-no-wi-fi-root-patches-required)
+    - [Supported macOS Versions](#supported-macos-versions)
+    - [Installation](#installation-1)
+    - [Migrating from a Root-Patched Installation](#migrating-from-a-root-patched-installation)
+    - [Multiple macOS Versions](#multiple-macos-versions-1)
+    - [Final Checks](#final-checks)
+  - [Method 2: Traditional OCLP Root-Patch Method](#method-2-traditional-oclp-root-patch-method)
+    - [Required Components](#required-components)
+    - [OpenCore Configuration](#opencore-configuration)
+    - [Applying OCLP Root Patches](#applying-oclp-root-patches)
+- [Intel Bluetooth](#intel-bluetooth)
+  - [Required Kexts](#required-kexts)
+  - [Required NVRAM Settings](#required-nvram-settings)
+- [Troubleshooting Bluetooth](#troubleshooting-bluetooth)
+- [Links](#links)
+- [References](#references)
+- [Credits](#credits)
+
+---
+
 ## Overview
 
 Intel Wi-Fi support in macOS is provided by the [**OpenIntelWireless**](https://github.com/OpenIntelWireless) project, which offers two different kexts: `itlwm.kext` and `AirportItlwm.kext`.
