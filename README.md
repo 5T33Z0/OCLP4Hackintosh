@@ -48,22 +48,19 @@ Listed below are configuration guides for updating your OpenCore EFI and `config
 
 ## (Re-)Enabling Features
 
-### macOS Tahoe
+### Audio
+- [**Re-Enabling Audio in macOS Tahoe**](docs/Guides/Enable_Features/Audio/Audio_Tahoe.md)
 
-- [**Fixing Audio in macOS Tahoe**](docs/Guides/Enable_Features/Audio/Audio_Tahoe.md)
+### Ethernet
+- [**Re-Enabling Legacy Broadcom Ethernet Controllers**](docs/Guides/Enable_Features/Ethernet/) (macOS 11–26)
+
+### Wi-Fi and Bluetooth
+- [**Re-Enabbling Broadcom WiFi and BT in macOS Sonoma and newer**](/docs/Guides/Enable_Features/WiFi/WiFi_BT_Broadcom_Sonoma+.md)
+- [**Re-Enabling Atheros WiFi in macOS Sonoma and newer**](/docs/Guides/Enable_Features/WiFi/WiFi_Atheros_Sonoma+.md)
+- [**Using `AirportItlwm.kext` for Intel Wi-Fi in macOS Sequoia and Tahoe**](docs/Guides/Enable_Features/WiFi/AirportItlwm_Sequoia.md)
+
+### USB
 - [**Fixing `USBMap.kext` for macOS Tahoe**](docs/Guides/Enable_Features/USB/USB_Tahoe.md)
-- [**Re-Enabling Wi-Fi and Bluetooth**](docs/Guides/Enable_Features/WiFi/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel).
-- [**Alternatives to OpenCore Legacy Patcher**](docs/OCLP-related/OCLP_Alternatives.md)
-- [**Re-Enabling Legacy Broadcom Ethernet Controllers**](/docs/Guides/Enable_Features/Ethernet) (macOS 11–26)
-
-### macOS Sequoia
-
-- [**Re-Enabling Wi-Fi and Bluetooth**](docs/Guides/Enable_Features/WiFi/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel).
-- [**How to disable Gatekeeper in macOS Sequoia**](docs/macOS-related/Disable_Gatekeeper.md)
-
-### macOS Sonoma
-
-- [**Re-Enabling Wi-Fi and Bluetooth**](docs/Guides/Enable_Features/WiFi/WiFi_BT_Sonoma+.md) (Broadcom/Atheros/Intel).
 
 ## Misc
 
