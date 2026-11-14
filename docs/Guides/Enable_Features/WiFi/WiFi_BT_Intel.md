@@ -382,7 +382,7 @@ Add the following entries t **`NVRAM/Delete/7C436110-AB2A-4BBB-A880-FE41995C9F82
 
 **Screenshot:**
 
-![](/Users/5t33z0/Desktop/NVRAM_del.png)
+<img width="813" height="270" alt="NVRAM_del" src="https://github.com/user-attachments/assets/b2e2ca24-8792-4708-a65a-3ea3e56735d7" />
 
 > [!NOTE]
 > 
