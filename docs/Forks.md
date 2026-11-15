@@ -32,6 +32,8 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**SMCAMDProcessor**](https://github.com/trulyspinach/SMCAMDProcessor) | AMD Zen | Provides AMD CPU power management and temperature monitoring through `AMDRyzenCPUPowerManagement.kext` and `SMCAMDProcessor.kext`. |
 | [**ryzenstatus-utils**](https://github.com/DrogaBox/ryzenstatus-utils) | AMD Ryzen | Utilities supporting RyzenStatus for AMD Ryzen CPU monitoring and power management. |
 
+---
+
 ## Chipset
 
 ### 🟥 AMD USB
@@ -70,6 +72,15 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | Original Kext | Alternative | GPU Type / Generation | Description |
 | --- | --- | --- | --- |
 | [**nvidia-macos-driver**](https://github.com/nullmoth/nvidia-macos-driver) | N/A (new kext) | Modern NVIDIA GPUs (Turing and newer) | Experimental driver aiming to enable Metal 3 support for modern NVIDIA graphics cards in macOS. 
+
+---
+
+### 🟪 Virtualization
+
+| Original Kext | Alternative | Platform | Description |
+|---------------|-------------|----------|-------------|
+| [**RyzenHV**](https://github.com/OverlordDev/ryzen-hypervisor.framework) | N/A (new kext) | AMD Ryzen (AMD-V / SVM) | Experimental kernel extension implementing Apple's Hypervisor.framework API on AMD Ryzen systems. Enables virtualization software such as Docker Desktop, Parallels Desktop and QEMU to use hardware virtualization through AMD-V (SVM). Compatibility and stability vary depending on the virtualization software and macOS version. |
+| [**MacHyperVSupport**](https://github.com/acidanthera/MacHyperVSupport) | - | macOS guests on Microsoft Hyper-V | Provides Hyper-V guest integration services for macOS virtual machines, including synthetic device support and improved guest integration. |
 
 ---
 
