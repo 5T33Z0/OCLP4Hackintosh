@@ -44,6 +44,17 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ## 🎨 Graphics
 
+### 🟥 AMD
+
+| Original Kext | Alternative | GPU Type / Generation | Description |
+| --- | --- | --- | --- |
+| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | AMD RDNA 4 (Navi 48 / RX 9070 XT) | Experimental native macOS graphics driver for unsupported AMD Radeon GPUs. Combines a custom IOKit kernel driver, a port of Mesa's RADV Vulkan driver and a Metal-on-Vulkan translation layer to provide display output and Metal acceleration. Demonstrated a GPU-composited macOS desktop across three displays on an RX 9070 XT. Currently in preview; application compatibility, display modes and hardware video decoding remain works in progress. Not recommended for everyday use yet. |
+| [**RedNavi**](https://github.com/Helemen7/RedNavi) | N/A (new driver) | RDNA 3 (Navi 32) | Native macOS display driver for AMD Radeon RX 7800 XT. ⚠️ Research prototype, not a driver you can install and use.|
+| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | RDNA 3 (Navi 3x) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
+| [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A (new driver) | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
+| [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
+| [**KaberiRed**](https://github.com/CL0utM4N/KaberiRed) | N/A (new driver) | AMD GCN 2 (Bonaire) | Adapts Apple's GCN 2 drivers for AMD Kabini, Mullins and Kaveri APUs. |
+
 ### 🟦 Intel
 
 | Original Kext | Alternative | GPU Type / Generation | Description |
@@ -53,17 +64,6 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 | [**NootedGreen**](https://github.com/sgiammori/NootedGreen) | N/A (new kext) | Intel Gen11 / Gen12 (Ice Lake, Tiger Lake, Alder Lake, Raptor Lake) | Lilu plugin adapting Apple's Tiger Lake graphics drivers for unsupported Intel iGPUs. Includes experimental acceleration support for newer architectures. Also retains legacy NootedBlue support for Haswell, Broadwell, Braswell and Gemini Lake. Work in progress; hardware compatibility and graphics acceleration vary by platform. |
 | [**VPXFixUp**](https://github.com/medkintos/VPXFixUp) | N/A (new kext) | Intel 7th–10th Gen Core (Kaby Lake - Comet Lake) | Lilu plugin addressing VP9/HEVC hardware-decoding issues and GPU sandbox compatibility in macOS browsers. Also aims to preserve Apple Music FairPlay DRM with `unfairgva=4`. Experimental; hardware compatibility and functionality require further verification. |
 | [**VP8MetalDecoder**](https://github.com/medkintos/VP8MetalDecoder) | N/A (new kext) | Kaby Lake+ | Experimental VP8 hardware-decoding implementation using Apple's Metal framework. Supported Intel GPU generations and macOS compatibility need verification. |
-
-### 🟥 AMD
-
-| Original Kext | Alternative | GPU Type / Generation | Description |
-| --- | --- | --- | --- |
-| [**Cobalt64**](https://github.com/Almosst-DEV/Cobalt64) | N/A (new driver) | RDNA 4 (Navi 48) | Experimental native macOS GPU acceleration for unsupported AMD Radeon GPUs, starting with RDNA 4 (RX 9070 XT / Navi 48). Uses a custom kernel driver and a port of Mesa's RADV Vulkan driver to enable Metal rendering. Currently in preview; not recommended for everyday use yet. |
-| [**RedNavi**](https://github.com/Helemen7/RedNavi) | N/A (new driver) | RDNA 3 (Navi 32) | Native macOS display driver for AMD Radeon RX 7800 XT. ⚠️ Research prototype, not a driver you can install and use.|
-| [**AMD RDNA 3 macOS Driver**](https://github.com/luuumi-dev/amd-rdna3-macos-driver) | N/A (new driver) | RDNA 3 (Navi 3x) | Work-in-progress driver for AMD RDNA 3 GPUs, aiming to enable graphics acceleration in macOS. Experimental; full graphics acceleration and Metal support are not yet established. |
-| [**NootedRed**](https://github.com/ChefKissInc/NootedRed) | N/A (new driver) | Vega-based APUs (GCN 5) | Patches Apple's AMD graphics drivers to enable graphics acceleration on unsupported AMD Vega integrated GPUs, including those found in Raven Ridge, Picasso, Renoir, Cezanne, and Barcelo APUs. Experimental and under active development. |
-| [**CarrizoRed**](https://github.com/CL0utM4N/CarrizoRed) | N/A (new driver) | GCN 3 (GFX8) APUs | Experimental graphics support for older AMD GCN 3 (GFX8) APUs using Apple's Polaris drivers. Targets Carrizo, Bristol Ridge, and Stoney Ridge. Currently experimental, with demonstrated functionality limited to Stoney Ridge; Carrizo and Bristol Ridge remain untested. |
-| [**KaberiRed**](https://github.com/CL0utM4N/KaberiRed) | N/A (new driver) | AMD GCN 2 (Bonaire) | Adapts Apple's GCN 2 drivers for AMD Kabini, Mullins and Kaveri APUs. |
 
 ### 🟩 NVIDIA
 
