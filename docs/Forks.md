@@ -75,7 +75,7 @@ Below is an incomplete list of actively maintained alternatives to existing kext
 
 ---
 
-### 🟪 Virtualization
+## 🟪 Virtualization
 
 | Original Kext | Alternative | Platform | Description |
 |---------------|-------------|----------|-------------|
