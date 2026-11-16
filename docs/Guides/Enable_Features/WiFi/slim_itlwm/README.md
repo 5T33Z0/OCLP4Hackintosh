@@ -17,7 +17,9 @@ The stock itlwm kexts embed firmware for every supported Intel Wi-Fi card (about
 
 It automates the manual steps of the [Slimming Intel Wi-Fi/BT Kexts](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Content/J_Compiling_Kexts/Slimming_Intel_WiFI_BT_Kexts.md) guide for the Wi-Fi kexts.
 
-> **Note:** Slimming only reduces the kext size. It does not improve performance or compatibility. If you keep the wrong firmware, Wi-Fi will not initialize.
+> [!NOTE]
+>
+> Slimming only reduces the kext size. It does not improve performance or compatibility. If you keep the wrong firmware, Wi-Fi will not initialize.
 
 ## Requirements
 
