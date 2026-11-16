@@ -172,7 +172,7 @@ This will compile `itlwm.kext` and the available `AirportItlwm.kext` variants fo
 
 > [!TIP]
 > 
-> I've created a Python script ([**ilwm Slim Builder**](/slim_itlwm)) which lets you build slimmed versions of Itlwm and AiportIlwm kexts.
+> I've created a Python script ([**ilwm Slim Builder**](/docs/Guides/Enable_Features/WiFi/slim_itlwm)) which lets you build slimmed versions of Itlwm and AiportIlwm kexts.
 
 ---
 
