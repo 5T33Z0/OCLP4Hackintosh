@@ -170,6 +170,10 @@ This will compile `itlwm.kext` and the available `AirportItlwm.kext` variants fo
     -configuration Release ARCHS=x86_64 CODE_SIGNING_ALLOWED=NO build
   ```
 
+> [!TIP]
+> 
+> I've created a Python script ([**ilwm Slim Builder**](/slim_itlwm)) which lets you build slimmed versions of Itlwm and AiportIlwm kexts.
+
 ---
 
 ## Credits and Thank Yous
