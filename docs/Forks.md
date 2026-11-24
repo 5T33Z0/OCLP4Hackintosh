@@ -166,6 +166,12 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- | --- |
 | [**Acidanthera/FeatureUnlock**](https://github.com/acidanthera/FeatureUnlock) | [**FeatureUnlock-Tahoe**](https://github.com/kgp-macPro/FeatureUnlock-Tahoe) | macOS Tahoe (Darwin 25) | Fork of FeatureUnlock with fixes targeting AirPlay Screen Mirroring on Hackintosh systems running macOS Tahoe. Also includes experimental Sidecar support. |
 
+### Trackpad Support (I2C)
+
+| Original Kext | Alternative | Platform / Hardware | Description |
+|---|---|---|---|
+| [**VoodooI2C**](https://github.com/VoodooI2C/VoodooI2C) | [**VoodooI2C_APIC**](https://github.com/amane1234/VoodooI2C_APIC) | Intel I2C controllers | Fork enabling APIC interrupt pins above `0x2F`, addressing systems where BIOS-locked GPIO pads prevent conventional GPIO pinning. Includes additional I2C transfer and controller error-handling fixes. |
+
 ---
 
 ## UEFI Drivers
