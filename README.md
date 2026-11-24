@@ -88,17 +88,13 @@ There are several options to fetch and download macOS installers directly from A
 2. [**Download Full Installer**](https://github.com/perez987/DownloadFullInstaller): A simple macOS app to download macOS Big Sur through Tahoe for Intel-based systems.
 3. [**MIST**](https://github.com/ninxsoft/Mist): A GUI-based app to download macOS installers and Apple Silicon firmware.
 4. **Terminal**. Open Terminal and enter the following commands:
-
    ```bash
    softwareupdate --fetch-full-installer --list-full-installers
    ```
-
    (To fetch the list of available installers.)
-
    ```bash
    softwareupdate --fetch-full-installer --full-installer-version xx.xx
    ```
-
    (Replace `xx.xx` with the version you want to download.)
 
 For more options, check the [**Utilities**](https://github.com/5T33Z0/OC-Little-Translated/tree/main/C_Utilities_and_Resources#getting-macos) section.

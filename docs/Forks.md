@@ -136,7 +136,7 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 
 | Original Kext | Alternative | Improvements/Limitations |
 | --- | --- | --- |
-| [**IntelBluetoothFirmware**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) + [**IntelBTPatcher**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) + [**BlueToolFixup**](https://github.com/acidanthera/BrcmPatchRAM) | [**IntelBTUnified**](https://github.com/macintelk/IntelBTUnified) | Combines Intel Bluetooth firmware uploading, Bluetooth stack compatibility patches and BlueToolFixup functionality into a single kext. Simplifies installation by consolidating three previously separate components. |
+| [**IntelBluetoothFirmware**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) + [**IntelBTPatcher**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) + [**BlueToolFixup**](https://github.com/acidanthera/BrcmPatchRAM) | [**IntelBTUnified**](https://github.com/laguillo/IntelBTUnified) | Combines Intel Bluetooth firmware uploading, Bluetooth stack compatibility patches and BlueToolFixup functionality into a single kext. Simplifies installation by consolidating three previously separate components. |
 | [**IntelBluetoothFirmware**](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) | [lshbluesky/IntelBluetoothFirmware](https://github.com/lshbluesky/IntelBluetoothFirmware/releases) | Improved BLE pairing; additional and updated firmware; macOS Tahoe compatibility. |
 
 --- 
