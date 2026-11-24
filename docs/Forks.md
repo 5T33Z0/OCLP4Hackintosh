@@ -156,6 +156,12 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | --- | --- | --- |
 | [**UVCProbeFix**](https://www.insanelymac.com/forum/topic/363309-uvcprobefix-for-macos-tahoe-fix-broken-usb-webcam-video-and-black-screen-on-hackintosh/) | N/A (new kext) | Experimental fix for USB UVC webcams that are detected by macOS Tahoe but produce a black screen because of malformed UVC PROBE/COMMIT negotiation. Source code is not publicly provided. |
 
+### Trackpad Support (I2C)
+
+| Original Kext | Alternative | Platform / Hardware | Description |
+|---|---|---|---|
+| [**VoodooI2C**](https://github.com/VoodooI2C/VoodooI2C) | [**VoodooI2C_APIC**](https://github.com/amane1234/VoodooI2C_APIC) | Intel I2C controllers | Fork enabling APIC interrupt pins above `0x2F`, addressing systems where BIOS-locked GPIO pads prevent conventional GPIO pinning. Includes additional I2C transfer and controller error-handling fixes. |
+
 ---
 
 ## 🍎 macOS Features
@@ -165,12 +171,6 @@ This is not a direct replacement, but an alternative for specific Broadcom Wi-Fi
 | Original Kext | Alternative | Platform | Description |
 | --- | --- | --- | --- |
 | [**Acidanthera/FeatureUnlock**](https://github.com/acidanthera/FeatureUnlock) | [**FeatureUnlock-Tahoe**](https://github.com/kgp-macPro/FeatureUnlock-Tahoe) | macOS Tahoe (Darwin 25) | Fork of FeatureUnlock with fixes targeting AirPlay Screen Mirroring on Hackintosh systems running macOS Tahoe. Also includes experimental Sidecar support. |
-
-### Trackpad Support (I2C)
-
-| Original Kext | Alternative | Platform / Hardware | Description |
-|---|---|---|---|
-| [**VoodooI2C**](https://github.com/VoodooI2C/VoodooI2C) | [**VoodooI2C_APIC**](https://github.com/amane1234/VoodooI2C_APIC) | Intel I2C controllers | Fork enabling APIC interrupt pins above `0x2F`, addressing systems where BIOS-locked GPIO pads prevent conventional GPIO pinning. Includes additional I2C transfer and controller error-handling fixes. |
 
 ---
 
