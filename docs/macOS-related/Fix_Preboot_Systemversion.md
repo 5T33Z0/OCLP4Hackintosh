@@ -113,9 +113,7 @@ For manual repairs, MacSchrauber provides a collection of tools, including **Pre
 - Select `Download`.
 - This downloads `Macschrauber's Rom Dump.dmg`. The applet also provides the means to unlock and mount the password-protected disk image.
 - Once mounted, navigate to:
-
-  `/Volumes/Macschrauber's CMP Rom Dump/Readme & other tools/Preboot fixer and renamer`
-
+    `/Volumes/Macschrauber's CMP Rom Dump/Readme & other tools/Preboot fixer and renamer`
 - Locate and run **PrebootFixer and Renamer**.
 - Follow the [**Preboot repair instructions**](https://github.com/Macschrauber/Macschrauber-s-Rom-Dump/blob/main/Rename_and_repair_preboot.md).
 
